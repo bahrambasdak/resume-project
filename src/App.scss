@@ -1,0 +1,135 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-header-img {
+  width: 100%;
+  height: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-image: url("./img/main-header-img.jpg");
+  background-size: cover;
+}
+
+.welcome-text {
+  color: #555;
+  font-size: 1.5rem;
+}
+.name-text {
+  font-size: 4rem;
+  color: white;
+  font-weight: 500;
+}
+.type-text {
+  color: #555;
+  font-size: 1.5rem;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.main-header-link{
+  display: flex;
+  justify-content: center;
+}
+.main-header-link span {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  margin: 1rem;
+ 
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s ease-out;
+
+}
+
+.main-header-link span:hover {
+background-color: blueviolet;
+}
+
+.header-canvas{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+/********************ABOUT ME****************/
+.about-me {
+  display: flex;
+ 
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 4rem;
+  padding: 3rem;
+  width: 100vw;
+  height: 100vh;
+}
+.about-me .right {
+  text-align: left;
+  
+}
+.about-me .right img {
+
+}
+
+.about-me .left {
+  flex-basis: 60%;
+  
+  align-self: flex-start;
+}
+
+
+.about-me .left h1{
+
+  font-weight: 1000;
+  text-shadow:2px 2px 2px rgb(151, 151, 172);
+}
+.about-me .left h1 span{
+  color: red;
+  border-bottom: 1px solid red;
+
+}
+
+
+
+/********************MAIN MENU****************/
+.main-menu {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  background-color: aliceblue;
+  box-shadow: 0 1px 3px 1px rgb(245, 237, 237);
+}
+
+.main-menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.main-menu .menu .item {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.main-menu .menu .item:hover {
+  color: blueviolet;
+
+  transition: all 0.3s ease-in-out;
+}
+
+
