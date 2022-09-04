@@ -1,4 +1,5 @@
 const MainMenu = () => {
+  
   return (
     <div  className="main-menu">
       <ul className="menu">

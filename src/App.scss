@@ -1,4 +1,5 @@
 .App {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,9 +111,13 @@ background-color: blueviolet;
   display: flex;
   justify-content: center;
   position: fixed;
+
+
   width: 100%;
   background-color: aliceblue;
-  box-shadow: 0 1px 3px 1px rgb(245, 237, 237);
+  box-shadow: 0 1px 5px 1px gainsboro;
+  z-index: 2;
+ 
 }
 
 .main-menu .menu {
