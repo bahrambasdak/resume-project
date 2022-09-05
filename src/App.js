@@ -1,30 +1,35 @@
-import logo from './logo.svg';
-import './App.scss';
 
-import MainHeader from './components/MainHeader';
-import MainMenu from './components/MainMenu';
-import AboutMe from './components/AboutMe';
-import { useEffect, useState } from 'react';
+import "./App.scss";
+
+import MainHeader from "./components/MainHeader";
+import MainMenu from "./components/MainMenu";
+import AboutMe from "./components/AboutMe";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [showInTop, setShowInTop] = useState(false);
 
-  const [scroll , setScroll] = useState('');
-  window.addEventListener('scroll',(e)=>{
-    console.log(e);
-  })
-  useEffect(()=>{
+console.log('app render');
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      console.log(window.screen.availHeight - window.scrollY < 200);
+      window.screen.availHeight - window.scrollY < 200
+        ? setShowInTop(true)
+        : setShowInTop(false);
+        console.log(window.scrollY);
+     
+    });
+    console.log('app useEfect');
+  },[]);
 
-  })
   return (
     <div className="App">
-      <MainMenu />
+      <MainMenu showInTop={showInTop} />
+
       
-      <header className="App-header">
         <MainHeader />
-      </header>
 
       <AboutMe />
-
     </div>
   );
 }

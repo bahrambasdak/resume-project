@@ -1,5 +1,10 @@
 import img from "./../img/about.jpg";
+import { memo, useEffect } from "react";
 const AboutMe = () => {
+  console.log('about me render');
+  useEffect(()=>{
+    console.log('about me useEfect');
+  },[])
   return (
     <div className="about-me">
       <div className="right">
@@ -27,4 +32,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default memo(AboutMe);

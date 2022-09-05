@@ -1,16 +1,27 @@
-.App {
+*{
+  scroll-behavior:smooth;
+}
+body{
+ 
+}
 
+.App {
+overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .main-header-img {
   width: 100%;
   height: 100%;
 }
 
+
+
 .App-header {
   background-color: #282c34;
+  background-image: url("./img/main-header-img.jpg");
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,7 +32,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: url("./img/main-header-img.jpg");
+
   background-size: cover;
 }
 
@@ -35,11 +46,21 @@
   font-weight: 500;
 }
 .type-text {
-  color: #555;
+  color: white;
   font-size: 1.5rem;
+  border: 1px solid transparent;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
+  background-color: transparent;
+  //caret-color: red;
+  
+  outline: none;
+  //outline-style: none;
+  //shape-outside: none;
+  //outline-color: transparent;
+  box-shadow: none;
 }
+
 .main-header-link{
   display: flex;
   justify-content: center;
@@ -53,6 +74,7 @@
   cursor: pointer;
   border-radius: 50%;
   transition: all 0.5s ease-out;
+  z-index: 2;
 
 }
 
@@ -80,9 +102,12 @@ background-color: blueviolet;
 }
 .about-me .right {
   text-align: left;
-  
+  border: 10px solid rgb(245, 245, 245);
+  border-radius: 5px;
 }
 .about-me .right img {
+  height: 100%;
+  width: 100%;
 
 }
 
@@ -108,16 +133,21 @@ background-color: blueviolet;
 
 /********************MAIN MENU****************/
 .main-menu {
+  position: absolute;
   display: flex;
   justify-content: center;
-  position: fixed;
-
-
   width: 100%;
-  background-color: aliceblue;
-  box-shadow: 0 1px 5px 1px gainsboro;
+  background-color: transparent;
+  color: aliceblue;
   z-index: 2;
+  transition: all 0.5s;
  
+}
+.ShowInTop{
+  color: #282c34;
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 1px 5px 1px gainsboro;
 }
 
 .main-menu .menu {
