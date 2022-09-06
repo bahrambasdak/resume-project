@@ -13,7 +13,7 @@ const MainMenu = ({ showInTop }) => {
   return (
     <div className={`main-menu ${showInTop ? "ShowInTop" : ""}`}>
       <ul className="menu">
-        <li onClick={() => linkToAboutMePage(500)} className="item">
+        <li onClick={() => linkToAboutMePage(window.screen.availHeight)} className="item">
           درباره من
         </li>
         <li className="item">مهارت ها</li>

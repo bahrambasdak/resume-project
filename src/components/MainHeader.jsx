@@ -125,12 +125,14 @@ const MainHeader = () => {
         <canvas ref={canvasRef} className="header-canvas"></canvas>
         <div className="welcome-text">به وب سایت من خوش آمدید</div>
         <div className="name-text">بهرام بسدک</div>
+        <div className="type-text">
         <input
           type="text"
           value="توسعه دهنده ی react"
           ref={typistRef}
-          className="type-text"
+          className="typer"
         />
+        </div>
 
         <div className="main-header-link">
           <span>
