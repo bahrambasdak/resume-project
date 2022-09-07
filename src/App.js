@@ -5,6 +5,11 @@ import MainMenu from "./components/MainMenu";
 import AboutMe from "./components/AboutMe";
 import { useEffect, useState } from "react";
 import MySkills from "./components/MySkills";
+import Portfolio from "./components/Portfolio";
+ import work1 from './img/work1.png';
+ import work2 from './img/work2.JPG';
+import work3 from './img/work3.JPG';
+ import work4 from './img/work4.JPG';
 
 function App() {
   const [showInTop, setShowInTop] = useState(false);
@@ -23,9 +28,17 @@ function App() {
 
   const skills = [
     { name: "javascript", degree: 85 },
-    { name: "javascript", degree: 85 },
-    { name: "javascript", degree: 85 },
-    { name: "javascript", degree: 85 },
+    { name: "React", degree: 85 },
+    { name: "HTML/CSS", degree: 85 },
+    { name: "GIT", degree: 85 },
+    { name: "GIT", degree: 85 },
+  ];
+
+  const works = [
+    { title: "product Manager", img: work1 },
+    { title: "product Manager", img: work2 },
+    { title: "product Manager", img: work3},
+    { title: "product Manager", img: work4},
   ];
 
   return (
@@ -36,6 +49,7 @@ function App() {
 
       <AboutMe />
       <MySkills skills={skills} />
+      <Portfolio works={works} />
     </div>
   );
 }
