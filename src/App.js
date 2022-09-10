@@ -1,55 +1,21 @@
-import "./App.scss";
+//import "./App.scss";
 
-import MainHeader from "./components/MainHeader";
-import MainMenu from "./components/MainMenu";
-import AboutMe from "./components/AboutMe";
-import { useEffect, useState } from "react";
-import MySkills from "./components/MySkills";
-import Portfolio from "./components/Portfolio";
- import work1 from './img/work1.png';
- import work2 from './img/work2.JPG';
-import work3 from './img/work3.JPG';
- import work4 from './img/work4.JPG';
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import Home from "./projects/resume/Home";
+import TodoList from "./projects/todolist/TodoList";
 
 function App() {
-  const [showInTop, setShowInTop] = useState(false);
-
-  console.log("app render");
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      console.log(window.screen.availHeight - window.scrollY < 200);
-      window.screen.availHeight - window.scrollY < 200
-        ? setShowInTop(true)
-        : setShowInTop(false);
-      console.log(window.scrollY);
-    });
-    console.log("app useEfect");
-  }, []);
-
-  const skills = [
-    { name: "javascript", degree: 85 },
-    { name: "React", degree: 85 },
-    { name: "HTML/CSS", degree: 85 },
-    { name: "GIT", degree: 85 },
-    { name: "GIT", degree: 85 },
-  ];
-
-  const works = [
-    { title: "product Manager", img: work1 },
-    { title: "product Manager", img: work2 },
-    { title: "product Manager", img: work3},
-    { title: "product Manager", img: work4},
-  ];
-
   return (
-    <div className="App">
-      <MainMenu showInTop={showInTop} />
+    <div >
+      
+      <BrowserRouter>
+        <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/todolist" element={<TodoList />} />
 
-      <MainHeader />
-
-      <AboutMe />
-      <MySkills skills={skills} />
-      <Portfolio works={works} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

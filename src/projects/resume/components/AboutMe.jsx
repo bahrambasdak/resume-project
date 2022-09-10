@@ -1,4 +1,5 @@
 import img from "./../img/about.jpg";
+import classes from '../styles.module.scss';
 import { memo, useEffect } from "react";
 const AboutMe = () => {
   console.log("about me render");
@@ -6,13 +7,14 @@ const AboutMe = () => {
     console.log("about me useEfect");
   }, []);
   return (
-    <div className="about-me">
-      <div className="right">
+    <div className={classes.about_me} id="aboutMe">
+      <div className={classes.right}>
         <img src={img} alt="about" />
       </div>
-      <div className="left">
+
+      <div className={classes.left}>
         <h1>
-          <span>درباره</span> من{" "}
+          <span>درباره</span> من
         </h1>
         <h3>من یک طراح رابط کاربری حرفه ای هستم</h3>
         <p>
@@ -21,13 +23,13 @@ const AboutMe = () => {
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
           متنوع با هدف بهبود ابزارهای
         </p>
-        <div className="description">
-          <div>نام: بهرام بسدک</div>
-          <div>ایمیل: bahrambasdak@gmail.com</div>
-          <div>سن : 33 </div>
-          <div>مکان : تهران</div>
+        <div className={classes.description}>
+          <div><b>نام</b> : بهرام بسدک</div>
+          <div><b>ایمیل</b> : bahrambasdak@gmail.com</div>
+          <div><b>سن</b> : 33 </div>
+          <div><b>مکان</b> : تهران</div>
         </div>
-        <button>رزومه</button>
+        <button>دریافت رزومه</button>
       </div>
     </div>
   );

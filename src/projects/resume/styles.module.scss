@@ -1,22 +1,79 @@
 * {
   scroll-behavior: smooth;
 }
-body {
-}
+
+$main-header-welcom-text-color: rgb(200, 201, 203);
+$main-header-menu-text-color: rgb(248, 248, 248);
+$aboutMe-title-color: rgb(31, 30, 30);
+$aboutMe-title-color2: rgb(202, 15, 235);
+$aboutMe-Bgbuttom-color: rgb(202, 15, 235);
+$aboutMe-buttom-text-color: rgb(248, 248, 248);
+$skills-title-color: rgb(202, 15, 235);
+$skills-title-color2: rgb(31, 30, 30);
 
 .App {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
+/********************MAIN MENU****************/
+.main_menu {
+  position: absolute;
+  display: flex;
+  font-size: larger;
+  justify-content: center;
+
+  width: 100%;
+  background-color: transparent;
+  color: $main-header-menu-text-color;
+  z-index: 3;
+  transition: all 0.5s;
+  top: 0;
+  left: 0;
+}
+
+.main_menu .menu {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.main_menu .menu .item {
+  a {
+    color: $main-header-menu-text-color;
+  }
+
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.main_menu .menu .item:hover {
+  a {
+    color: blueviolet;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.ShowInTop {
+  .menu .item a {
+    color: #282c34;
+  }
+
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 1px 5px 1px gainsboro;
+}
+
+/////////////////////////////////////MAIN HEADER//////////////////////////////
 .main-header-img {
   width: 100%;
   height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
+.Home_header {
   background-image: url("./img/main-header-img.jpg");
   width: 100vw;
   height: 100vh;
@@ -32,16 +89,18 @@ body {
   background-size: cover;
 }
 
-.welcome-text {
-  color: #555;
+.welcome_text {
+  color: $main-header-welcom-text-color;
   font-size: 1.5rem;
 }
-.name-text {
+.name_text {
   font-size: 4rem;
   color: white;
   font-weight: 500;
 }
 .typer {
+  display: inline-block;
+  width: auto !important;
   color: #999;
   font-size: 1.5rem;
   border: 1px solid transparent;
@@ -49,14 +108,15 @@ body {
   border-bottom: 1px solid rgba(199, 195, 195, 0.2);
   background-color: transparent;
 }
-.type-text {
+.type_text {
+  text-align: center;
 }
 
-.main-header-link {
+.main_header_link {
   display: flex;
   justify-content: center;
 }
-.main-header-link span {
+.main_header_link span {
   display: flex;
   justify-content: center;
   padding: 0.6rem;
@@ -68,167 +128,151 @@ body {
   z-index: 2;
 }
 
-.main-header-link span:hover {
+.main_header_link span:hover {
   background-color: blueviolet;
 }
 
-.header-canvas {
+.header_canvas {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
 /********************ABOUT ME****************/
-.about-me {
+.about_me {
   display: flex;
-
+  margin: auto;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   column-gap: 4rem;
   padding: 3rem;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding: 5rem 0 0 0;
 }
-.about-me .right {
+.about_me .right {
   text-align: left;
   border: 10px solid rgb(245, 245, 245);
   border-radius: 5px;
+  height: 530px;
+  width: 380px;
 }
-.about-me .right img {
+.about_me .right img {
   height: 100%;
   width: 100%;
 }
 
-.about-me .left {
+.about_me .left {
   display: flex;
-  flex-direction: column;
-  padding-left: 10%;
-  flex-basis: 60%;
-  height: 100%;
-  justify-content: space-between;
 
-  align-self: flex-start;
+  flex-direction: column;
+  width: 500px;
+  height: 530px;
+  //flex-basis: 60%;
+
+  justify-content: space-between;
 }
 
-.about-me .left h1 {
-  font-weight: 1000;
+.about_me .left h1 {
+  color: $aboutMe-title-color;
+  padding: 0;
+  font-size: 3rem;
+  font-weight: bolder;
   text-shadow: 2px 2px 2px rgb(151, 151, 172);
 }
-.about-me .left h1 span {
-  color: red;
-  border-bottom: 1px solid red;
+.about_me .left h1 span {
+  color: $aboutMe-title-color2;
+  border-bottom: 1px solid $aboutMe-title-color2;
 }
 
-.about-me .left p {
+.about_me .left p {
   padding-bottom: 30px;
   border-bottom: 1px solid #999;
 }
 
-.about-me .left .description {
+.about_me .left .description {
   display: flex;
 
   flex-wrap: wrap;
 }
-.about-me .left .description div {
+.about_me .left .description div {
   min-width: 50%;
   padding-bottom: 2rem;
 }
 
-.about-me .left button {
+.about_me .left button {
   align-self: flex-start;
   position: relative;
-  // padding: 15px 40px 15px 40px;
+  font-weight: bold;
+  font-size: 1.2rem;
   width: 200px;
   height: 50px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background-color: rgb(155, 87, 172);
-  color: aliceblue;
+  background-color: $aboutMe-Bgbuttom-color;
+  color: $aboutMe-buttom-text-color;
   z-index: 2;
 }
-.about-me .left button:hover {
+.about_me .left button:hover {
   color: #282c34;
 }
 
-.about-me .left button::before {
+.about_me .left button::before {
   transition: all 0.3s ease-out;
   border-radius: 30px;
   content: "";
   width: 0px;
   height: 50px;
-  background-color: rgb(245, 240, 240);
+  background-color: $aboutMe-buttom-text-color;
   position: absolute;
   left: 100px;
   top: 0px;
   z-index: -1;
 }
-.about-me .left button:hover::before {
+.about_me .left button:hover::before {
   width: 200px;
   left: 0px;
   top: 0px;
 }
 
-/********************MAIN MENU****************/
-.main-menu {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: transparent;
-  color: aliceblue;
-  z-index: 2;
-  transition: all 0.5s;
-}
-.ShowInTop {
-  color: #282c34;
-  position: fixed;
-  background-color: white;
-  box-shadow: 0 1px 5px 1px gainsboro;
-}
-
-.main-menu .menu {
-  display: flex;
-  column-gap: 1rem;
-}
-
-.main-menu .menu .item {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 1rem;
-}
-
-.main-menu .menu .item:hover {
-  color: blueviolet;
-
-  transition: all 0.3s ease-in-out;
-}
-
 ///////////////////////////////////MY SKILLS//////////
-.my-skills {
+.my_skills {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 100vw;
   height: 100vh;
 }
 
-.my-skills-section {
+.my_skills_section {
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
+  height: 80%;
+  margin: 10% 0 0 0;
   background-color: rgb(242, 242, 242);
 }
-.my-skills .title {
-  padding: 100px;
+.my_skills_section .title {
+  //padding: 100px;
+  color: $skills-title-color2;
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px rgb(151, 151, 172);
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
 }
-.my-skills .skills {
+.my_skills_section .title span {
+  color: $skills-title-color;
+  border-bottom: 1px solid $skills-title-color;
+  padding-bottom: 3px;
+}
+.my_skills_section .skills {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -238,24 +282,27 @@ body {
   width: 100%;
   padding: 30px;
 }
-.my-skills .skills .skill {
+.my_skills_section .skills .skill {
   width: 40%;
   position: relative;
 }
-.my-skills .skills .skill .name {
+
+.my_skills_section .skills .skill:last-child {
+}
+.my_skills_section .skills .skill .name {
   padding-bottom: 20px;
 }
-.my-skills .skills .skill .bar {
+.my_skills_section .skills .skill .bar {
   background-color: white;
   width: 100%;
   height: 5px;
 }
 
-.my-skills .skills .skill .bar .bar-value {
+.my_skills_section .skills .skill .bar .bar_value {
   background-color: rgb(173, 7, 228);
   height: 5px;
 }
-.my-skills .skills .skill .degree {
+.my_skills_section .skills .skill .degree {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,21 +315,32 @@ body {
   height: 30px;
 }
 
-
-
-
 //////////////////////PORTFOLIO//////////////
 ///
 .portfolio {
   text-align: center;
+  padding-top: 100px;
 }
 .portfolio .title {
   font-size: 3rem;
-  padding: 0 0 3rem 0;
+  display: inline-block;
+  color: $skills-title-color2;
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px rgb(151, 151, 172);
+  border-bottom: 1px solid rgb(212, 206, 206);
+  padding-bottom: 10px;
+  margin: 0 0 3rem 0;
+  text-align: center;
 }
-.portfolio .works {
-  // margin: 5rem 15rem 10rem 15rem;
 
+.portfolio .title span {
+  color: $skills-title-color;
+  border-bottom: 1px solid $skills-title-color;
+  padding-bottom: 3px;
+}
+
+.portfolio .works {
   display: flex;
   max-width: 70vw;
   gap: 1rem;
@@ -299,6 +357,7 @@ body {
   height: 350px;
   transition: all 0.5s ease-in-out;
   overflow: hidden;
+  border-radius: 0.5rem;
 }
 
 .portfolio .works .work img {
@@ -307,9 +366,8 @@ body {
   height: 100% !important;
   top: 0;
   left: 0;
-  border-radius: 0.5rem;
 }
-.portfolio .works .work .work-title {
+.portfolio .works .work .work_title {
   transition: all 0.3s ease-in-out;
   position: absolute;
   width: 100%;
@@ -333,7 +391,7 @@ body {
       cursor: pointer;
     }
 
-    .zoom:hover{
+    .zoom:hover {
       color: red;
     }
     .link {
@@ -347,7 +405,7 @@ body {
 }
 
 .portfolio .works .work:hover {
-  .work-title {
+  .work_title {
     top: 0;
   }
 }

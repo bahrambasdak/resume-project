@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
+import classes from '../styles.module.scss';
 
 const MainHeader = () => {
   const canvasRef = useRef(null);
@@ -121,20 +122,20 @@ const MainHeader = () => {
 
   return (
     <>
-      <header className="App-header">
-        <canvas ref={canvasRef} className="header-canvas"></canvas>
-        <div className="welcome-text">به وب سایت من خوش آمدید</div>
-        <div className="name-text">بهرام بسدک</div>
-        <div className="type-text">
+      <header className={classes.Home_header} id="home">
+        <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
+        <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
+        <div className={classes.name_text}>بهرام بسدک</div>
+        <div className={classes.type_text}>
         <input
           type="text"
-          value="توسعه دهنده ی react"
+          value=""
           ref={typistRef}
-          className="typer"
+          className={classes.typer}
         />
         </div>
 
-        <div className="main-header-link">
+        <div className={classes.main_header_link}>
           <span>
             <BsGithub />
           </span>
