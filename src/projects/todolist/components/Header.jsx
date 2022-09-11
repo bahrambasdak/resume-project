@@ -46,10 +46,12 @@ const TodosHeader = () => {
   };
 
   return (
+   
     <div className={`${classes.todos_header} ${getHeaderImageClass(time.getHours())}`}>
       <div className={classes.day}>{day()}</div>
       <div className={classes.month}>{month()}</div>
     </div>
+  
   );
 };
 

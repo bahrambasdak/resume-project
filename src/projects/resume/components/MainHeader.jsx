@@ -77,7 +77,7 @@ const MainHeader = () => {
             Math.pow(item.x - point.x, 2) + Math.pow(item.y - point.y, 2)
           );
           if (
-            radius < 150 &&
+            radius < winWidth/9 &&
             item.x > 0 &&
             item.x < winWidth &&
             item.y > 0 &&
@@ -85,7 +85,7 @@ const MainHeader = () => {
           ) {
             ctx.moveTo(point.x, point.y);
             ctx.lineTo(item.x, item.y);
-            ctx.strokeStyle = `rgba(200,200,200,${(150 - radius) / 1000})`;
+            ctx.strokeStyle = `rgba(200,200,200,${(winWidth/9 - radius) / 1000})`;
             ctx.stroke();
           }
         });

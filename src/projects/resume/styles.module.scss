@@ -409,3 +409,32 @@ $skills-title-color2: rgb(31, 30, 30);
     top: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  // .TodoList {
+  //   width: 90vw;
+  // }
+  // .col-s-12 {
+  //   width: 90vw;
+  // }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  // .TodoList {
+  //   width: 50vw;
+  // }
+  // .col-12 {
+  //   width: 50vw;
+  // }
+}

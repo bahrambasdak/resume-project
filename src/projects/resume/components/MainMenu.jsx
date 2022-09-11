@@ -3,7 +3,6 @@ import classes from '../styles.module.scss';
 
 const MainMenu = ({ showInTop }) => {
   console.log("mainmenu render");
-  const screenHeight = window.screen.height;
   // const [styles , setStyles] = useState({
   //   aboutMe: { color: "white" },
   //   skills: { color: "white" },

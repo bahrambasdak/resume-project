@@ -18,6 +18,7 @@ function TodoList() {
 
   useEffect( () => {
     const localTodos = JSON.parse(localStorage.getItem("todos"));
+    //document.getElementsByTagName('html')[0].setAttribute('dir','ltr');
 
     setTodosState(localTodos ? localTodos : []);
   }, []);

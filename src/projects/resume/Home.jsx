@@ -4,12 +4,12 @@ import AboutMe from "./components/AboutMe";
 import { useEffect, useState } from "react";
 import MySkills from "./components/MySkills";
 import Portfolio from "./components/Portfolio";
-import work1 from "./img/work1.png";
+import work1 from "./img/work1.JPG";
 import work2 from "./img/work2.JPG";
 import work3 from "./img/work3.JPG";
 import work4 from "./img/work4.JPG";
 import classes from './styles.module.scss';
-import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const [showInTop, setShowInTop] = useState(false);
@@ -23,6 +23,8 @@ const Home = () => {
         : setShowInTop(false);
       console.log(window.scrollY);
     });
+
+    //document.getElementsByTagName('html')[0].setAttribute('dir','rtl');
     console.log("app useEfect");
   }, []);
 
@@ -43,10 +45,7 @@ const Home = () => {
   return (
     <div className={classes.App}>
       <MainMenu showInTop={showInTop} />
-      
       <MainHeader />
-      
-      <Link to={'/todolist'}>jhgdjhasfsf</Link>
       <AboutMe />
       <MySkills skills={skills} />
       <Portfolio works={works} />

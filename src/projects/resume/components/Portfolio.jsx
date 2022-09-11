@@ -1,18 +1,14 @@
 import { BsZoomIn, BsLink } from "react-icons/bs";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import TodoList from "../../todolist/TodoList";
+import { Link } from "react-router-dom";
+
 import classes from '../styles.module.scss';
 
 const Portfolio = ({ works }) => {
-const location = useLocation()
+
     const workPictureZoomIn = ()=>{
 
     }
 
-    const linkToWork = (title)=>{
-      console.log(location);
-
-    }
   return (
     <>
       <div className={classes.portfolio} id="portfilio">
