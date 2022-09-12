@@ -10,22 +10,24 @@ const MainHeader = () => {
   console.log("mainHeader render");
   const winWidth = window.screen.availWidth;
   const winHeight = window.screen.availHeight;
+  const r_line = winWidth/15;
 
   const createPoints = (count, xInit, yInit) => {
     const points = [];
+    const V = 3;//winWidth/500;
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
-      const vx = (Math.random() - 0.5) * 4;
-      const vy = (Math.random() - 0.5) * 4;
-      const r = Math.random() * 5;
+      const vx = (Math.random() - 0.5) * V;
+      const vy = (Math.random() - 0.5) * V;
+      const r = (Math.random()+0.1) * V;
       points.push({ x, y, vx, vy, r });
     }
     return points;
   };
 
   useEffect(() => {
-    let points = createPoints(100);
+    let points = createPoints(200);
     const ctx = canvasRef.current.getContext("2d");
     canvasRef.current.width = winWidth;
     canvasRef.current.height = winHeight;
@@ -70,6 +72,7 @@ const MainHeader = () => {
 
     const drowPoints = () => {
       ctx.clearRect(0, 0, winWidth, winHeight);
+      
 
       points.forEach((point, index) => {
         points.slice(index).forEach((item) => {
@@ -77,7 +80,7 @@ const MainHeader = () => {
             Math.pow(item.x - point.x, 2) + Math.pow(item.y - point.y, 2)
           );
           if (
-            radius < winWidth/9 &&
+            radius < r_line &&
             item.x > 0 &&
             item.x < winWidth &&
             item.y > 0 &&
@@ -85,7 +88,7 @@ const MainHeader = () => {
           ) {
             ctx.moveTo(point.x, point.y);
             ctx.lineTo(item.x, item.y);
-            ctx.strokeStyle = `rgba(200,200,200,${(winWidth/9 - radius) / 1000})`;
+            ctx.strokeStyle = `rgba(200,200,200,${(r_line - radius) / r_line/2})`;
             ctx.stroke();
           }
         });

@@ -38,9 +38,9 @@ const Home = () => {
 
   const works = [
     { title: "/todolist", img: work1 },
-    { title: "product Manager", img: work2 },
-    { title: "product Manager", img: work3 },
-    { title: "product Manager", img: work4 },
+    { title: "product-Manager", img: work2 },
+    { title: "work3", img: work3 },
+    { title: "work4", img: work4 },
   ];
   return (
     <div className={classes.App}>

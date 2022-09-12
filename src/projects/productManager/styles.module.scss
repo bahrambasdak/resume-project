@@ -1,0 +1,76 @@
+.product_manager {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main_header {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(226, 220, 220);
+  text-align: center;
+}
+.sidebar {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 15%;
+  height: 90%;
+  background-color: rgb(86, 82, 82);
+  text-align: center;
+}
+
+.login_page {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_wraper {
+  display: flex;
+  position: absolute;
+  right: 15%;
+  width: 85%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid #999;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px rgba($color: #000000, $alpha: 0.05);
+}
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 20px;
+  font-size: 1.5rem;
+
+  input {
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: outline 0.1s ease;
+    padding: 10px;
+    direction: ltr;
+  }
+
+  input:focus {
+    border: 1px solid #1b26f1;
+    outline: 5px solid rgba($color: #6b72fb, $alpha: 0.3);
+  }
+  [type="submit"] {
+    align-self: flex-start;
+    padding: 5px 20px 5px 20px;
+  }
+  label {
+    padding: 5px;
+  }
+}
