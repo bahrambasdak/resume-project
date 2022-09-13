@@ -1,7 +1,22 @@
-import Axios from 'axios';
+import Axios from "axios";
+
+export const LoginAPI = ({ email, password }) =>
+  Axios.post("https://dummyjson.com/auth/login", {
+    username: "kminchelle",
+    password: "0lelplR",
+  });
 
 
 
-export const LoginAPI = ({email , password})=>{
-Axios.post('http://127.0.0.1:8000/login',{email , password});
-}
+// fetch('https://dummyjson.com/auth/login', {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify({
+
+//     username: 'kminchelle',
+//     password: '0lelplR',
+//     // expiresInMins: 60, // optional
+//   })
+// })
+// .then(res => res.json())
+// .then(console.log);

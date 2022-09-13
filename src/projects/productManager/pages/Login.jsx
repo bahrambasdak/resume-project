@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { LoginAPI } from "../Api";
+import { useAuth } from "../contexts/Auth";
 import classes from "../styles.module.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const {toggleAuth} = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
     LoginAPI({ email, password })
       .then((res) => {
         console.log(res.data);
+        toggleAuth();
       })
       .catch((err) => {
         setError(err.response.data);
@@ -29,7 +32,7 @@ const Login = () => {
             <label htmlFor="email">ایمیل</label>
 
             <input
-              type="email"
+              type="text"
               id="email"
               onChange={(e) => setEmail(e.value)}
             />

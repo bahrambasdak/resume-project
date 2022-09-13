@@ -23,21 +23,20 @@ const getLocalStorage = (key, initialValue) => {
 };
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => {
-    getLocalStorage("user", { LoggedIn: false });
-  });
+  const [user, setUser] = useState(() =>
+    getLocalStorage("user", { loggedIn: false })
+  );
+
   useEffect(() => {
     setLocalStorage("user", user);
   }, [user]);
-  
+
   const toggleAuth = () => {
     setUser((prev) => ({
       ...prev,
-      LoggedIn: !prev.LoggedIn,
+      loggedIn: !prev.loggedIn,
     }));
   };
-
-
 
   const value = { toggleAuth: toggleAuth, user };
 

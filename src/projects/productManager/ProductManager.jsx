@@ -1,20 +1,21 @@
-import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Login from './pages/Login';
+
 import classes from './styles.module.scss';
 import { AuthProvider } from './contexts/Auth';
+import productManagerRoutes from './routes';
 
 const ProductManager = () => {
 
-
+console.log(productManagerRoutes);
     return ( <div className={classes.product_manager}>
 
 <Header />
 
-<Sidebar/>
-<AuthProvider>
-  
+<Sidebar routes={productManagerRoutes}/>
+
+<AuthProvider> 
 <Outlet /> 
 
 </AuthProvider>  

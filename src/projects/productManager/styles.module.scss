@@ -74,3 +74,35 @@
     padding: 5px;
   }
 }
+
+
+
+
+.sidebar{
+  font-size: 1.5rem;
+  list-style: none;
+  .sidebar_nav{
+  
+  }
+
+  .selected .sidebar_link{
+    color: rgb(0, 255, 21);
+  }
+  .sidebar_item{
+    padding: 10px;
+    :hover{
+      color: aliceblue;
+    }
+  }
+  .sidebar_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+  }
+  .sidebar_name{
+    padding-right: 10px;
+  }
+
+}
