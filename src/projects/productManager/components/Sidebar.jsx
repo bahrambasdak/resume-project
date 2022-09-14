@@ -18,8 +18,9 @@ const Sidebar = ({ routes }) => {
     >
       <div className={classes.sidebar_nav}>
         <ul>
-          {routes.map((route, index) => {
-            return (
+          {routes
+            .filter((route) => route.showInNav)
+            .map((route, index) => (
               <li
                 key={index}
                 className={`${classes.sidebar_item} ${
@@ -27,12 +28,11 @@ const Sidebar = ({ routes }) => {
                 }`}
               >
                 <Link to={route.path} className={classes.sidebar_link}>
-                    {route.icon}
+                  {route.icon}
                   <span className={classes.sidebar_name}>{route.name}</span>
                 </Link>
               </li>
-            );
-          })}
+            ))}
         </ul>
       </div>
     </aside>
