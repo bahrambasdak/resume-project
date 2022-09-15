@@ -6,7 +6,7 @@ import { BsBasket3Fill } from "react-icons/bs";
 
 import { useAuth } from "../contexts/Auth";
 import classes from "../styles.module.scss";
-import { Chart } from "react-chartjs-2";
+//import { Chart } from "react-chartjs-2";
 
 const Dashboard = () => {
   const { user } = useAuth();

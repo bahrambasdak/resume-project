@@ -16,7 +16,7 @@
   right: 0;
   top: 10%;
   width: 15%;
-  
+
   background-color: rgb(86, 82, 82);
   text-align: center;
 }
@@ -139,13 +139,21 @@
 }
 
 .product_list {
+  padding: 20px 15px 20px 15px;
   width: 80%;
   table {
     width: 100%;
-    border-collapse: collapse;
+
+    padding: 10px;
+
     thead {
       text-align: right;
+      th {
+        padding-bottom: 10px;
+      }
     }
+
+    border-collapse: collapse;
   }
   table tbody > :nth-child(odd) {
     background-color: #e2e3e9;
@@ -155,7 +163,8 @@
     transition: all 0.2s ease-in-out;
     background-color: transparent;
     cursor: pointer;
-    padding: 5px;
+    padding: 3px 5px 3px 5px;
+    margin: 5px;
   }
 
   .edit_btn {
@@ -176,12 +185,16 @@
   }
 }
 
-.product_form{
+.product_form {
   width: 80%;
-  .card_header{
-background-color: #e2e3e9;
-  }
-  .card_body{
+  .card_header {
+    border-bottom: 1px solid #999;
+    padding: 5px;
 
+    background-color: #e9ebfa;
+  }
+  .card_body {
+    width: 100%;
+    height: 100%;
   }
 }
