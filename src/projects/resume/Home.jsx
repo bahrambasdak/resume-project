@@ -29,10 +29,10 @@ const Home = () => {
   }, []);
 
   const skills = [
-    { name: "javascript", degree: 85 },
+    { name: "javascript", degree: 90 },
     { name: "React", degree: 85 },
-    { name: "HTML/CSS", degree: 85 },
-    { name: "GIT", degree: 85 },
+    { name: "HTML/CSS", degree: 95 },
+    { name: "GIT", degree: 90 },
     { name: "GIT", degree: 85 },
   ];
 

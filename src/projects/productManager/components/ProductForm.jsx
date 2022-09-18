@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { useProducts } from "../contexts/products";
 import classes from "../styles.module.scss";
 
 const ProductForm = ({ onSubmit, mode }) => {
-  const { id } = useParams();
+  const { id: productId } = useParams();
+  const { products } = useProducts();
   const {
     register,
     handleSubmit,
@@ -20,13 +22,15 @@ const ProductForm = ({ onSubmit, mode }) => {
   };
 
   useEffect(() => {
-
-    if (mode === "edit") setFormDefaultValue({});
-  }, []);
+    if (mode === "edit")
+      setFormDefaultValue(products.filter((item) => item.id === productId)[0]);
+  });
 
   return (
     <div>
-      <form onSubmit={handleSubmit((data)=>onSubmit(data))}>
+      <form
+        onSubmit={handleSubmit((data) => onSubmit({ ...data, id: productId }))}
+      >
         <div className={classes.row}>
           <div>
             <label htmlFor="name-input"> نام محصول</label>
@@ -38,7 +42,9 @@ const ProductForm = ({ onSubmit, mode }) => {
                 required: "وارد کردن نام محصول اجباری است",
               })}
             />
-            {errors.name && <div className={classes.error}>{errors.name.message}</div>}
+            {errors.name && (
+              <div className={classes.error}>{errors.name.message}</div>
+            )}
           </div>
           <div>
             <label htmlFor="price-input">قیمت</label>
@@ -54,14 +60,16 @@ const ProductForm = ({ onSubmit, mode }) => {
                 },
               })}
             />
-            {errors.price && <div className={classes.error}>{errors.price.message}</div>}
+            {errors.price && (
+              <div className={classes.error}>{errors.price.message}</div>
+            )}
           </div>
         </div>
 
         <div className={classes.row}>
           <div>
             <label htmlFor="category-select">دسته بندی</label>
-            <select id="category-select"  {...register('category')}>
+            <select id="category-select" {...register("category")}>
               <option>موبایل</option>
               <option>کتاب</option>
               <option>تیشرت</option>
@@ -69,7 +77,11 @@ const ProductForm = ({ onSubmit, mode }) => {
           </div>
           <div>
             <label htmlFor="description-input">توضیحات</label>
-            <textarea id="description-input" rows="3" {...register('description')}></textarea>
+            <textarea
+              id="description-input"
+              rows="3"
+              {...register("description")}
+            ></textarea>
           </div>
         </div>
 

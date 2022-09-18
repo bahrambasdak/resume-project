@@ -1,10 +1,15 @@
 import ProductForm from "../components/ProductForm";
+import { useProducts } from "../contexts/products";
 import classes from "../styles.module.scss";
+
+import {v4 as uuidv4} from 'uuid';
 
 const AddProduct = () => {
 
-const onSubmit = (e)=>{
-e.preventDefault();
+  const { addProduct} = useProducts();
+
+const onSubmit = (data)=>{
+  addProduct({...data , id:uuidv4()});
 }
 
 
