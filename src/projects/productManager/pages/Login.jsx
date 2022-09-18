@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LoginAPI } from "../Api";
 import { useAuth } from "../contexts/Auth";
 import classes from "../styles.module.scss";
@@ -8,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const {toggleAuth} = useAuth();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         toggleAuth();
+        navigate('/product-manager/dashboard');
       })
       .catch((err) => {
         setError(err.response.data);

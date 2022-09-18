@@ -51,24 +51,50 @@
 }
 
 .card_body {
-  display: flex;
-  flex-direction: column;
-  width: 20rem;
+  width: 100%;
+  height: 100%;
+
   padding: 20px;
   font-size: 1.5rem;
 
-  input {
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    flex-wrap: wrap;
+  }
+  .row > div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 49%;
+    min-width: 300px;
+  }
+
+  input,
+  select,
+  textarea {
     border: 1px solid #999;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     transition: outline 0.1s ease;
     padding: 10px;
     direction: ltr;
   }
+  textarea {
+    resize: vertical;
+  }
 
-  input:focus {
+  input:focus,
+  select:focus,
+  textarea:focus {
     border: 1px solid #1b26f1;
     outline: 5px solid rgba($color: #6b72fb, $alpha: 0.3);
   }
@@ -78,6 +104,22 @@
   }
   label {
     padding: 5px;
+  }
+
+  button {
+    background-color: #6b72fb;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #1b26f1;
   }
 }
 
@@ -186,15 +228,35 @@
 }
 
 .product_form {
-  width: 80%;
+  width: 90%;
   .card_header {
     border-bottom: 1px solid #999;
     padding: 5px;
-
     background-color: #e9ebfa;
   }
-  .card_body {
-    width: 100%;
-    height: 100%;
-  }
+}
+.add_product {
+  background-image: linear-gradient(
+    90deg,
+    rgb(143, 243, 245),
+    rgb(13, 220, 223)
+  );
+}
+.add_product:hover {
+  background-image: linear-gradient(
+    -90deg,
+    rgb(143, 243, 245),
+    rgb(13, 220, 223)
+  );
+}
+
+.edit_product {
+  background-color: rgb(249, 249, 249);
+}
+
+.error{
+  color: red;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
 }

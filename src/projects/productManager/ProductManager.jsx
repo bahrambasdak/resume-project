@@ -5,8 +5,11 @@ import Sidebar from './components/Sidebar';
 import classes from './styles.module.scss';
 import { AuthProvider } from './contexts/Auth';
 import productManagerRoutes from './routes';
+import { useEffect } from 'react';
+import ProductProvider from './contexts/products';
 
 const ProductManager = () => {
+
 
 console.log(productManagerRoutes);
     return ( <div className={classes.product_manager}>
@@ -16,8 +19,9 @@ console.log(productManagerRoutes);
 <Sidebar routes={productManagerRoutes}/>
 
 <AuthProvider> 
+    <ProductProvider>
 <Outlet /> 
-
+</ProductProvider>
 </AuthProvider>  
     </div> );
 }
