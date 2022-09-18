@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.92083d57.css",
+    "main.js": "/static/js/main.17eb5452.js",
+    "static/js/787.5619a551.chunk.js": "/static/js/787.5619a551.chunk.js",
+    "static/media/main-header-img.jpg": "/static/media/main-header-img.a64a61a9697d774f974d.jpg",
+    "static/media/header-day.jpg": "/static/media/header-day.1565fc4e05bc12a8da4d.jpg",
+    "static/media/header-afternoon.jpg": "/static/media/header-afternoon.4ab6b0e9c3f104c6b6da.jpg",
+    "static/media/header-night.jpg": "/static/media/header-night.374c675d154d3f5c5a8f.jpg",
+    "static/media/BNazanin.ttf": "/static/media/BNazanin.6337ce6eb8d11957c0c0.ttf",
+    "static/media/work1.JPG": "/static/media/work1.8c6cb0c345c23ba9899a.JPG",
+    "static/media/about.jpg": "/static/media/about.f9394b4bc6c07089bd4f.jpg",
+    "static/media/work3.JPG": "/static/media/work3.52e03e633f6193da416b.JPG",
+    "static/media/work2.JPG": "/static/media/work2.c8bb7bb87cd32e9c4bb1.JPG",
+    "static/media/work4.JPG": "/static/media/work4.296f72caf2723ee85a6f.JPG",
+    "index.html": "/index.html",
+    "main.92083d57.css.map": "/static/css/main.92083d57.css.map",
+    "main.17eb5452.js.map": "/static/js/main.17eb5452.js.map",
+    "787.5619a551.chunk.js.map": "/static/js/787.5619a551.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92083d57.css",
+    "static/js/main.17eb5452.js"
+  ]
+}
