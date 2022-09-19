@@ -1,27 +1,97 @@
+$light1: rgb(255, 255, 255);
+$light2: rgb(240, 238, 238);
+$light3: rgb(211, 207, 207);
+$light4: rgb(180, 176, 176);
+$light5: rgb(93, 92, 92);
+$dark1: rgb(0, 0, 0);
+$dark2: rgb(47, 41, 41);
+$dark3: #444;
+
 .product_manager {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
-
+///////////////////////////MainHeader////////////////////////
 .main_header {
- 
   width: 100%;
-  height: 10%;
-  background-color: white;
-  text-align: center;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $light2;
+
+  .themBtn {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+    color: $dark1;
+  }
+  .profile {
+    padding-left: 20px;
+    height: 50%;
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .menu_icon{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+  }
 }
+
+/////////////////////////////////////////Side-Bar//////////////
 .sidebar {
   position: absolute;
-  height: 90%;
+  height: 90vh;
   right: 0;
-  top: 10%;
-  width: 15%;
-
-  background-color: rgb(86, 82, 82);
+transition: all 1s ease;
   text-align: center;
+
+  font-size: 1.5rem;
+  list-style: none;
+  background-image: linear-gradient(
+    109.6deg,
+    #4183c4 11.2%,
+    rgba(121, 137, 212, 1) 91.2%
+  );
+  .sidebar_nav {
+    
+  }
+
+  .selected .sidebar_link {
+    color: rgb(0, 255, 21);
+  }
+  .sidebar_item {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+
+    :hover {
+      color: $light1;
+    }
+  }
+  .sidebar_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light3;
+  }
+  .sidebar_name {
+    padding-right: 10px;
+    //display: none;
+  }
 }
 
+/////////////////////////////////////Login Page///////////////////////
 .login_page {
   display: flex;
   flex-grow: 1;
@@ -30,6 +100,7 @@
   align-items: center;
 }
 
+///////////////////////////////////////Global for all page////////////////////////
 .page_wraper {
   display: flex;
   padding-top: 30px;
@@ -38,18 +109,16 @@
   right: 15%;
   width: 85%;
   height: 90%;
-  //justify-content: center;
   align-items: center;
-  background-color: #eefafd;
+  background-color: $light1;
 }
 
 .card {
-  border: 1px solid #999;
+  border: 1px solid $light3;
   border-radius: 5px;
   box-shadow: 0 0 10px 5px rgba($color: #000000, $alpha: 0.05);
   font-size: 1.5rem;
-  background-color: white;
-
+  background-color: $light1;
 }
 
 .card_body {
@@ -66,26 +135,26 @@
   }
   .row {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     flex-grow: 1;
-
+    flex-shrink: 1;
     flex-wrap: wrap;
   }
   .row > div {
     display: flex;
     flex-direction: column;
-    flex-basis: 49%;
-    min-width: 300px;
+    //width: -content;
+     flex-basis: 49%;
+    // min-width: 300px;
   }
 
   input,
   select,
   textarea {
-    border: 1px solid #999;
+    border: 1px solid $light3;
     border-radius: 5px;
     font-size: 1.3rem;
     font-weight: 500;
-    //margin-bottom: 20px;
     transition: outline 0.1s ease;
     padding: 10px;
     direction: ltr;
@@ -123,39 +192,18 @@
   button:hover {
     background-color: #1b26f1;
   }
-}
 
-.sidebar {
-  font-size: 1.5rem;
-  list-style: none;
-  .sidebar_nav {
-  }
-
-  .selected .sidebar_link {
-    color: rgb(0, 255, 21);
-  }
-  .sidebar_item {
-    padding: 10px;
+  .user_message {
     display: flex;
-    justify-content: flex-start;
-    :hover {
-      color: aliceblue;
-    }
-  }
-  .sidebar_link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .sidebar_name {
-    padding-right: 10px;
+    flex-direction: column;
   }
 }
 
+///////////////////////////////////////Dashboard//////////////////////
 .dashboard_widget {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  //align-items: center;
   height: 15%;
   width: 100%;
   .widget {
@@ -167,7 +215,7 @@
 
   .icon {
     padding: 10px;
-    color: aliceblue;
+    color: $light2;
   }
 
   .description {
@@ -182,6 +230,7 @@
   width: 100%;
 }
 
+///////////////////////////////////////////Product-List///////////////
 .product_list {
   padding: 20px 15px 20px 15px;
   width: 80%;
@@ -200,7 +249,7 @@
     border-collapse: collapse;
   }
   table tbody > :nth-child(odd) {
-    background-color: #e2e3e9;
+    background-color: $light2;
   }
 
   button {
@@ -229,6 +278,7 @@
   }
 }
 
+/////////////////////////////////////////////Product-Form//////////////
 .product_form {
   width: 90%;
   .card_header {
@@ -237,6 +287,7 @@
     background-color: #e9ebfa;
   }
 }
+
 .add_product {
   background-image: linear-gradient(
     90deg,
@@ -256,34 +307,213 @@
   background-color: rgb(249, 249, 249);
 }
 
-.error{
+.error {
   color: red;
   font-size: 1rem;
   padding: 0;
   margin: 0;
 }
 
-.remove_modal{
-position: absolute;
-display: flex;
-justify-content: space-between;
-flex-direction: column;
-background-color: bisque;
-padding: 10px;
+.remove_modal {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $light3;
+  padding: 10px;
 
-font-size: 1.5rem;
-width: 40%;
-height: 30%;
-z-index: 5;
-left: 40%;
-top: 40%;
-button{
-  padding: 5px 10px 5px 10px;
+  font-size: 1.5rem;
+  width: 40%;
+  height: 30%;
+  z-index: 5;
+  left: 40%;
+  top: 40%;
+  button {
+    padding: 5px 10px 5px 10px;
+  }
+
+  .rm_button {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-.rm_button{
-display: flex;
-justify-content: space-around;
+//////////////////////////////////////Dark-Mode////////////////////////
+.dark {
+  background-color: $dark2;
+  background-image: linear-gradient(
+    109.6deg,
+    #0e1925 11.2%,
+    rgb(27, 36, 75) 91.2%
+  );
+  color: $light5;
+
+  .themBtn {
+    color: $light1;
+  }
 }
 
+//////////////////////////////////Rsponsive///////////////////@at-root
+///
+/// 
+
+@media only screen and (max-width: 768px) {
+  /* For tablet: */
+
+  .sidebar{
+    font-size: 2rem;
+  }
+
+  .sidebar .sidebar_name {
+    display:none;
+  }
+
+  .page_wraper{
+    right: 10%;
+    width: 90%;
+    height: 90%;
+   // padding-top: 0px;
+  }
+  .card_body{
+    //padding:0px;
+    //font-size: 1rem;
+    .row{
+      flex-direction: column;
+    }
+  }
+
+  
 }
+
+@media only screen and (max-width: 600px) {
+  /* For mobile: */
+  
+  .sidebar{
+    font-size: 1.5rem;
+  }
+  .sidebar .sidebar_name {
+    display:inline-block;
+  }
+  .main_header .menu_icon{
+    display: flex;
+    align-items: center;
+  }
+  .card {
+    font-size: 1rem;
+    //width: 100%;
+    padding: 10px;
+  }
+  .sidebar{
+    //display: none;
+    position: absolute;
+    z-index: 10;
+  }
+  .show{
+    //display: flex;
+right: 0px;
+
+  }
+.hide{
+  //display: hide;
+  right: -100%;
+}
+  .page_wraper{
+    right: 0px;
+    width: 100%;
+    height: 90%;
+    //padding-top: 0px;
+  }
+
+  .card_body{
+   // padding:0px;
+    font-size: 1rem;
+    .row{
+      flex-direction: column;
+    }
+  }
+
+    .row > div {
+    //min-width: 400px;
+    flex-basis: content;
+  }
+
+}
+
+
+
+// .card_body {
+//   width: 100%;
+//   height: 100%;
+
+//   padding: 20px;
+//   font-size: 1.5rem;
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     row-gap: 20px;
+//   }
+//   .row {
+//     display: flex;
+//     justify-content: space-between;
+//     flex-grow: 1;
+
+//     flex-wrap: wrap;
+//   }
+//   .row > div {
+//     display: flex;
+//     flex-direction: column;
+//     flex-basis: 49%;
+//     min-width: 300px;
+//   }
+
+//   input,
+//   select,
+//   textarea {
+//     border: 1px solid $light3;
+//     border-radius: 5px;
+//     font-size: 1.3rem;
+//     font-weight: 500;
+//     transition: outline 0.1s ease;
+//     padding: 10px;
+//     direction: ltr;
+//   }
+//   textarea {
+//     resize: vertical;
+//   }
+
+//   input:focus,
+//   select:focus,
+//   textarea:focus {
+//     border: 1px solid #1b26f1;
+//     outline: 5px solid rgba($color: #6b72fb, $alpha: 0.3);
+//   }
+//   [type="submit"] {
+//     align-self: flex-start;
+//     padding: 5px 20px 5px 20px;
+//   }
+//   label {
+//     padding: 5px;
+//   }
+
+//   button {
+//     background-color: #6b72fb;
+//     border-radius: 5px;
+//     border: none;
+//     color: white;
+//     cursor: pointer;
+//     align-self: flex-start;
+//     margin-top: 20px;
+//     padding: 5px;
+//     transition: all 0.2s ease-in-out;
+//   }
+
+//   button:hover {
+//     background-color: #1b26f1;
+//   }
+
+//   .user_message {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }

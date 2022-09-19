@@ -1,22 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
+import { useAuth_Them } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
 
-const Sidebar = ({ routes }) => {
-  const location = useLocation();
 
+const Sidebar = ({ routes , showSidebar , showMenu}) => {
+  const location = useLocation();
+  const { user } = useAuth_Them();
   const activeRoute = (routename) => {
     return location.pathname.indexOf(routename) > -1 ? "selected" : "";
   };
   return (
     <aside
-      className={classes.sidebar}
-      style={{
-        color: "white",
-        backgroundImage:
-          "linear-gradient( 109.6deg,  #4183c4 11.2%, rgba(121,137,212,1) 91.2% )",
-      }}
+      className={`${classes.sidebar} ${
+        user.them === "dark" ? classes.dark : classes.light
+      } ${showSidebar? classes.show: classes.hide}`}
     >
       <div className={classes.sidebar_nav}>
+        
         <ul>
           {routes
             .filter((route) => route.showInNav)
@@ -27,7 +27,7 @@ const Sidebar = ({ routes }) => {
                   classes[activeRoute(route.path)]
                 }`}
               >
-                <Link to={route.path} className={classes.sidebar_link}>
+                <Link to={route.path} className={classes.sidebar_link} onClick={showMenu}>
                   {route.icon}
                   <span className={classes.sidebar_name}>{route.name}</span>
                 </Link>

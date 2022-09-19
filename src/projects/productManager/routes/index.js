@@ -15,7 +15,7 @@ import EditProduct from "../pages/edit-product";
 const productManagerRoutes = [
   {
     path: "dashboard",
-    name: "داشبرد",
+    name: "داشبورد",
     icon: <AiFillDashboard />,
     private: true,
     showInNav: true,
