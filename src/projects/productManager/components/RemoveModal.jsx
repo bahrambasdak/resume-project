@@ -1,23 +1,23 @@
-import classes from '../styles.module.scss';
+import classes from "../styles.module.scss";
 
-const RemoveModal = ({onClose , onConfirm , product}) => {
+const RemoveModal = ({ onClose, onConfirm, product }) => {
+  // const onClose =()=>{
 
-// const onClose =()=>{
+  // }
 
-// }
+  // const onConfirm =(product)=>{
 
-// const onConfirm =(product)=>{
+  // }
 
-// }
-
-    return ( <div className={`${classes.remove_modal} ${classes.card}`}>
-
-        <div>آیا از حذف محصول {product.name} مطمعن هستید؟</div>
-        <div className={classes.rm_button}>
+  return (
+    <div className={`${classes.remove_modal} ${classes.card}`}>
+      <div>آیا از حذف محصول {product.name} مطمئن هستید؟</div>
+      <div className={classes.rm_button}>
         <button onClick={onConfirm}>بله</button>
         <button onClick={onClose}>خیر</button>
-        </div>
-    </div> );
-}
- 
+      </div>
+    </div>
+  );
+};
+
 export default RemoveModal;

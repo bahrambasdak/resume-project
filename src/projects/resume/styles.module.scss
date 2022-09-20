@@ -12,6 +12,7 @@ $skills-title-color: rgb(202, 15, 235);
 $skills-title-color2: rgb(31, 30, 30);
 
 .App {
+  overflow: hidden;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;

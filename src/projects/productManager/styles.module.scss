@@ -8,14 +8,19 @@ $dark2: rgb(47, 41, 41);
 $dark3: #444;
 
 .product_manager {
-  position: relative;
+  display: grid;
+  grid-template-columns: auto 10fr;
+  grid-template-rows: 1fr 11fr;
   width: 100vw;
   height: 100vh;
 }
 ///////////////////////////MainHeader////////////////////////
 .main_header {
-  width: 100%;
-  height: 10vh;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  // z-index: 20;
+  // width: 100%;
+  // height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,20 +33,20 @@ $dark3: #444;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-right: 30px;
+    margin-right: 50px;
     color: $dark1;
   }
   .profile {
-    padding-left: 20px;
-    height: 50%;
+    padding: 5px;
+    //height: 50%;
     img {
       border-radius: 50%;
-      width: 100%;
-      height: 100%;
+      width: 50px;
+      height: 50px;
     }
   }
 
-  .menu_icon{
+  .menu_icon {
     font-size: 2rem;
     cursor: pointer;
     display: none;
@@ -50,10 +55,10 @@ $dark3: #444;
 
 /////////////////////////////////////////Side-Bar//////////////
 .sidebar {
-  position: absolute;
-  height: 90vh;
-  right: 0;
-transition: all 1s ease;
+  grid-column: 1/2;
+  grid-row: 2/3;
+
+  transition: all 0.5s ease;
   text-align: center;
 
   font-size: 1.5rem;
@@ -64,7 +69,6 @@ transition: all 1s ease;
     rgba(121, 137, 212, 1) 91.2%
   );
   .sidebar_nav {
-    
   }
 
   .selected .sidebar_link {
@@ -87,30 +91,36 @@ transition: all 1s ease;
   }
   .sidebar_name {
     padding-right: 10px;
-    //display: none;
   }
 }
 
 /////////////////////////////////////Login Page///////////////////////
-.login_page {
+.page_wraper .login_page {
   display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
+
+  width: 350px;
   justify-content: center;
   align-items: center;
+  .row {
+
+    flex-direction: column;
+  }
+
 }
 
 ///////////////////////////////////////Global for all page////////////////////////
 .page_wraper {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
   display: flex;
   padding-top: 30px;
   flex-direction: column;
-  position: absolute;
-  right: 15%;
-  width: 85%;
-  height: 90%;
+
   align-items: center;
   background-color: $light1;
+
+  overflow: auto;
 }
 
 .card {
@@ -119,6 +129,7 @@ transition: all 1s ease;
   box-shadow: 0 0 10px 5px rgba($color: #000000, $alpha: 0.05);
   font-size: 1.5rem;
   background-color: $light1;
+  width: 100%;
 }
 
 .card_body {
@@ -135,7 +146,8 @@ transition: all 1s ease;
   }
   .row {
     display: flex;
-    justify-content:space-between;
+    //flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
     flex-shrink: 1;
     flex-wrap: wrap;
@@ -144,7 +156,7 @@ transition: all 1s ease;
     display: flex;
     flex-direction: column;
     //width: -content;
-     flex-basis: 49%;
+    flex-basis: 49%;
     // min-width: 300px;
   }
 
@@ -203,13 +215,16 @@ transition: all 1s ease;
 .dashboard_widget {
   display: flex;
   justify-content: space-around;
-  //align-items: center;
-  height: 15%;
+  flex-wrap: wrap;
+  align-items: center;
+  height: fit-content;
   width: 100%;
+  
   .widget {
     display: flex;
     gap: 10px;
     width: 30%;
+    height: 100%;
     padding: 10px;
   }
 
@@ -318,24 +333,35 @@ transition: all 1s ease;
   position: absolute;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
-  background-color: $light3;
+  background-color: $light2;
   padding: 10px;
+  color: red;
 
   font-size: 1.5rem;
   width: 40%;
   height: 30%;
   z-index: 5;
-  left: 40%;
-  top: 40%;
+   left: 30%;
+   top: 30%;
+   >div{
+    padding: 20px;
+   }
   button {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 30px 5px 30px;
   }
 
   .rm_button {
     display: flex;
+    width: 100%;
+    
     justify-content: space-around;
   }
+}
+
+.disable{
+  filter: brightness(0.5);
 }
 
 //////////////////////////////////////Dark-Mode////////////////////////
@@ -355,165 +381,79 @@ transition: all 1s ease;
 
 //////////////////////////////////Rsponsive///////////////////@at-root
 ///
-/// 
+///
 
 @media only screen and (max-width: 768px) {
   /* For tablet: */
-
-  .sidebar{
+  .remove_modal{
+    width: 80%;
+    left: 10%;
+      }
+  .sidebar {
     font-size: 2rem;
   }
 
   .sidebar .sidebar_name {
-    display:none;
+    display: none;
   }
 
-  .page_wraper{
-    right: 10%;
-    width: 90%;
-    height: 90%;
-   // padding-top: 0px;
+  .page_wraper {
+    font-size: 1.1rem;
   }
-  .card_body{
-    //padding:0px;
-    //font-size: 1rem;
-    .row{
+  .card {
+    font-size: 1.2rem;
+  }
+  .card_body {
+
+    .row {
       flex-direction: column;
     }
   }
-
-  
 }
 
 @media only screen and (max-width: 600px) {
   /* For mobile: */
-  
-  .sidebar{
+
+  .remove_modal{
+width: 80%;
+left: 10%;
+  }
+  .product_list {
+    padding: 20px 15px 20px 15px;
+    width: 95%;
+  }
+  .sidebar {
     font-size: 1.5rem;
   }
   .sidebar .sidebar_name {
-    display:inline-block;
+    display: inline-block;
   }
-  .main_header .menu_icon{
+  .main_header .menu_icon {
     display: flex;
     align-items: center;
   }
   .card {
     font-size: 1rem;
-    //width: 100%;
-    padding: 10px;
   }
-  .sidebar{
-    //display: none;
+  .sidebar {
     position: absolute;
-    z-index: 10;
+    height: 100%;
   }
-  .show{
-    //display: flex;
-right: 0px;
-
-  }
-.hide{
-  //display: hide;
-  right: -100%;
-}
-  .page_wraper{
+  .show {
     right: 0px;
-    width: 100%;
-    height: 90%;
-    //padding-top: 0px;
+  }
+  .hide {
+    right: -100%;
+  }
+  .page_wraper {
+
   }
 
-  .card_body{
-   // padding:0px;
+  .card_body {
     font-size: 1rem;
-    .row{
-      flex-direction: column;
-    }
   }
 
-    .row > div {
-    //min-width: 400px;
-    flex-basis: content;
-  }
+  .row > div {
 
+  }
 }
-
-
-
-// .card_body {
-//   width: 100%;
-//   height: 100%;
-
-//   padding: 20px;
-//   font-size: 1.5rem;
-
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     row-gap: 20px;
-//   }
-//   .row {
-//     display: flex;
-//     justify-content: space-between;
-//     flex-grow: 1;
-
-//     flex-wrap: wrap;
-//   }
-//   .row > div {
-//     display: flex;
-//     flex-direction: column;
-//     flex-basis: 49%;
-//     min-width: 300px;
-//   }
-
-//   input,
-//   select,
-//   textarea {
-//     border: 1px solid $light3;
-//     border-radius: 5px;
-//     font-size: 1.3rem;
-//     font-weight: 500;
-//     transition: outline 0.1s ease;
-//     padding: 10px;
-//     direction: ltr;
-//   }
-//   textarea {
-//     resize: vertical;
-//   }
-
-//   input:focus,
-//   select:focus,
-//   textarea:focus {
-//     border: 1px solid #1b26f1;
-//     outline: 5px solid rgba($color: #6b72fb, $alpha: 0.3);
-//   }
-//   [type="submit"] {
-//     align-self: flex-start;
-//     padding: 5px 20px 5px 20px;
-//   }
-//   label {
-//     padding: 5px;
-//   }
-
-//   button {
-//     background-color: #6b72fb;
-//     border-radius: 5px;
-//     border: none;
-//     color: white;
-//     cursor: pointer;
-//     align-self: flex-start;
-//     margin-top: 20px;
-//     padding: 5px;
-//     transition: all 0.2s ease-in-out;
-//   }
-
-//   button:hover {
-//     background-color: #1b26f1;
-//   }
-
-//   .user_message {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// }

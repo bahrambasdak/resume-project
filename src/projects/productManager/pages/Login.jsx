@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginAPI } from "../Api";
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { user , toggleAuth } = useAuth_Them();
+  const { user , toggleAuth } = useAuthThem();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {

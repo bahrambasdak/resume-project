@@ -3,12 +3,12 @@ import { useProducts } from "../contexts/products";
 import classes from "../styles.module.scss";
 
 import { v4 as uuidv4 } from "uuid";
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import { Navigate } from "react-router-dom";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();
-  const { user } = useAuth_Them();
+  const { user } = useAuthThem();
 
   const onSubmit = (data) => {
     addProduct({ ...data, id: uuidv4() });

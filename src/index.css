@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
 
 @font-face {
@@ -25,7 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 
-  
+ 
 overflow-x: hidden;
   display: flex;
   justify-content: center;

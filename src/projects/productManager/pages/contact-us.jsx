@@ -1,8 +1,8 @@
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
 
 const ContactUs = () => {
-    const {user} = useAuth_Them();
+    const {user} = useAuthThem();
   return (
     <div
       className={`${classes.page_wraper} ${

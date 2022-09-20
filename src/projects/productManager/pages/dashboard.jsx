@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+
 import { Navigate } from "react-router-dom";
 import DashboardWidget from "../components/dashboard/DashboardWidget";
 import { FaTshirt, FaCoins } from "react-icons/fa";
 import { BsBasket3Fill } from "react-icons/bs";
 
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
 import { useProducts } from "../contexts/products";
 //import { Chart } from "react-chartjs-2";
 
 const Dashboard = () => {
-  const { user } = useAuth_Them();
+  const { user } = useAuthThem();
 
   const { products } = useProducts();
 

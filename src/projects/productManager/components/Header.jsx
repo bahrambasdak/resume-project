@@ -1,12 +1,12 @@
 import classes from "../styles.module.scss";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import profile from "../img/profile.jpg";
 import defaultProfile from "../img/defaultprofile.jpg";
 import { MdMenu, MdClose } from "react-icons/md";
 
-const Header = ({ showMenu, showSidebar }) => {
-  const { user, toggleThem } = useAuth_Them();
+const Header = ({ setShowSidebar, showSidebar }) => {
+  const { user, toggleThem } = useAuthThem();
 
   return (
     <div
@@ -14,7 +14,13 @@ const Header = ({ showMenu, showSidebar }) => {
         user.them === "dark" ? classes.dark : classes.light
       }`}
     >
-      <div className={classes.menu_icon} onClick={showMenu}>
+      <div
+        className={classes.menu_icon}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowSidebar(true);
+        }}
+      >
         {showSidebar ? <MdClose /> : <MdMenu />}
       </div>
       <button className={classes.themBtn} onClick={toggleThem}>

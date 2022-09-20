@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
 
-const Auth_ThemContext = createContext(undefined);
+const AuthThemContext = createContext(undefined);
 
 const setLocalStorage = (key, value) => {
   try {
@@ -22,7 +22,7 @@ const getLocalStorage = (key, initialValue) => {
   }
 };
 
-const Auth_ThemProvider = ({ children }) => {
+const AuthThemProvider = ({ children }) => {
   const [user, setUser] = useState(() =>
     getLocalStorage("user", { loggedIn: false, them: "light" })
   );
@@ -48,17 +48,17 @@ const Auth_ThemProvider = ({ children }) => {
   const value = { toggleAuth: toggleAuth, toggleThem: toggleThem, user };
 
   return (
-    <Auth_ThemContext.Provider value={value}>
+    <AuthThemContext.Provider value={value}>
       {children}
-    </Auth_ThemContext.Provider>
+    </AuthThemContext.Provider>
   );
 };
 
-const useAuth_Them = () => {
-  const context = useContext(Auth_ThemContext);
+const useAuthThem = () => {
+  const context = useContext(AuthThemContext);
   if (context === undefined)
     throw new Error("useAuth must be within AuthProvider!");
   return context;
 };
 
-export { Auth_ThemProvider, useAuth_Them };
+export { AuthThemProvider, useAuthThem };

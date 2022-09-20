@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useProducts } from "../contexts/products";
 import { useState } from "react";
 import RemoveModal from "../components/RemoveModal";
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import { Navigate } from "react-router-dom";
 
 const ProductList = () => {
-  const { user } = useAuth_Them();
+  const { user } = useAuthThem();
   const { products, removeProduct } = useProducts();
   const [selectedProduct, setselectedProduct] = useState(null);
 
@@ -25,7 +25,7 @@ const ProductList = () => {
         <div
           className={`${classes.page_wraper} ${
             user.them === "light" ? classes.light : classes.dark
-          }`}
+          } ${selectedProduct? classes.disable: ''}`}
         >
           <div className={`${classes.card} ${classes.product_list}`}>
             <table>

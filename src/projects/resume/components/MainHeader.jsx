@@ -2,25 +2,25 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
-import classes from '../styles.module.scss';
+import classes from "../styles.module.scss";
 
-const MainHeader = () => {
+const MainHeader = ({ showInTop }) => {
   const canvasRef = useRef(null);
   const typistRef = useRef(null);
   console.log("mainHeader render");
   const winWidth = window.screen.availWidth;
   const winHeight = window.screen.availHeight;
-  const r_line = winWidth/15;
+  const r_line = winWidth / 15;
 
   const createPoints = (count, xInit, yInit) => {
     const points = [];
-    const V = 3;//winWidth/500;
+    const V = 3; //winWidth/500;
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
       const vx = (Math.random() - 0.5) * V;
       const vy = (Math.random() - 0.5) * V;
-      const r = (Math.random()+0.1) * V;
+      const r = (Math.random() + 0.1) * V;
       points.push({ x, y, vx, vy, r });
     }
     return points;
@@ -28,9 +28,10 @@ const MainHeader = () => {
 
   useEffect(() => {
     let points = createPoints(200);
-    const ctx = canvasRef.current.getContext("2d");
-    canvasRef.current.width = winWidth;
-    canvasRef.current.height = winHeight;
+    const canvasRefCurrent = canvasRef.current;
+    const ctx = canvasRefCurrent.getContext("2d");
+    canvasRefCurrent.width = winWidth;
+    canvasRefCurrent.height = winHeight;
 
     const text = "توسعه دهنده ی  React"; //'front end developer';//
     typistRef.current.value = "";
@@ -38,7 +39,12 @@ const MainHeader = () => {
     let i = 0;
     const speed = 100;
     let reverse = false;
-    function typeWriter() {
+
+    const addPoints = (e) => {
+      points.push(...createPoints(10, e.clientX, e.clientY));
+    };
+
+    function writer() {
       if (i < text.length && !reverse) {
         typistRef.current.value =
           text
@@ -46,33 +52,28 @@ const MainHeader = () => {
             .slice(0, i + 1)
             .join("") + "|"; //charAt(i)
         i++;
-        setTimeout(typeWriter, speed);
-      } else reverse = true;
+        setTimeout(writer, speed);
+      } else {
+        clearTimeout(writer);
+        reverse = true;
+      }
 
-      if (i > 0 && reverse) {
-        typistRef.current.value =
-          text
-            .split("")
-            .slice(0, i + 1)
-            .join("") + "|"; //charAt(i)
+      if (i >= 0 && reverse) {
+        typistRef.current.value = text.split("").slice(0, i).join("") + "|";
         i--;
-        setTimeout(typeWriter, speed);
+        setTimeout(writer, speed);
       } else if (reverse) {
         reverse = false;
-        typeWriter();
+        clearTimeout(writer);
       }
     }
-    typeWriter();
+    const writerInterval = setInterval(writer, 6000);
+    // typeWriter();
 
-    canvasRef.current.addEventListener("click", (e) => {
-      points.push(...createPoints(10, e.clientX, e.clientY));
-
-      //console.log(e.clientX);
-    });
+    canvasRef.current.addEventListener("click", addPoints);
 
     const drowPoints = () => {
       ctx.clearRect(0, 0, winWidth, winHeight);
-      
 
       points.forEach((point, index) => {
         points.slice(index).forEach((item) => {
@@ -88,7 +89,9 @@ const MainHeader = () => {
           ) {
             ctx.moveTo(point.x, point.y);
             ctx.lineTo(item.x, item.y);
-            ctx.strokeStyle = `rgba(200,200,200,${(r_line - radius) / r_line/2})`;
+            ctx.strokeStyle = `rgba(200,200,200,${
+              (r_line - radius) / r_line / 2
+            })`;
             ctx.stroke();
           }
         });
@@ -99,7 +102,7 @@ const MainHeader = () => {
         ctx.fill();
       });
     };
-
+    let myanimation;
     const translatePoints = () => {
       points = [
         ...points.map((point) => {
@@ -113,15 +116,20 @@ const MainHeader = () => {
         }),
       ];
       drowPoints();
-      requestAnimationFrame(translatePoints);
+      myanimation = requestAnimationFrame(translatePoints);
     };
 
-    translatePoints();
+    if (!showInTop) myanimation = requestAnimationFrame(translatePoints);
 
     console.log("mainHeader useEfect");
 
-    //return clearInterval(typeInterval);
-  }, []);
+    return () => {
+      console.log("mainheader stopped");
+      clearInterval(writerInterval);
+      cancelAnimationFrame(myanimation);
+      canvasRefCurrent.removeEventListener("click", addPoints);
+    };
+  }, [showInTop]);
 
   return (
     <>
@@ -130,12 +138,12 @@ const MainHeader = () => {
         <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
         <div className={classes.name_text}>بهرام بسدک</div>
         <div className={classes.type_text}>
-        <input
-          type="text"
-          value=""
-          ref={typistRef}
-          className={classes.typer}
-        />
+          <input
+            type="text"
+            value=""
+            ref={typistRef}
+            className={classes.typer}
+          />
         </div>
 
         <div className={classes.main_header_link}>

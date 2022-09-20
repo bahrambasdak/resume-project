@@ -48,6 +48,70 @@ const ProductProvider = ({ children }) => {
       category: "موبایل",
       availability: 25,
     },
+    {
+      id: '7',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '9',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '10',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '11',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '12',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '13',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '14',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '15',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+    {
+      id: '16',
+      name: "A56",
+      price: 1_500_000,
+      category: "موبایل",
+      availability: 25,
+    },
+
   ]);
 
   const editProduct = (editedproduct) => {

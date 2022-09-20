@@ -8,24 +8,23 @@ import work1 from "./img/work1.JPG";
 import work2 from "./img/work2.JPG";
 import work3 from "./img/work3.JPG";
 import work4 from "./img/work4.JPG";
-import classes from './styles.module.scss';
-
+import classes from "./styles.module.scss";
 
 const Home = () => {
   const [showInTop, setShowInTop] = useState(false);
 
   console.log("app render");
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      console.log(window.screen.availHeight - window.scrollY < 200);
-      window.screen.availHeight - window.scrollY < 200
-        ? setShowInTop(true)
-        : setShowInTop(false);
-      console.log(window.scrollY);
-    });
 
-    //document.getElementsByTagName('html')[0].setAttribute('dir','rtl');
-    console.log("app useEfect");
+  const handleScroll = (e) => {
+    window.screen.availHeight - window.scrollY < 200
+      ? setShowInTop(true)
+      : setShowInTop(false);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    
+    return ()=> window.removeEventListener("scroll" , handleScroll);
   }, []);
 
   const skills = [
@@ -45,12 +44,12 @@ const Home = () => {
   return (
     <div className={classes.App}>
       <MainMenu showInTop={showInTop} />
-      <MainHeader />
+      <MainHeader showInTop={showInTop} />
       <AboutMe />
       <MySkills skills={skills} />
       <Portfolio works={works} />
       <button></button>
-      </div>
+    </div>
   );
 };
 

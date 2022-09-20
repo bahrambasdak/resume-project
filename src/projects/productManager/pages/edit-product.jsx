@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import ProductForm from "../components/ProductForm";
-import { useAuth_Them } from "../contexts/Auth_Them";
+import { useAuthThem } from "../contexts/Auth_Them";
 import { useProducts } from "../contexts/products";
 import classes from "../styles.module.scss";
 
 const EditProduct = () => {
   const { id: productId } = useParams();
   const { products, editProduct } = useProducts();
-  const {user} = useAuth_Them();
+  const {user} = useAuthThem();
   const onSubmit = (data) => {
     editProduct(data);
   };

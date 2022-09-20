@@ -9,7 +9,7 @@ import TodoList from "./projects/todolist/TodoList";
 
 function App() {
   return (
-    <div>
+    <div >
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home />} />
