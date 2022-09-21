@@ -4,6 +4,7 @@ import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
 import classes from "../styles.module.scss";
 
+
 const MainHeader = ({ showInTop }) => {
   const canvasRef = useRef(null);
   const typistRef = useRef(null);
@@ -134,6 +135,7 @@ const MainHeader = ({ showInTop }) => {
   return (
     <>
       <header className={classes.Home_header} id="home">
+
         <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
         <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
         <div className={classes.name_text}>بهرام بسدک</div>
@@ -143,6 +145,7 @@ const MainHeader = ({ showInTop }) => {
             value=""
             ref={typistRef}
             className={classes.typer}
+            readOnly
           />
         </div>
 

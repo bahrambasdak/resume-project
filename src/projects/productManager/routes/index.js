@@ -9,7 +9,6 @@ import { AiTwotonePhone } from "react-icons/ai";
 import AddProduct from "../pages/add-product";
 import ContactUs from "../pages/contact-us";
 import ProductList from "../pages/product-list";
-import LogOut from "../pages/log-out";
 import EditProduct from "../pages/edit-product";
 
 const productManagerRoutes = [
@@ -60,14 +59,7 @@ const productManagerRoutes = [
     showInNav: true,
     element: <Login />,
   },
-  {
-    path: "logout",
-    name: "خروج",
-    icon: <MdLogout />,
-    private: true,
-    showInNav: true,
-    element: <LogOut />,
-  },
+
 ];
 
 export default productManagerRoutes;

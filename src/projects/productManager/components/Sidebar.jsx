@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuthThem } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
+import { MdLogout } from "react-icons/md";
 
 const Sidebar = ({ routes, showSidebar }) => {
   const location = useLocation();
@@ -25,13 +26,18 @@ const Sidebar = ({ routes, showSidebar }) => {
                   classes[activeRoute(route.path)]
                 }`}
               >
-                <Link
-                  to={route.path}
-                  className={classes.sidebar_link}
-                  
-                >
-                  {route.icon}
-                  <span className={classes.sidebar_name}>{route.name}</span>
+                <Link to={route.path} className={classes.sidebar_link}>
+                  {route.path === "login" && user.loggedIn ? (
+                    <div>
+                      <MdLogout />
+                      <span className={classes.sidebar_name}>خروج</span>
+                    </div>
+                  ) : (
+                    <div>
+                      {route.icon}
+                      <span className={classes.sidebar_name}>{route.name}</span>
+                    </div>
+                  )}
                 </Link>
               </li>
             ))}

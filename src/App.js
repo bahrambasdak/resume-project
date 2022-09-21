@@ -8,9 +8,11 @@ import Home from "./projects/resume/Home";
 import TodoList from "./projects/todolist/TodoList";
 
 function App() {
+
   return (
     <div >
       <BrowserRouter>
+
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/todolist" element={<TodoList />} />
@@ -21,6 +23,7 @@ function App() {
           </Route>
           <Route path="/" element={<Home />} />
         </Routes>
+
       </BrowserRouter>
     </div>
   );

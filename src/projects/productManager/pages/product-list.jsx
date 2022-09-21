@@ -25,42 +25,46 @@ const ProductList = () => {
         <div
           className={`${classes.page_wraper} ${
             user.them === "light" ? classes.light : classes.dark
-          } ${selectedProduct? classes.disable: ''}`}
+          } ${selectedProduct ? classes.disable : ""}`}
         >
           <div className={`${classes.card} ${classes.product_list}`}>
-            <table>
-              <thead>
-                <th>نام محصول</th>
-                <th>قیمت</th>
-                <th>دسته بندی</th>
-                <th>موجودی</th>
-              </thead>
-              <tbody>
-                {products.map((product, index) => (
-                  <tr key={index}>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                    <td>{product.category}</td>
-                    <td>{product.availability}</td>
-                    <td>
-                      <button
-                        className={classes.delete_btn}
-                        onClick={() => setselectedProduct(product)}
-                      >
-                        حذف
-                      </button>
-                      <button className={classes.edit_btn}>
-                        <Link
-                          to={`/product-manager/products/edit/${product.id}`}
+            {products.length > 0 ? (
+              <table>
+                <thead>
+                  <th>نام محصول</th>
+                  <th>قیمت</th>
+                  <th>دسته بندی</th>
+                  <th>موجودی</th>
+                </thead>
+                <tbody>
+                  {products.map((product, index) => (
+                    <tr key={index}>
+                      <td>{product.name}</td>
+                      <td>{product.price}</td>
+                      <td>{product.category}</td>
+                      <td>{product.availability}</td>
+                      <td>
+                        <button
+                          className={classes.delete_btn}
+                          onClick={() => setselectedProduct(product)}
                         >
-                          ویرایش
-                        </Link>
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                          حذف
+                        </button>
+                        <button className={classes.edit_btn}>
+                          <Link
+                            to={`/product-manager/products/edit/${product.id}`}
+                          >
+                            ویرایش
+                          </Link>
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              "محصولی یافت نشد!"
+            )}
           </div>
         </div>
       ) : (

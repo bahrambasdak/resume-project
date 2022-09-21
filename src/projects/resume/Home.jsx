@@ -12,20 +12,19 @@ import classes from "./styles.module.scss";
 
 const Home = () => {
   const [showInTop, setShowInTop] = useState(false);
+  const screenHeight = window.screen.availHeight;
+  console.log("home render");
 
-  console.log("app render");
-
-  const handleScroll = (e) => {
-    window.screen.availHeight - window.scrollY < 200
-      ? setShowInTop(true)
-      : setShowInTop(false);
+  const handleScroll = () => {
+    if (screenHeight - window.scrollY < 200 && !showInTop) setShowInTop(true);
+    if (screenHeight - window.scrollY > 200 && showInTop) setShowInTop(false);
   };
 
-  window.addEventListener("scroll", handleScroll);
+ 
   useEffect(() => {
-    
-    return ()=> window.removeEventListener("scroll" , handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   const skills = [
     { name: "javascript", degree: 90 },

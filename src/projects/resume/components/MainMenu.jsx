@@ -1,47 +1,42 @@
 import { memo, useEffect, useState } from "react";
-import classes from '../styles.module.scss';
+import classes from "../styles.module.scss";
+import { MdMenu, MdClose } from "react-icons/md";
 
 const MainMenu = ({ showInTop }) => {
   console.log("mainmenu render");
-  // const [styles , setStyles] = useState({
-  //   aboutMe: { color: "white" },
-  //   skills: { color: "white" },
-  //   works: { color: "white" },
-  //   resume: { color: "white" },
-  //   home: { color: "white" },
-  // });
-
-  // const handleScroll = (activebutton, scroll) => {
-  //   window.scrollTo(0, scroll);
-  //   //setStyles({...styles,[activebutton]:{color:'red'}});
-  // };
+  const [showMenu, setshowMenu] = useState(false);
 
   useEffect(() => {
     console.log("mainmenu useEfect");
   });
 
   return (
-    <div className={`${classes.main_menu} ${showInTop ? classes.ShowInTop : ""}`}>
-      <ul className={classes.menu}>
-        <li
-        
-          className={classes.item}
-        >
+    <div
+      className={`${classes.main_menu} ${showInTop ? classes.ShowInTop : ""} ${
+        showMenu ? classes.showMenu : ""
+      }`}
+    >
+      <button
+        className={classes.showMenuBtn}
+        onClick={() => setshowMenu((prev) => !prev)}
+      >
+        {showMenu ? <MdClose /> : <MdMenu />}
+      </button>
+      <ul className={classes.menu} onClick={() => setshowMenu((prev) => !prev)}>
+        <li className={classes.item}>
           <a href="#aboutMe">درباره من</a>
         </li>
-        <li
-          className={classes.item}
-        ><a href="#skills">مهارت ها</a>
-        </li>
-        <li className={classes.item}><a href="#aboutMe">رزومه</a></li>
-        <li
-          className={classes.item}
-         
-        ><a href="#portfilio">نمونه کارها</a>
-          
+        <li className={classes.item}>
+          <a href="#skills">مهارت ها</a>
         </li>
         <li className={classes.item}>
-        <a href="#home">خانه</a>
+          <a href="#aboutMe">رزومه</a>
+        </li>
+        <li className={classes.item}>
+          <a href="#portfilio">نمونه کارها</a>
+        </li>
+        <li className={classes.item}>
+          <a href="#home">خانه</a>
         </li>
       </ul>
     </div>

@@ -27,6 +27,7 @@ const Header = ({ setShowSidebar, showSidebar }) => {
         {user.them === "light" ? <MdDarkMode /> : <MdOutlineLightMode />}
       </button>
       <div className={classes.profile}>
+        {user.email && <div>{user.email}</div>}
         <img src={user.loggedIn ? profile : defaultProfile} alt="profile" />
       </div>
     </div>

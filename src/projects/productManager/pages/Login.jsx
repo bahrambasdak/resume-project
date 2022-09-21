@@ -5,18 +5,24 @@ import { useAuthThem } from "../contexts/Auth_Them";
 import classes from "../styles.module.scss";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [input, setInput] = useState({});
   const [error, setError] = useState("");
-  const { user , toggleAuth } = useAuthThem();
+  const { user, toggleAuth } = useAuthThem();
   const navigate = useNavigate();
+
+  if (user.loggedIn) toggleAuth("");
+
+  const handleInput = (e) => {
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
-    LoginAPI({ email, password })
+
+    LoginAPI({ input })
       .then((res) => {
         console.log(res.data);
-        toggleAuth();
+        toggleAuth(e.target[0].value);
         navigate("/product-manager/dashboard");
       })
       .catch((err) => {
@@ -39,9 +45,12 @@ const Login = () => {
                 <div>
                   <label htmlFor="email">ایمیل</label>
                   <input
-                    type="text"
+                    type="email"
                     id="email"
-                    onChange={(e) => setEmail(e.value)}
+                    name="email"
+                    value={input.email}
+                    onChange={handleInput}
+                    required
                   />
                 </div>
               </div>
@@ -51,7 +60,11 @@ const Login = () => {
                   <input
                     type="password"
                     id="password"
-                    onChange={(e) => setPassword(e.value)}
+                    name="password"
+                    value={input.password}
+                    onChange={handleInput}
+                    required
+                    minLength={5}
                   />
                 </div>
               </div>
