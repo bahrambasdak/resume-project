@@ -159,7 +159,7 @@ $skills-title-color2: rgb(31, 30, 30);
   height: 100%;
 }
 
-/********************ABOUT ME****************/
+/********************ABOUT ME*************************************/
 .about_me {
   display: flex;
   margin: auto;
@@ -210,6 +210,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .about_me .left p {
   padding-bottom: 30px;
   border-bottom: 1px solid #999;
+  line-height: normal;
 }
 
 .about_me .left .description {
