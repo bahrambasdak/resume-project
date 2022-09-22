@@ -1,14 +1,6 @@
 import classes from "../styles.module.scss";
 
 const RemoveModal = ({ onClose, onConfirm, product }) => {
-  // const onClose =()=>{
-
-  // }
-
-  // const onConfirm =(product)=>{
-
-  // }
-
   return (
     <div className={`${classes.remove_modal} ${classes.card}`}>
       <div>آیا از حذف محصول {product.name} مطمئن هستید؟</div>

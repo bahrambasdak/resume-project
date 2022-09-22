@@ -1,25 +1,27 @@
+import { useRef } from "react";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginAPI } from "../Api";
-import { useAuthThem } from "../contexts/Auth_Them";
+import { useAuth } from "../contexts/Auth";
+import { useTheme } from "../contexts/theme";
 import classes from "../styles.module.scss";
 
 const Login = () => {
-  const [input, setInput] = useState({});
   const [error, setError] = useState("");
-  const { user, toggleAuth } = useAuthThem();
+  const { theme } = useTheme();
+  const { toggleAuth } = useAuth();
+  const emailRef = useRef();
+  const passwordRef = useRef();
   const navigate = useNavigate();
-
-  if (user.loggedIn) toggleAuth("");
-
-  const handleInput = (e) => {
-    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    LoginAPI({ input })
+    LoginAPI({
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    })
       .then((res) => {
         console.log(res.data);
         toggleAuth(e.target[0].value);
@@ -30,10 +32,11 @@ const Login = () => {
         console.log(err.response.data);
       });
   };
+  console.log("Login");
   return (
     <div
       className={`${classes.page_wraper} ${
-        user.them === "light" ? classes.light : classes.dark
+        theme.mode === "light" ? classes.light : classes.dark
       }`}
     >
       <div className={classes.login_page}>
@@ -48,8 +51,7 @@ const Login = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={input.email}
-                    onChange={handleInput}
+                    ref={emailRef}
                     required
                   />
                 </div>
@@ -61,8 +63,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     name="password"
-                    value={input.password}
-                    onChange={handleInput}
+                    ref={passwordRef}
                     required
                     minLength={5}
                   />

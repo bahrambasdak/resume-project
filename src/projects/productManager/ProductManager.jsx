@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import classes from "./styles.module.scss";
-import { AuthThemProvider } from "./contexts/Auth_Them";
+import { AuthProvider } from "./contexts/Auth";
+import { ThemeProvider } from "./contexts/theme";
 import productManagerRoutes from "./routes";
 
 import ProductProvider from "./contexts/products";
@@ -13,7 +14,11 @@ const ProductManager = () => {
   const location = useLocation();
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
+
+  console.log('product-manager');
+
   useEffect(() => {
+    console.log('product-manager useEfect');
     navigate("dashboard");
   }, []);
 
@@ -22,7 +27,8 @@ const ProductManager = () => {
       className={classes.product_manager}
       onClick={() => setShowSidebar(false)}
     >
-      <AuthThemProvider>
+      <AuthProvider>
+        <ThemeProvider>
         <Header setShowSidebar={setShowSidebar} showSidebar={showSidebar} />
 
         <Sidebar showSidebar={showSidebar} routes={productManagerRoutes} />
@@ -34,7 +40,8 @@ const ProductManager = () => {
             </CSSTransition>
           </TransitionGroup>
         </ProductProvider>
-      </AuthThemProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </div>
   );
 };

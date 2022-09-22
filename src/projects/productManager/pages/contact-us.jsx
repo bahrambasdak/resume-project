@@ -1,12 +1,14 @@
-import { useAuthThem } from "../contexts/Auth_Them";
+
+import { useTheme } from "../contexts/theme";
 import classes from "../styles.module.scss";
 
 const ContactUs = () => {
-    const {user} = useAuthThem();
+    const {theme} = useTheme();
+    console.log('contact us');
   return (
     <div
       className={`${classes.page_wraper} ${
-        user.them === "light" ? classes.light : classes.dark
+        theme.mode === "light" ? classes.light : classes.dark
       }`}
     >
       <div className={classes.card_body}>
@@ -34,4 +36,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactUs ;

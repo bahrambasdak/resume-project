@@ -1,7 +1,7 @@
 import Dashboard from "../pages/dashboard";
 import Login from "../pages/Login";
 import { AiFillDashboard } from "react-icons/ai";
-import { MdLogout } from "react-icons/md";
+
 import { MdLogin } from "react-icons/md";
 import { RiAddFill } from "react-icons/ri";
 import { TiThSmallOutline } from "react-icons/ti";
@@ -10,6 +10,7 @@ import AddProduct from "../pages/add-product";
 import ContactUs from "../pages/contact-us";
 import ProductList from "../pages/product-list";
 import EditProduct from "../pages/edit-product";
+
 
 const productManagerRoutes = [
   {
@@ -55,10 +56,11 @@ const productManagerRoutes = [
     path: "login",
     name: "ورود",
     icon: <MdLogin />,
-    private: true,
-    showInNav: true,
+    showInNav: false,
     element: <Login />,
   },
+
+  { path: "/product-manager", pathTo: "/product-manager/dashboard", name: "Dashboard", redirect: true },
 
 ];
 
