@@ -1,41 +1,41 @@
-import classes from '../todoListStyles.module.css';
-import { MdOutlineDeleteOutline , MdEditNote } from 'react-icons/md';
-import { useTodoValueContext } from '../contexts/TodoValue';
+import classes from "../todoListStyles.module.css";
+import { MdOutlineDeleteOutline, MdEditNote } from "react-icons/md";
+import { useTodos } from "../contexts/Todos";
 
+const TodosList = () => {
+  const { todos, editTodos } = useTodos();
 
-const TodosList = ({ todos, setTodos }) => {
-
-  const {todoValue , setTodoValue} = useTodoValueContext();
-  function handleChecked(e, id) {
-
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id
-          ? { title: todo.title, isCompleted: e.target.checked, id: todo.id }
-          : { title: todo.title, isCompleted: todo.isCompleted, id: todo.id }
-      )
-    );
+  function handleChecked(e, todo) {
+    editTodos({ ...todo, status: e.target.checked }, "edit");
   }
 
-function handleEditTodo(todo){
-  setTodoValue(todo.title)
-}
-
-  function handleDeleteTodo(id) {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  function handleEdit(todo) {
+    todos.forEach((item) => {
+      if (item.edit === true && todo.id !== item.id)
+        editTodos({ ...item, edit: false }, "edit");
+    });
+    editTodos({ ...todo, edit: true }, "edit");
   }
+
   return (
     <div className={classes.todos_list}>
       <ul>
-        {todos.map((todo , key) => (
-          <li className={todo.isCompleted ? classes.iscomplete : ""} key={key}>
-            <input type="checkBox" onChange={(e) => handleChecked(e, todo.id)} checked={todo.isCompleted}/>
+        {todos.map((todo, key) => (
+          <li className={`${todo.status ? classes.iscomplete : ""} ${todo.edit ? classes.edited: ''}`} key={key}>
+            <input
+              type="checkBox"
+              onChange={(e) => handleChecked(e, todo)}
+              checked={todo.status}
+            />
             <div className={classes.todo_content}>
-               <span>{todo.title}</span> 
+              <span>{todo.title}</span>
             </div>
-            <button onClick={() => handleEditTodo(todo)}><MdEditNote /></button>
-            <button onClick={() => handleDeleteTodo(todo.id)}><MdOutlineDeleteOutline /></button>
-            
+            <button onClick={() => handleEdit(todo)}>
+              <MdEditNote />
+            </button>
+            <button onClick={() => editTodos(todo, "delete")}>
+              <MdOutlineDeleteOutline />
+            </button>
           </li>
         ))}
       </ul>

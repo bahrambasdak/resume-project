@@ -1,35 +1,59 @@
 import { MdOutlineLibraryAdd } from "react-icons/md";
-import { useState } from "react";
-import { useTodoValueContext } from "../contexts/TodoValue";
-import classes from '../todoListStyles.module.css';
+import { GrUpdate } from "react-icons/gr";
+import { useTodos } from "../contexts/Todos";
+import classes from "../todoListStyles.module.css";
+import { useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useEffect } from "react";
 
-const AddTodos = ({ addTodo }) => {
+const AddTodos = () => {
+  const { todos, editTodos } = useTodos();
+  const todoRef = useRef();
 
-  const {todoValue , setTodoValue} = useTodoValueContext();
- 
-
-  const submit = (e) => {
+  const addTodo = (e, mode) => {
     e.preventDefault();
-    if (!todoValue) {
-      alert("input is empty");
-      return;
+    if (todoRef.current.value) {
+      editTodos(
+        { id: uuidv4(), title: todoRef.current.value, status: false },
+        mode
+      );
+      todoRef.current.value = "";
     }
-    addTodo(todoValue);
-    setTodoValue("");
-
   };
+
+  const editTodo = (e, mode) => {
+    e.preventDefault();
+    editTodos(
+      {
+        ...todos.filter((todo) => todo.edit === true)[0],
+        title: todoRef.current.value,
+        edit: false,
+      },
+      mode
+    );
+    todoRef.current.value = "";
+  };
+  useEffect(() => {
+    const editTitle = todos.filter((todo) => todo?.edit)[0]?.title;
+    if (editTitle) todoRef.current.value = editTitle;
+  }, [todos]);
+
   return (
     <div className={classes.add_todos}>
-      <form onSubmit={submit}>
+      <form>
         <input
+          ref={todoRef}
           type="text"
-          value={todoValue}
-          onChange={(e) => setTodoValue(e.target.value)}
-          placeholder= 'Add task'
+          placeholder="Add task"
           autoFocus={true}
         />
-        
-        <button type="submit"><MdOutlineLibraryAdd /></button>
+
+        <button onClick={(e) => editTodo(e, "edit")}>
+          <GrUpdate />
+        </button>
+        <button onClick={(e) => addTodo(e, "add")}>
+          <MdOutlineLibraryAdd />
+        </button>
       </form>
     </div>
   );

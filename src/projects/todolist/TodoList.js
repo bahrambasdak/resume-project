@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import TodosList from "./components/Todos";
 import TodosFooter from "./components/Footer";
 import { v4 as uuidv4 } from "uuid";
-import {TodoValueContextProvider} from './contexts/TodoValue'
+import {TodosProvider} from './contexts/Todos'
 
 function TodoList() {
   const [todosState, setTodosState] = useState([]);
@@ -18,7 +18,7 @@ function TodoList() {
 
   useEffect( () => {
     const localTodos = JSON.parse(localStorage.getItem("todos"));
-    //document.getElementsByTagName('html')[0].setAttribute('dir','ltr');
+  
 
     setTodosState(localTodos ? localTodos : []);
   }, []);
@@ -32,12 +32,12 @@ function TodoList() {
 
   return (
     <div className={`${classes.TodoList} `}>
-      <TodoValueContextProvider>
+      <TodosProvider>
       <TodosHeader />
       <AddTodos addTodo={addTodo} />
       <TodosList todos={todosState} setTodos={setTodos} />
       <TodosFooter todos={todosState} />
-      </TodoValueContextProvider>
+      </TodosProvider>
     </div>
   );
 }

@@ -136,7 +136,7 @@ const MainHeader = ({ showInTop }) => {
     <>
       <header className={classes.Home_header} id="home">
 
-        <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
+        <canvas ref={canvasRef} className={classes.header_canvas} ></canvas>
         <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
         <div className={classes.name_text}>بهرام بسدک</div>
         <div className={classes.type_text}>
