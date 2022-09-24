@@ -1,7 +1,17 @@
-import classes from '../todoListStyles.module.css';
+
+import classes from "../todoListStyles.module.css";
 
 const TodosHeader = () => {
   const time = new Date();
+
+  const dayOfMonth = () => {
+    let date = time.getDate();
+    if (date === 1) date = date + "st";
+    else if (date === 2) date = date + "nd";
+    else date = date + "th";
+    return date;
+  };
+
   const day = () => {
     return [
       "Sunday",
@@ -46,12 +56,16 @@ const TodosHeader = () => {
   };
 
   return (
-   
-    <div className={`${classes.todos_header} ${getHeaderImageClass(time.getHours())}`}>
-      <div className={classes.day}>{day()}</div>
-      <div className={classes.month}>{month()}</div>
+    <div
+      className={`${classes.todos_header} ${getHeaderImageClass(
+        time.getHours()
+      )}`}
+    >
+      <div className={classes.day}>
+        {day()} {dayOfMonth()}
+      </div>
+      <div className={classes.month}> {month()}</div>
     </div>
-  
   );
 };
 

@@ -76,6 +76,7 @@ $skills-title-color2: rgb(31, 30, 30);
 
   right: 10%;
   top: 20px;
+
   background-color: transparent;
   color: rgb(213, 189, 189);
   font-size: 3rem;
@@ -85,7 +86,6 @@ $skills-title-color2: rgb(31, 30, 30);
   justify-content: center;
   border: none;
   padding: 10px;
-
 }
 
 /////////////////////////////////////MAIN HEADER//////////////////////////////
@@ -135,7 +135,6 @@ $skills-title-color2: rgb(31, 30, 30);
 .main_header_link {
   display: flex;
   justify-content: center;
-
 }
 .main_header_link span {
   display: flex;
@@ -165,32 +164,33 @@ $skills-title-color2: rgb(31, 30, 30);
   margin: auto;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  column-gap: 4rem;
-  padding: 3rem;
+  //flex-wrap: wrap;
+  //column-gap: 4rem;
+ // padding: 3rem;
   width: 100vw;
-  height: 100%;
-  padding: 5rem 0 0 0;
+  //height: 100vh;
+  padding-top: 30px;
 }
-.about_me .right {
-  text-align: left;
-  border: 10px solid rgb(245, 245, 245);
-  border-radius: 5px;
-  height: 530px;
-  width: 380px;
-}
-.about_me .right img {
-  height: 100%;
-  width: 100%;
-}
+// .about_me .right {
+//   text-align: left;
+//   border: 10px solid rgb(245, 245, 245);
+//   border-radius: 5px;
+//   height: 530px;
+//   width: 380px;
+// }
+// .about_me .right img {
+//   height: 100%;
+//   width: 100%;
+// }
 
 .about_me .left {
   display: flex;
 
   flex-direction: column;
-  width: 500px;
-  height: 530px;
+  width: 90%;
+  height: 100%;
   //flex-basis: 60%;
+  align-items: center;
 
   justify-content: space-between;
 }
@@ -206,27 +206,39 @@ $skills-title-color2: rgb(31, 30, 30);
   color: $aboutMe-title-color2;
   border-bottom: 1px solid $aboutMe-title-color2;
 }
-
+.about_me .left h3{
+  align-self: flex-start;
+  padding: 20px;
+}
 .about_me .left p {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #999;
-  line-height: normal;
+  line-height: 2.5rem;
 }
 
 .about_me .left .description {
   display: flex;
-
+justify-content: space-between;
+//align-items: center;
+width: 90%;
   flex-wrap: wrap;
+  padding: 20px 0 20px 0;
+
 }
-.about_me .left .description div {
-  min-width: 50%;
-  padding-bottom: 2rem;
+.about_me .left .description > div {
+ // min-width: 50%;
+  //padding-bottom: 2rem;
+  //padding: 10px;
+  div{
+    padding-bottom: 20px;
+  }
 }
 
 .about_me .left button {
   align-self: flex-start;
   position: relative;
   font-weight: bold;
+  margin-bottom: 20px;
   font-size: 1.2rem;
   width: 200px;
   height: 50px;
@@ -260,24 +272,24 @@ $skills-title-color2: rgb(31, 30, 30);
   top: 0px;
 }
 
-///////////////////////////////////MY SKILLS//////////
+///////////////////////////////////MY SKILLS////////////////////////////////////////////////
 .my_skills {
   display: flex;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .my_skills_section {
-  padding-top: 100px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  //justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80%;
-  margin: 10% 0 0 0;
+  min-height: 80%;
+ // margin: 10% 0 0 0;
   background-color: rgb(242, 242, 242);
 }
 .my_skills_section .title {
@@ -307,6 +319,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .my_skills_section .skills .skill {
   width: 40%;
   position: relative;
+  font-weight: 500;
 }
 
 .my_skills_section .skills .skill:last-child {
@@ -337,14 +350,14 @@ $skills-title-color2: rgb(31, 30, 30);
   height: 30px;
 }
 
-//////////////////////PORTFOLIO//////////////
+//////////////////////PORTFOLIO/////////////////////////////////////////////////////
 ///
 .portfolio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  //justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 70px;
   width: 100vw;
 }
 .portfolio .title {
@@ -447,8 +460,6 @@ $skills-title-color2: rgb(31, 30, 30);
   }
 }
 
-
-
 @media only screen and (max-width: 600px) {
   /* For mobiles: */
   .main_menu {
@@ -460,18 +471,17 @@ $skills-title-color2: rgb(31, 30, 30);
 
   .showMenuBtn {
     display: flex;
- 
   }
   .showMenu {
     flex-direction: column;
-  
+    position: fixed;
     left: 0px;
-    .showMenuBtn{
+    height: 100%;
+    .showMenuBtn {
       position: static;
       align-self: flex-start;
     }
   }
-
 
   .main_menu .menu {
     flex-direction: column;
@@ -489,10 +499,44 @@ $skills-title-color2: rgb(31, 30, 30);
   }
   .portfolio .works {
     width: 90%;
-   
   }
   .portfolio .works .work {
     width: 100%;
   }
 }
 
+
+
+
+
+
+
+///////////////////////////////RESPONSIVE///////////////////////////////////////////////
+/// 
+@media only screen and (max-width: 768px) {
+//for tablet////
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  //for mobile////
+  .my_skills_section .skills .skill {
+    width: 100%;
+
+  }
+
+  .my_skills_section {
+    padding-top: 20px;
+  }
+
+  .about_me {
+    padding-top: 0px;
+  }
+
+  .portfolio {
+    padding-top: 20px;
+  }
+  }

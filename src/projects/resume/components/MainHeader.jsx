@@ -11,17 +11,21 @@ const MainHeader = ({ showInTop }) => {
   console.log("mainHeader render");
   const winWidth = window.screen.availWidth;
   const winHeight = window.screen.availHeight;
-  const r_line = winWidth / 15;
+  let r_line = winWidth / 15;
+  if(winWidth < 768 )r_line = winWidth / 9;
 
   const createPoints = (count, xInit, yInit) => {
     const points = [];
-    const V = 3; //winWidth/500;
+    let V = 3;
+    let R = 3;
+    winWidth <768 ? V = 2 : winWidth <600 ? V = 1 : V=3;
+    winWidth <768 ? R = 2 : winWidth <600 ? R = 1 : R=3;
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
       const vx = (Math.random() - 0.5) * V;
       const vy = (Math.random() - 0.5) * V;
-      const r = (Math.random() + 0.1) * V;
+      const r = (Math.random() + 0.1) * R;
       points.push({ x, y, vx, vy, r });
     }
     return points;
@@ -68,8 +72,9 @@ const MainHeader = ({ showInTop }) => {
         clearTimeout(writer);
       }
     }
+    writer();
     const writerInterval = setInterval(writer, 6000);
-    // typeWriter();
+  
 
     canvasRef.current.addEventListener("click", addPoints);
 

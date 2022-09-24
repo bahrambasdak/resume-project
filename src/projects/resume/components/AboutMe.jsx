@@ -9,15 +9,15 @@ const AboutMe = () => {
   }, []);
   return (
     <div className={classes.about_me} id="aboutMe">
-      <div className={classes.right}>
+      {/* <div className={classes.right}>
         <img src={img} alt="about" />
-      </div>
+      </div> */}
 
       <div className={classes.left}>
         <h1>
           <span>درباره</span> من
         </h1>
-        <h3>من یک طراح رابط کاربری حرفه ای هستم</h3>
+        <h3> توسعه دهنده React </h3>
         <p>
           فردی با توانایی و شوق یادگیری بالا، عاشق ترکیب برنامه نویسی و
           نوآوری هستم. در دانشگاه و بعد از آن همواره در حوزه برنامه نویسی فعال
@@ -32,6 +32,7 @@ const AboutMe = () => {
         </p>
         <div className={classes.description}>
           <div>
+          <div>
             <b>نام</b> : بهرام بسدک
           </div>
           <div>
@@ -40,8 +41,17 @@ const AboutMe = () => {
           <div>
             <b>سن</b> : 33{" "}
           </div>
+          </div>
+          <div>
           <div>
             <b>مکان</b> : تهران
+          </div>
+          <div>
+            <b>آدرس نمونه کارها در گیت هاب : </b> bahrambasdak.github.com
+          </div>
+          <div>
+            <b>شماره تماس  : </b> 09351905281
+          </div>
           </div>
         </div>
         <a href={resume} download>

@@ -1,20 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductForm from "../components/ProductForm";
 import { useTheme } from "../contexts/theme";
 import { useProducts } from "../contexts/products";
 import classes from "../styles.module.scss";
 
-
 const EditProduct = () => {
   const { id: productId } = useParams();
   const { products, editProduct } = useProducts();
-  const {theme} = useTheme();
+  const { theme } = useTheme();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     editProduct(data);
+    navigate("/product-manager/all-products");
   };
-  console.log('editProduct');
+  console.log("editProduct");
   return (
-    <div className={`${classes.page_wraper} ${theme.mode === 'light' ? classes.light : classes.dark}`}>
+    <div
+      className={`${classes.page_wraper} ${
+        theme.mode === "light" ? classes.light : classes.dark
+      }`}
+    >
       <div
         className={`${classes.card} ${classes.product_form} ${classes.edit_product}`}
       >
