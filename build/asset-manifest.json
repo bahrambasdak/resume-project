@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8c5bc6ab.css",
-    "main.js": "/static/js/main.f04b7579.js",
+    "main.js": "/static/js/main.f5bfc31e.js",
     "static/js/496.2ae41673.chunk.js": "/static/js/496.2ae41673.chunk.js",
     "static/media/bahram-basdak-resume-1401.pdf": "/static/media/bahram-basdak-resume-1401.d8db952bdcb88d948ae2.pdf",
     "static/media/header-day.jpg": "/static/media/header-day.1565fc4e05bc12a8da4d.jpg",
@@ -16,11 +16,11 @@
     "static/media/defaultprofile.jpg": "/static/media/defaultprofile.5a1c79884c66c57d9ddf.jpg",
     "index.html": "/index.html",
     "main.8c5bc6ab.css.map": "/static/css/main.8c5bc6ab.css.map",
-    "main.f04b7579.js.map": "/static/js/main.f04b7579.js.map",
+    "main.f5bfc31e.js.map": "/static/js/main.f5bfc31e.js.map",
     "496.2ae41673.chunk.js.map": "/static/js/496.2ae41673.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8c5bc6ab.css",
-    "static/js/main.f04b7579.js"
+    "static/js/main.f5bfc31e.js"
   ]
 }

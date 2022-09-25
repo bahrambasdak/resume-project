@@ -152,10 +152,10 @@ const MainHeader = ({ showInTop }) => {
         </div>
 
         <div className={classes.main_header_link}>
-          <a href="https://github.com/bahrambasdak">
+          <a href="https://github.com/bahrambasdak?tab=repositories">
             <BsGithub />
           </a>
-          <a href="https://www.telegram.org/@Bahrambs">
+          <a href="https://t.me/Bahrambs">
             <BsTelegram />
           </a>
           <a href="https://www.instagram.com/bhrmbasdak/">
