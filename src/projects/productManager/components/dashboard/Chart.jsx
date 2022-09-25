@@ -1,49 +1,164 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import 'smart-webcomponents-react/source/styles/smart.default.css';
 
-export const data = {
-  labels: ["1397", "1398", "1399", "1400", "1401"],
-  datasets: [
-    {
-      label: "# of Votes",
-      lineTension: 0.4,
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255,99,132,1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-      fill: true, // 3: no fill
-    },
-  ],
-};
 
-const options = {
-  plugins: {
-    filler: {
-      propagate: true,
-    },
-  },
-};
+import { Chart } from 'smart-webcomponents-react/chart';
 
-const Chart = () => {
-  return (
-    <div>
-      <Line data={data} options={options} />
-    </div>
-  );
-};
+const MyChart = () => {
+	const caption = "Fitness & exercise weekly scorecard";
+	const description = "Time spent in vigorous exercise by activity";
+	const showLegend = true;
+	const padding = {
+		left: 10,
+		top: 10,
+		right: 15,
+		bottom: 10
+	};
 
-export default Chart;
+	const titlePadding = {
+		left: 90,
+		top: 0,
+		right: 0,
+		bottom: 10
+	};
+
+	const dataSource = [{
+		Day: 'Monday',
+		Running: 30,
+		Swimming: 10,
+		Cycling: 25,
+		Goal: 40
+	},
+	{
+		Day: 'Tuesday',
+		Running: 25,
+		Swimming: 15,
+		Cycling: 10,
+		Goal: 50
+	},
+	{
+		Day: 'Wednesday',
+		Running: 30,
+		Swimming: 10,
+		Cycling: 25,
+		Goal: 60
+	},
+	{
+		Day: 'Thursday',
+		Running: 40,
+		Swimming: 20,
+		Cycling: 25,
+		Goal: 40
+	},
+	{
+		Day: 'Friday',
+		Running: 45,
+		Swimming: 20,
+		Cycling: 25,
+		Goal: 50
+	},
+	{
+		Day: 'Saturday',
+		Running: 30,
+		Swimming: 20,
+		Cycling: 30,
+		Goal: 60
+	},
+	{
+		Day: 'Sunday',
+		Running: 20,
+		Swimming: 30,
+		Cycling: 10,
+		Goal: 90
+	}
+	];
+	const colorScheme = 'scheme13';
+	const xAxis = {
+		dataField: 'Day',
+		unitInterval: 2,
+		tickMarks: {
+			visible: true,
+			unitInterval: 1
+		},
+		gridLines: {
+			visible: true,
+			unitInterval: 1
+		},
+		valuesOnTicks: false,
+		padding: {
+			bottom: 10
+		}
+	};
+	const valueAxis = {
+		unitInterval: 10,
+		minValue: 0,
+		maxValue: 50,
+		title: {
+			text: 'Time in minutes<br><br>'
+		},
+		labels: {
+			horizontalAlignment: 'right'
+		}
+	};
+
+	const seriesGroups = [{
+		type: 'spline',
+		series: [{
+			dataField: 'Swimming',
+			symbolType: 'square',
+			labels: {
+				visible: true,
+				backgroundColor: '#FEFEFE',
+				backgroundOpacity: 0.2,
+				borderColor: '#7FC4EF',
+				borderOpacity: 0.7,
+				padding: {
+					left: 5,
+					right: 5,
+					top: 0,
+					bottom: 0
+				}
+			}
+		},
+		{
+			dataField: 'Running',
+			symbolType: 'square',
+			labels: {
+				visible: true,
+				backgroundColor: '#FEFEFE',
+				backgroundOpacity: 0.2,
+				borderColor: '#7FC4EF',
+				borderOpacity: 0.7,
+				padding: {
+					left: 5,
+					right: 5,
+					top: 0,
+					bottom: 0
+				}
+			}
+		}
+		]
+	}];
+
+	return (
+		
+			<Chart
+				caption={caption}
+				description={description}
+				showLegend={showLegend}
+				padding={padding}
+				titlePadding={titlePadding}
+				dataSource={dataSource}
+				colorScheme={colorScheme}
+				xAxis={xAxis}
+				valueAxis={valueAxis}
+				seriesGroups={seriesGroups}
+				id="chart">
+			</Chart>
+		
+	);
+}
+
+
+
+export default MyChart;
+	

@@ -3,9 +3,11 @@ $light2: rgb(240, 238, 238);
 $light3: rgb(211, 207, 207);
 $light4: rgb(180, 176, 176);
 $light5: rgb(93, 92, 92);
+$light6: rgb(17, 17, 36);
+
 $dark1: rgb(0, 0, 0);
 $dark2: rgb(47, 41, 41);
-$dark3: #444;
+$dark3: rgb(21, 25, 54);
 
 .product_manager {
   display: grid;
@@ -76,9 +78,7 @@ $dark3: #444;
   display: flex;
   justify-content: center;
   .sidebar_nav {
-  
   }
-
 
   .sidebar_item {
     padding: 10px 10px 10px 20px;
@@ -89,7 +89,7 @@ $dark3: #444;
       color: $light1;
     }
   }
-  .sidebar_link>div{
+  .sidebar_link > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,7 @@ $dark3: #444;
     padding-right: 10px;
   }
 
-  .selected .sidebar_link>div{
+  .selected .sidebar_link > div {
     color: rgb(0, 255, 21);
   }
 }
@@ -112,10 +112,8 @@ $dark3: #444;
   justify-content: center;
   align-items: center;
   .row {
-
     flex-direction: column;
   }
-
 }
 
 ///////////////////////////////////////Global for all page////////////////////////
@@ -222,6 +220,14 @@ $dark3: #444;
 }
 
 ///////////////////////////////////////Dashboard//////////////////////
+/// 
+
+.dashboard_page{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 .dashboard_widget {
   display: flex;
   justify-content: space-around;
@@ -229,7 +235,7 @@ $dark3: #444;
   align-items: center;
   height: fit-content;
   width: 100%;
-  
+
   .widget {
     display: flex;
     gap: 10px;
@@ -248,11 +254,11 @@ $dark3: #444;
 }
 
 .dashboard_chart {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 85%;
-  width: 100%;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  // height: 200px !important;
+  // width: 90%;
 }
 
 ///////////////////////////////////////////Product-List///////////////
@@ -353,11 +359,11 @@ $dark3: #444;
   width: 40%;
   height: 30%;
   z-index: 5;
-   left: 30%;
-   top: 30%;
-   >div{
+  left: 30%;
+  top: 30%;
+  > div {
     padding: 20px;
-   }
+  }
   button {
     padding: 5px 30px 5px 30px;
   }
@@ -365,12 +371,12 @@ $dark3: #444;
   .rm_button {
     display: flex;
     width: 100%;
-    
+
     justify-content: space-around;
   }
 }
 
-.disable{
+.disable {
   filter: brightness(0.5);
 }
 
@@ -385,7 +391,28 @@ $dark3: #444;
   color: $light5;
 
   .themBtn {
-    color: $light1;
+    color: $light3;
+  }
+
+  .card {
+    background-color: $light6;
+  }
+  input,
+  textarea,
+  select {
+    background-color: $dark3;
+    color: $light3;
+  }
+
+  .add_product {
+    background-image: linear-gradient(90deg, rgb(48, 81, 82), rgb(3, 45, 46));
+  }
+  .add_product:hover {
+    background-image: linear-gradient(-90deg, rgb(48, 81, 82), rgb(3, 45, 46));
+  }
+  .product_list table tbody > :nth-child(odd) {
+    background-color: $light5;
+    color: $light2;
   }
 }
 
@@ -395,10 +422,31 @@ $dark3: #444;
 
 @media only screen and (max-width: 768px) {
   /* For tablet: */
-  .remove_modal{
+
+  .product_form {
+    width: 70%;
+  }
+
+  .card_body {
+    font-size: 1rem;
+    form {
+      label,
+      input,
+      select,
+      textarea {
+        font-size: 1rem;
+        padding: 5px;
+      }
+      button {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .remove_modal {
     width: 80%;
     left: 10%;
-      }
+  }
   .sidebar {
     font-size: 2rem;
   }
@@ -414,7 +462,6 @@ $dark3: #444;
     font-size: 1.2rem;
   }
   .card_body {
-
     .row {
       flex-direction: column;
     }
@@ -423,10 +470,12 @@ $dark3: #444;
 
 @media only screen and (max-width: 600px) {
   /* For mobile: */
-
-  .remove_modal{
-width: 80%;
-left: 10%;
+  .product_form {
+    width: 90%;
+  }
+  .remove_modal {
+    width: 80%;
+    left: 10%;
   }
   .product_list {
     padding: 20px 15px 20px 15px;
@@ -448,6 +497,7 @@ left: 10%;
   .sidebar {
     position: absolute;
     height: 100%;
+    top: 0;
   }
   .show {
     right: 0px;
@@ -456,14 +506,5 @@ left: 10%;
     right: -100%;
   }
   .page_wraper {
-
-  }
-
-  .card_body {
-    font-size: 1rem;
-  }
-
-  .row > div {
-
   }
 }

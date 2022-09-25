@@ -1,18 +1,19 @@
 import { BsZoomIn, BsLink } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-import classes from '../styles.module.scss';
+import classes from "../styles.module.scss";
+let zoomIn;
 
 const Portfolio = ({ works }) => {
 
-    const workPictureZoomIn = ()=>{
-
-    }
 
   return (
     <>
       <div className={classes.portfolio} id="portfilio">
-        <h2 className={classes.title}><span>نمونه کارهای </span>من</h2>
+
+        <h2 className={classes.title}>
+          <span>نمونه کارهای </span>من
+        </h2>
         <div className={classes.works}>
           {works.map((work, key) => {
             return (
@@ -25,9 +26,19 @@ const Portfolio = ({ works }) => {
                 <div className={classes.work_title}>
                   <div>{work.title}</div>
                   <div className={classes.icons}>
-                    <BsZoomIn className={classes.zoom} onClick={workPictureZoomIn}/>
-                    <Link to={work.title}><BsLink className={classes.link} /></Link>
-                    
+                    <BsZoomIn
+                      className={classes.zoom}
+                      
+                    />
+                    {work.space === "internal" ? (
+                      <Link to={work.path}>
+                        <BsLink className={classes.link} />
+                      </Link>
+                    ) : (
+                      <a href={work.path}>
+                        <BsLink className={classes.link} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

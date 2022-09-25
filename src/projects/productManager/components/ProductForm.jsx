@@ -27,7 +27,7 @@ const ProductForm = ({ onSubmit, mode }) => {
   });
 
   return (
-    <div>
+    
       <form
         onSubmit={handleSubmit((data) => onSubmit({ ...data, id: productId }))}
       >
@@ -87,7 +87,7 @@ const ProductForm = ({ onSubmit, mode }) => {
 
         <button>{mode === "edit" ? "ویرایش" : "افزودن"} محصول</button>
       </form>
-    </div>
+    
   );
 };
 

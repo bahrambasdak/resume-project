@@ -49,6 +49,9 @@ $skills-title-color2: rgb(31, 30, 30);
   a {
     color: $main-header-menu-text-color;
   }
+  .active{
+    color: rgb(175, 44, 192);
+  }
 
   cursor: pointer;
   padding: 1rem;
@@ -91,7 +94,7 @@ $skills-title-color2: rgb(31, 30, 30);
 /////////////////////////////////////MAIN HEADER//////////////////////////////
 
 .Home_header {
-  filter: brightness(0.6);
+  filter: brightness(1);
   width: 100vw;
   height: 100vh;
   background-image: url("./img/main-header-img.jpg");
@@ -135,6 +138,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .main_header_link {
   display: flex;
   justify-content: center;
+  font-size: 2rem;
 }
 .main_header_link span {
   display: flex;
@@ -315,7 +319,7 @@ $skills-title-color2: rgb(31, 30, 30);
   padding: 30px;
 }
 .my_skills_section .skills .skill {
-  width: 40%;
+  width: 45%;
   position: relative;
   font-weight: 500;
 }
@@ -323,7 +327,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .my_skills_section .skills .skill:last-child {
 }
 .my_skills_section .skills .skill .name {
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .my_skills_section .skills .skill .bar {
   background-color: white;
@@ -415,6 +419,8 @@ $skills-title-color2: rgb(31, 30, 30);
   align-items: center;
   top: 100%;
   left: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
   background-color: rgba($color: #93b6fc, $alpha: 0.3);
   div {
     padding: 10px;
@@ -422,10 +428,12 @@ $skills-title-color2: rgb(31, 30, 30);
 
   .icons {
     display: flex;
+    align-items: center;
     gap: 50px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     .zoom {
       cursor: pointer;
+      display: none;
     }
 
     .zoom:hover {
@@ -433,6 +441,7 @@ $skills-title-color2: rgb(31, 30, 30);
     }
     .link {
       cursor: pointer;
+      font-size: 3rem;
     }
 
     .link:hover {

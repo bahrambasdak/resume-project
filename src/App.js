@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
 import ProtectedRout from "./projects/productManager/components/ProtectedRout";
 
 import ProductManager from "./projects/productManager/ProductManager";
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/todolist" element={<TodoList />} />
+
           <Route path="/product-manager" element={<ProductManager />}>
             {productManagerRoutes.map((route, key) => {
               if (route.redirect) {

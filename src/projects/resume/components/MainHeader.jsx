@@ -40,14 +40,14 @@ const MainHeader = ({ showInTop }) => {
 
     const text = "توسعه دهنده ی  React"; //'front end developer';//
     typistRef.current.value = "";
-    //typistRef.current.focus();
+
     let i = 0;
     const speed = 100;
     let reverse = false;
 
-    const addPoints = (e) => {
-      points.push(...createPoints(10, e.clientX, e.clientY));
-    };
+    // const addPoints = (e) => {
+    //   points.push(...createPoints(10, e.clientX, e.clientY));
+    // };
 
     function writer() {
       if (i < text.length && !reverse) {
@@ -76,7 +76,7 @@ const MainHeader = ({ showInTop }) => {
     const writerInterval = setInterval(writer, 6000);
   
 
-    canvasRef.current.addEventListener("click", addPoints);
+    //canvasRef.current.addEventListener("click", addPoints);
 
     const drowPoints = () => {
       ctx.clearRect(0, 0, winWidth, winHeight);
@@ -95,7 +95,7 @@ const MainHeader = ({ showInTop }) => {
           ) {
             ctx.moveTo(point.x, point.y);
             ctx.lineTo(item.x, item.y);
-            ctx.strokeStyle = `rgba(200,200,200,${
+            ctx.strokeStyle = `rgba(250,250,250,${
               (r_line - radius) / r_line / 2
             })`;
             ctx.stroke();
@@ -104,7 +104,7 @@ const MainHeader = ({ showInTop }) => {
 
         ctx.beginPath();
         ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
-        ctx.fillStyle = "rgba(200,200,200,0.3)";
+        ctx.fillStyle = "rgba(250,250,250,0.3)";
         ctx.fill();
       });
     };
@@ -133,7 +133,7 @@ const MainHeader = ({ showInTop }) => {
       console.log("mainheader stopped");
       clearInterval(writerInterval);
       cancelAnimationFrame(myanimation);
-      canvasRefCurrent.removeEventListener("click", addPoints);
+      //canvasRefCurrent.removeEventListener("click", addPoints);
     };
   }, [showInTop]);
 

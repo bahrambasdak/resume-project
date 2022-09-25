@@ -1,14 +1,17 @@
 import { memo, useEffect, useState } from "react";
 import classes from "../styles.module.scss";
 import { MdMenu, MdClose } from "react-icons/md";
+import resume from "../bahram-basdak-resume-1401.pdf";
+import { useLocation } from "react-router-dom";
 
 const MainMenu = ({ showInTop }) => {
   console.log("mainmenu render");
   const [showMenu, setshowMenu] = useState(false);
+  const hash = useLocation().hash;
 
   useEffect(() => {
     console.log("mainmenu useEfect");
-  });
+  },[]);
 
   return (
     <div
@@ -24,19 +27,19 @@ const MainMenu = ({ showInTop }) => {
       </button>
       <ul className={classes.menu} onClick={() => setshowMenu((prev) => !prev)}>
         <li className={classes.item}>
-          <a href="#aboutMe">درباره من</a>
+          <a href="#aboutMe" className={hash ==="#aboutMe" ? classes.active:''}>درباره من</a>
         </li>
         <li className={classes.item}>
-          <a href="#skills">مهارت ها</a>
+          <a href="#skills" className={hash ==="#skills" ? classes.active:''}>مهارت ها</a>
         </li>
         <li className={classes.item}>
-          <a href="#aboutMe">رزومه</a>
+          <a href={resume} download >رزومه</a>
         </li>
         <li className={classes.item}>
-          <a href="#portfilio">نمونه کارها</a>
+          <a href="#portfilio" className={hash ==="#portfilio" ? classes.active:''}>نمونه کارها</a>
         </li>
         <li className={classes.item}>
-          <a href="#home">خانه</a>
+          <a href="#home" className={hash ==="#home" || hash===''? classes.active:''}>خانه</a>
         </li>
       </ul>
     </div>

@@ -20,25 +20,40 @@ const Home = () => {
     if (screenHeight - window.scrollY > 200 && showInTop) setShowInTop(false);
   };
 
- 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   const skills = [
-    { name: "javascript", degree: 90 },
-    { name: "React", degree: 85 },
+    { name: "Javascript", degree: 90 },
+    { name: "React", degree: 90 },
     { name: "HTML/CSS", degree: 95 },
     { name: "GIT", degree: 90 },
-    { name: "GIT", degree: 85 },
+    { name: "C++", degree: 85 },
+    { name: "Labview", degree: 85 },
+    { name: "SASS", degree: 85 },
+    { name: "AXIOS", degree: 90 },
+    { name: "RestFull API", degree: 80 },
+    { name: "React Hooks", degree: 95 },
+    { name: "BootStrap", degree: 50 },
+    { name: "Redux", degree: 50 },
   ];
 
   const works = [
-    { title: "/todolist", img: work1 },
-    { title: "product-Manager", img: work2 },
-    { title: "work3", img: work3 },
-    { title: "work4", img: work4 },
+    { title: "Todo List", img: work1, space: "internal", path: "/todolist" },
+    {
+      title: "Product Manager",
+      img: work2,
+      space: "internal",
+      path: "/product-manager",
+    },
+    {
+      title: "Face Landmark",
+      img: work4,
+      space: "external",
+      path: "https://face-landmark.netlify.app/",
+    },
   ];
   return (
     <div className={classes.App}>
