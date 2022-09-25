@@ -49,7 +49,7 @@ $skills-title-color2: rgb(31, 30, 30);
   a {
     color: $main-header-menu-text-color;
   }
-  .active{
+  .active {
     color: rgb(175, 44, 192);
   }
 
@@ -109,7 +109,6 @@ $skills-title-color2: rgb(31, 30, 30);
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  //position: relative;
 }
 
 .welcome_text {
@@ -140,11 +139,12 @@ $skills-title-color2: rgb(31, 30, 30);
   justify-content: center;
   font-size: 2rem;
 }
-.main_header_link span {
+.main_header_link a {
   display: flex;
   justify-content: center;
   padding: 0.6rem;
   margin: 1rem;
+  color: rgb(233, 158, 248);
 
   cursor: pointer;
   border-radius: 50%;
@@ -152,7 +152,7 @@ $skills-title-color2: rgb(31, 30, 30);
   z-index: 2;
 }
 
-.main_header_link span:hover {
+.main_header_link a:hover {
   background-color: blueviolet;
 }
 
@@ -168,24 +168,11 @@ $skills-title-color2: rgb(31, 30, 30);
   margin: auto;
   justify-content: center;
   align-items: center;
-  //flex-wrap: wrap;
-  //column-gap: 4rem;
-  // padding: 3rem;
+
   width: 100vw;
-  //height: 100vh;
+
   padding-top: 30px;
 }
-// .about_me .right {
-//   text-align: left;
-//   border: 10px solid rgb(245, 245, 245);
-//   border-radius: 5px;
-//   height: 530px;
-//   width: 380px;
-// }
-// .about_me .right img {
-//   height: 100%;
-//   width: 100%;
-// }
 
 .about_me .left {
   display: flex;
@@ -214,7 +201,7 @@ $skills-title-color2: rgb(31, 30, 30);
   align-self: flex-start;
   padding: 20px;
 }
-.about_me .left p {
+.about_me .left  .text{
   padding-bottom: 20px;
   border-bottom: 1px solid #999;
   line-height: 2.5rem;
@@ -383,7 +370,7 @@ $skills-title-color2: rgb(31, 30, 30);
 
 .portfolio .works {
   display: flex;
-  width: 70vw;
+  width: 80vw;
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
@@ -431,6 +418,7 @@ $skills-title-color2: rgb(31, 30, 30);
     align-items: center;
     gap: 50px;
     font-size: 2rem;
+
     .zoom {
       cursor: pointer;
       display: none;
@@ -441,7 +429,8 @@ $skills-title-color2: rgb(31, 30, 30);
     }
     .link {
       cursor: pointer;
-      font-size: 3rem;
+      font-size: 4rem;
+      color: #cc11b3;
     }
 
     .link:hover {

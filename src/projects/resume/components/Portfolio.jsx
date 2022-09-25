@@ -2,7 +2,6 @@ import { BsZoomIn, BsLink } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import classes from "../styles.module.scss";
-let zoomIn;
 
 const Portfolio = ({ works }) => {
 

@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
-import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
+import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import classes from "../styles.module.scss";
-
 
 const MainHeader = ({ showInTop }) => {
   const canvasRef = useRef(null);
@@ -12,14 +11,14 @@ const MainHeader = ({ showInTop }) => {
   const winWidth = window.screen.availWidth;
   const winHeight = window.screen.availHeight;
   let r_line = winWidth / 15;
-  if(winWidth < 768 )r_line = winWidth / 9;
+  if (winWidth < 768) r_line = winWidth / 9;
 
   const createPoints = (count, xInit, yInit) => {
     const points = [];
     let V = 3;
     let R = 3;
-    winWidth <768 ? V = 2 : winWidth <600 ? V = 1 : V=3;
-    winWidth <768 ? R = 2 : winWidth <600 ? R = 1 : R=3;
+    winWidth < 768 ? (V = 2) : winWidth < 600 ? (V = 1) : (V = 3);
+    winWidth < 768 ? (R = 2) : winWidth < 600 ? (R = 1) : (R = 3);
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
@@ -74,7 +73,6 @@ const MainHeader = ({ showInTop }) => {
     }
     writer();
     const writerInterval = setInterval(writer, 6000);
-  
 
     //canvasRef.current.addEventListener("click", addPoints);
 
@@ -140,8 +138,7 @@ const MainHeader = ({ showInTop }) => {
   return (
     <>
       <header className={classes.Home_header} id="home">
-
-        <canvas ref={canvasRef} className={classes.header_canvas} ></canvas>
+        <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
         <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
         <div className={classes.name_text}>بهرام بسدک</div>
         <div className={classes.type_text}>
@@ -155,15 +152,19 @@ const MainHeader = ({ showInTop }) => {
         </div>
 
         <div className={classes.main_header_link}>
-          <span>
+          <a href="https://github.com/bahrambasdak">
             <BsGithub />
-          </span>
-          <span>
+          </a>
+          <a href="https://www.telegram.org/@Bahrambs">
             <BsTelegram />
-          </span>
-          <span>
+          </a>
+          <a href="https://www.instagram.com/bhrmbasdak/">
             <BsInstagram />
-          </span>
+          </a>
+
+          <a href="https://wa.me/+989351905281">
+            <BsWhatsapp />
+          </a>
         </div>
       </header>
     </>
