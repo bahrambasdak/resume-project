@@ -22,7 +22,7 @@ const ProductProvider = ({ children }) => {
     },
     {
       id: "3",
-      name: "NIKEE",
+      name: "NIKE",
       price: 100_000,
       category: "تیشرت",
       availability: 21,

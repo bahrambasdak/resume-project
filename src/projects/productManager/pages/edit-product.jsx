@@ -24,7 +24,7 @@ const EditProduct = () => {
         className={`${classes.card} ${classes.product_form} ${classes.edit_product}`}
       >
         <div className={classes.card_header}>
-          ویرایش محصول{products.filter((item) => item.id === productId)[0].name}
+          ویرایش محصول <span>{products.filter((item) => item.id === productId)[0].name}</span>
         </div>
         <div className={classes.card_body}>
           <ProductForm onSubmit={onSubmit} mode="edit" />

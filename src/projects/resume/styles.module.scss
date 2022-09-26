@@ -201,7 +201,7 @@ $skills-title-color2: rgb(31, 30, 30);
   align-self: flex-start;
   padding: 20px;
 }
-.about_me .left  .text{
+.about_me .left .text {
   padding-bottom: 20px;
   border-bottom: 1px solid #999;
   line-height: 2.5rem;
@@ -216,9 +216,6 @@ $skills-title-color2: rgb(31, 30, 30);
   padding: 20px 0 20px 0;
 }
 .about_me .left .description > div {
-  // min-width: 50%;
-  //padding-bottom: 2rem;
-  //padding: 10px;
   div {
     padding-bottom: 20px;
   }
@@ -408,7 +405,7 @@ $skills-title-color2: rgb(31, 30, 30);
   left: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  background-color: rgba($color: #93b6fc, $alpha: 0.3);
+  background-color: rgba($color: #5c7ef0, $alpha: 0.7);
   div {
     padding: 10px;
   }

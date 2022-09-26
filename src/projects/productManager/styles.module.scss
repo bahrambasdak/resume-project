@@ -254,11 +254,7 @@ $dark3: rgb(21, 25, 54);
 }
 
 .dashboard_chart {
-  // display: flex;
-  // justify-content: space-around;
-  // align-items: center;
-  // height: 200px !important;
-  // width: 90%;
+
 }
 
 ///////////////////////////////////////////Product-List///////////////
@@ -316,6 +312,9 @@ $dark3: rgb(21, 25, 54);
     border-bottom: 1px solid #999;
     padding: 5px;
     background-color: #e9ebfa;
+    span{
+      color: rgb(255, 102, 0);
+    }
   }
 }
 

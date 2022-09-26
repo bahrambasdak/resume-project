@@ -17,6 +17,8 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    toggleAuth(e.target[0].value);
+    navigate("/product-manager/dashboard");
 
     LoginAPI({
       email: emailRef.current.value,
@@ -24,8 +26,8 @@ const Login = () => {
     })
       .then((res) => {
         console.log(res.data);
-        toggleAuth(e.target[0].value);
-        navigate("/product-manager/dashboard");
+        // toggleAuth(e.target[0].value);
+        // navigate("/product-manager/dashboard");
       })
       .catch((err) => {
         setError(err.response.data);
