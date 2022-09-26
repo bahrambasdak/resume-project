@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c5bc6ab.css",
-    "main.js": "/static/js/main.f5bfc31e.js",
-    "static/js/496.2ae41673.chunk.js": "/static/js/496.2ae41673.chunk.js",
-    "static/media/bahram-basdak-resume-1401.pdf": "/static/media/bahram-basdak-resume-1401.d8db952bdcb88d948ae2.pdf",
+    "main.css": "/static/css/main.c6cb0366.css",
+    "main.js": "/static/js/main.45274ec0.js",
+    "static/js/787.5619a551.chunk.js": "/static/js/787.5619a551.chunk.js",
+    "static/media/bahram-basdak-resume-1401.pdf": "/static/media/bahram-basdak-resume-1401.1b8edac1b766925e69c1.pdf",
     "static/media/header-day.jpg": "/static/media/header-day.1565fc4e05bc12a8da4d.jpg",
     "static/media/main-header-img.jpg": "/static/media/main-header-img.99b8224f5cbde054ce64.jpg",
     "static/media/header-afternoon.jpg": "/static/media/header-afternoon.4ab6b0e9c3f104c6b6da.jpg",
@@ -15,12 +15,12 @@
     "static/media/profile.jpg": "/static/media/profile.5625b3bb101f3d04ed33.jpg",
     "static/media/defaultprofile.jpg": "/static/media/defaultprofile.5a1c79884c66c57d9ddf.jpg",
     "index.html": "/index.html",
-    "main.8c5bc6ab.css.map": "/static/css/main.8c5bc6ab.css.map",
-    "main.f5bfc31e.js.map": "/static/js/main.f5bfc31e.js.map",
-    "496.2ae41673.chunk.js.map": "/static/js/496.2ae41673.chunk.js.map"
+    "main.c6cb0366.css.map": "/static/css/main.c6cb0366.css.map",
+    "main.45274ec0.js.map": "/static/js/main.45274ec0.js.map",
+    "787.5619a551.chunk.js.map": "/static/js/787.5619a551.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c5bc6ab.css",
-    "static/js/main.f5bfc31e.js"
+    "static/css/main.c6cb0366.css",
+    "static/js/main.45274ec0.js"
   ]
 }
