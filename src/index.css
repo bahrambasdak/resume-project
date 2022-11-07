@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: BNazanin;
+  font-family: 'BNazanin';
   src: url('BNazanin.ttf');
   /* src: url('BNazanin.eot?#iefix') format('BNazanin-opentype'),
        url('BNazanin.woff') format('woff'),
@@ -19,7 +19,7 @@
 
 body {
   margin: 0;
-  font-family:BNazanin , -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'BNazanin' , -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
