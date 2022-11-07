@@ -7,6 +7,7 @@ import Portfolio from "./components/Portfolio";
 import work1 from "./img/work1.JPG";
 import work2 from "./img/work2.JPG";
 import work4 from "./img/work4.JPG";
+import work5 from "./img/work5.JPG";
 import classes from "./styles.module.scss";
 
 const Home = () => {
@@ -52,6 +53,12 @@ const Home = () => {
       img: work4,
       space: "external",
       path: "https://face-landmark.netlify.app/",
+    },
+    {
+      title: "Huralya(web3)",
+      img: work5,
+      space: "external",
+      path: "https://huralya-web3.netlify.app/",
     },
   ];
   return (
