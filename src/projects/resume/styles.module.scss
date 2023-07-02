@@ -12,6 +12,7 @@ $skills-title-color: rgb(202, 15, 235);
 $skills-title-color2: rgb(31, 30, 30);
 
 .App {
+  direction: ltr;
   overflow: hidden;
   overflow-x: hidden;
   display: flex;
@@ -19,8 +20,11 @@ $skills-title-color2: rgb(31, 30, 30);
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: 'Times New Roman','Georgia',  Georgia ,  monospace;
   font-size: 1.2rem;
 }
+
+
 
 /********************MAIN MENU****************/
 .main_menu {
@@ -262,7 +266,6 @@ $skills-title-color2: rgb(31, 30, 30);
 ///////////////////////////////////MY SKILLS////////////////////////////////////////////////
 .my_skills {
   display: flex;
-  //align-items: center;
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
@@ -272,7 +275,6 @@ $skills-title-color2: rgb(31, 30, 30);
   padding-top: 60px;
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 80%;
@@ -290,7 +292,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .my_skills_section .title span {
   color: $skills-title-color;
   border-bottom: 1px solid $skills-title-color;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
 }
 .my_skills_section .skills {
   display: flex;
@@ -341,7 +343,6 @@ $skills-title-color2: rgb(31, 30, 30);
 .portfolio {
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   align-items: center;
   padding-top: 70px;
   width: 100vw;
@@ -362,7 +363,7 @@ $skills-title-color2: rgb(31, 30, 30);
 .portfolio .title span {
   color: $skills-title-color;
   border-bottom: 1px solid $skills-title-color;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
 }
 
 .portfolio .works {

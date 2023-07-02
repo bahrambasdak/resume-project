@@ -1,7 +1,6 @@
 import MainHeader from "./components/MainHeader";
 import MainMenu from "./components/MainMenu";
 import AboutMe from "./components/AboutMe";
-import "./components/languege/styles.css";
 
 import { useEffect, useState } from "react";
 import MySkills from "./components/MySkills";

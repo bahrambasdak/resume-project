@@ -3,8 +3,6 @@ import classes from "../styles.module.scss";
 import { MdMenu, MdClose } from "react-icons/md";
 import resume from "../bahram-basdak-resume-1401.pdf";
 import { useLocation } from "react-router-dom";
-import { Translation } from "react-i18next";
-import ChangeLang from "./languege/ChangeLang";
 
 const MainMenu = ({ showInTop }) => {
   console.log("mainmenu render");

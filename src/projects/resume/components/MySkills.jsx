@@ -1,3 +1,4 @@
+import {  MySkillLogo } from "../img/mySkill";
 import classes from "../styles.module.scss";
 
 const MySkills = ({ skills }) => {
@@ -6,9 +7,12 @@ const MySkills = ({ skills }) => {
       <div className={classes.my_skills} id="skills">
         <div className={classes.my_skills_section} >
           <h2 className={classes.title}>
-            <span>مهارت های</span> من
+          My <span>skills</span> 
           </h2>
-          <div className={classes.skills}>
+          <div style={{display:'flex',width:'80%',gap:'20px'}}>
+          <MySkillLogo style={{width:'40%'}}/>
+          <div className={classes.skills} style={{width:'60%'}}>
+
             {skills.map((skill, key) => {
               const width = `${skill.degree}%`;
               return (
@@ -26,6 +30,7 @@ const MySkills = ({ skills }) => {
                 </div>
               );
             })}
+          </div>
           </div>
         </div>
       </div>

@@ -7,62 +7,51 @@ const AboutMe = () => {
     console.log("about me useEfect");
   }, []);
   return (
-    <div className={classes.about_me} id="aboutMe">
-      {/* <div className={classes.right}>
-        <img src={img} alt="about" />
-      </div> */}
+     <div className={classes.about_me} id="aboutMe">
+
 
       <div className={classes.left}>
         <h1>
-          <span>درباره</span> من
+          <span>About</span> me
         </h1>
-        <h3> توسعه دهنده React </h3>
+        <h3> Front-end | React Developer </h3>
         <div className={classes.text}>
+
           <p>
-            فردی با توانایی و شوق یادگیری بالا ، عاشق ترکیب برنامه نویسی و و
-            نوآوری هستم. در دانشگاه و بعد از آن همواره در حوزه برنامه نویسی فعال
-            بوده ام. یکی از بهترین پروژه هایی که انجام داده ام برنامه نویسی کامل
-            سیستم خانه هوشمند بوده است. با گذراندن دوره های جاوااسکریپت داخلی و
-            خارجی و سپس دوره جامپ فرانت اند با React سایت quera و گرفتن گواهی
-            سطح PERFECT این دوره و انجام نمونه کارها به تسلط بر JavaScript و
-            React و همچنین کتابخانه های مربوطه رسیده ام از جمله توانایی کار با
-            APIها , React-Hook-Form , Axios , jest , service worker و...
-          </p>
-          <p>
-            با روحیه کار تیمی و همچنین توانایی بالا در حل مسأله میتوانم در پیش
-            برد هدفهای تیم موثر باشم. در مسیر حرفه‌ای خود به دنبال رشد مداوم در
-            حوزه فرانت اند و سپس بک اند هستم .
+          Creative and self-starting Front-End Developer with 3+ years of experience in designing, developing, and maintaining front-end web applications using . Highly skilled in JavaScript, React and Redux .
+          I am Interested in learning modern technologies and solving upcoming challenges.
+          With the spirit of team work and also high ability to solve problems, I can be effective in advancing the team's goals
           </p>
         </div>
         <div className={classes.description}>
           <div>
             <div>
-              <b>نام</b> : بهرام بسدک
+              <b>Name</b> : Bahram Basdak 
             </div>
             <div>
-              <b>ایمیل</b> : bahrambasdak@gmail.com
+              <b>Email</b> : bahrambasdak@gmail.com
             </div>
             <div>
-              <b>سن</b> : 33{" "}
+              <b>Age</b> : 33
             </div>
           </div>
           <div>
             <div>
-              <b>مکان</b> : تهران
+              <b>Location</b> : Tehran
             </div>
             <div>
-              <b>آدرس نمونه کارها در گیت هاب : </b>{" "}
+              <b>GitHub: </b>
               <a href="https://github.com/bahrambasdak">
                 github.com/bahrambasdak
               </a>
             </div>
             <div>
-              <b>شماره تماس : </b> 09351905281
+              <b> Phone number : </b> 09351905281
             </div>
           </div>
         </div>
         <a href={resume} download>
-          <button>دریافت رزومه </button>
+          <button>Get resume  </button>
         </a>
       </div>
     </div>
