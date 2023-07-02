@@ -34,12 +34,9 @@ const Home = () => {
     { name: "HTML/CSS", degree: 95 },
     { name: "GIT", degree: 95 },
     { name: "C++", degree: 85 },
-    { name: "Labview", degree: 85 },
     { name: "SASS", degree: 95 },
-    { name: "AXIOS", degree: 95 },
     { name: "RestFull API", degree: 95 },
     { name: "React Hooks", degree: 95 },
-    { name: "BootStrap", degree: 50 },
     { name: "Redux", degree: 90 },
   ];
 

@@ -7,7 +7,7 @@ const MySkills = ({ skills }) => {
       <div className={classes.my_skills} id="skills">
         <div className={classes.my_skills_section} >
           <h2 className={classes.title}>
-          My <span>skills</span> 
+          My <span>Skills</span> 
           </h2>
           <div style={{display:'flex',width:'80%',gap:'20px'}}>
           <MySkillLogo style={{width:'40%'}}/>
@@ -17,16 +17,12 @@ const MySkills = ({ skills }) => {
               const width = `${skill.degree}%`;
               return (
                 <div className={classes.skill} key={key}>
-                  <p className={classes.name}>{skill.name}</p>
+                  
                   <div className={classes.bar}>
-                    <div
-                      className={classes.bar_value}
-                      style={{ width: width }}
-                    ></div>
+                    <div></div>
                   </div>
-                  <span className={classes.degree} style={{ right: width }}>
-                    {width}
-                  </span>
+                  <p className={classes.name}>{skill.name}</p>
+
                 </div>
               );
             })}
