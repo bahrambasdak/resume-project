@@ -1,0 +1,82 @@
+/////////////////////////////////// MY SKILLS ////////////////////////////////////////////////
+/// 
+$skills-title-color: rgb(202, 15, 235);
+$skills-title-color2: rgb(31, 30, 30);
+
+.my_skills {
+    display: flex;
+    justify-content: center;
+        // width: 100vw;
+    // min-height: 100vh;
+    background-color: rgb(242, 242, 242);
+
+  }
+  
+  .my_skills_section {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 80%;
+  
+  }
+  .my_skills_section .title {
+    color: $skills-title-color2;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px rgb(151, 151, 172);
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+  }
+  .my_skills_section .title span {
+    color: $skills-title-color;
+    border-bottom: 1px solid $skills-title-color;
+    padding-bottom: 10px;
+  }
+  .my_skills_section .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    }
+  .my_skills_section .skills .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+  
+  }
+  
+  .my_skills_section .skills .skill:last-child {
+  }
+  .my_skills_section .skills .skill .name {
+    padding-top: 20px;
+  }
+  .my_skills_section .skills .skill .bar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    box-shadow: 0 .125rem .75rem rgba(0,0,0,15%)!important;
+  
+  }
+  
+  .my_skills_section .skills .skill .bar .bar_value {
+    background-color: rgb(173, 7, 228);
+    height: 5px;
+  }
+  .my_skills_section .skills .skill .degree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  
+    top: 50%;
+    border-radius: 5px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+  }

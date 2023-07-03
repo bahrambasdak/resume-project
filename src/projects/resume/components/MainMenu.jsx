@@ -41,9 +41,7 @@ const MainMenu = ({ showInTop }) => {
         <li className={classes.item}>
           <a href="#home" className={hash ==="#home" || hash===''? classes.active:''}>خانه</a>
         </li>
-        {/* <li className={classes.item}>
-         <Translation>{t => <ChangeLang t={t} />}</Translation>
-        </li> */}
+
 
       </ul>
     </div>

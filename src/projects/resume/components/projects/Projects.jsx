@@ -1,40 +1,40 @@
 import { BsZoomIn, BsLink } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-import classes from "../styles.module.scss";
+import classes from "./styles.module.scss";
 
-const Portfolio = ({ works }) => {
+const Projects = ({ projects }) => {
 
 
   return (
-    <>
+    
       <div className={classes.portfolio} id="portfilio">
 
         <h2 className={classes.title}>
           <span>نمونه کارهای </span>من
         </h2>
-        <div className={classes.works}>
-          {works.map((work, key) => {
+        <div className={classes.projects}>
+          {projects.map((project, key) => {
             return (
-              <div className={classes.work} key={key}>
+              <div className={classes.project} key={key}>
                 <img
-                  src={work.img}
+                  src={project.img}
                   alt=""
                   style={{ width: "100px", height: "100px" }}
                 />
                 <div className={classes.work_title}>
-                  <div>{work.title}</div>
+                  <div>{project.title}</div>
                   <div className={classes.icons}>
                     <BsZoomIn
                       className={classes.zoom}
                       
                     />
-                    {work.space === "internal" ? (
-                      <Link to={work.path}>
+                    {project.space === "internal" ? (
+                      <Link to={project.path}>
                         <BsLink className={classes.link} />
                       </Link>
                     ) : (
-                      <a href={work.path}>
+                      <a href={project.path}>
                         <BsLink className={classes.link} />
                       </a>
                     )}
@@ -45,8 +45,7 @@ const Portfolio = ({ works }) => {
           })}
         </div>
       </div>
-    </>
   );
 };
 
-export default Portfolio;
+export default Projects;

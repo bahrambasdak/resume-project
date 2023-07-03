@@ -1,6 +1,8 @@
-import classes from "../styles.module.scss";
 import { memo, useEffect } from "react";
-import resume from "../bahram-basdak-resume-1401.pdf";
+import resume from "../../bahram-basdak-resume-1401.pdf";
+import classes from "./styles.module.scss";
+
+
 const AboutMe = () => {
   console.log("about me render");
   useEffect(() => {
