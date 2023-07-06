@@ -20,8 +20,10 @@ const MySkills = ({ skills }) => {
               return (
                 <div className={classes.skill} key={key}>
                   
-                  <div className={classes.bar}>
-                    <div></div>
+                  <div className={classes.logo}>
+                    <div>
+                      
+                    </div>
                   </div>
                   <p className={classes.name}>{skill.name}</p>
 

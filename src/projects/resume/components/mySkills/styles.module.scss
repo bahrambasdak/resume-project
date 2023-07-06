@@ -52,7 +52,7 @@ $skills-title-color2: rgb(31, 30, 30);
   .my_skills_section .skills .skill .name {
     padding-top: 20px;
   }
-  .my_skills_section .skills .skill .bar {
+  .my_skills_section .skills .skill .logo {
     background-color: white;
     display: flex;
     align-items: center;
@@ -64,10 +64,7 @@ $skills-title-color2: rgb(31, 30, 30);
   
   }
   
-  .my_skills_section .skills .skill .bar .bar_value {
-    background-color: rgb(173, 7, 228);
-    height: 5px;
-  }
+
   .my_skills_section .skills .skill .degree {
     display: flex;
     justify-content: center;
