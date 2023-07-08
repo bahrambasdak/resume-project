@@ -11,8 +11,10 @@ const MySkills = ({ skills }) => {
           <h2 className={classes.title}>
           My <span>Skills</span> 
           </h2>
-          <div style={{display:'flex'}}>
-          <MySkillLogo style={{width:'50%'}}/>
+          <div style={{display:'flex',flexWrap:'wrap'}}>
+            <div style={{width:'50%'}}>
+            <MySkillLogo />
+            </div>
           <div className={classes.skills} style={{width:'50%'}}>
 
             {skills.map((skill, key) => {

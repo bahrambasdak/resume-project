@@ -37,6 +37,7 @@ $skills-title-color2: rgb(31, 30, 30);
   .my_skills_section .skills {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 100px;
     
     }
   .my_skills_section .skills .skill {
@@ -50,7 +51,7 @@ $skills-title-color2: rgb(31, 30, 30);
   .my_skills_section .skills .skill:last-child {
   }
   .my_skills_section .skills .skill .name {
-    padding-top: 20px;
+     padding-top: 5px;
   }
   .my_skills_section .skills .skill .logo {
     background-color: white;
