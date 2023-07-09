@@ -140,7 +140,7 @@ const HomePage = ({ showInTop }) => {
         <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
 
 
-        <section className="left_section">
+        <section className={classes.left_section}>
           <div className={classes.welcome_text}>Hello! welcome to my website</div>
           <p className={classes.aboutMe}>
           Creative and self-starting Front-End Developer with 3+ years of experience in designing, developing, and maintaining front-end web applications using . Highly skilled in JavaScript, React and Redux .
@@ -174,7 +174,7 @@ const HomePage = ({ showInTop }) => {
           </div>
         </section>
 
-        <section className="right_section">
+        <section className={classes.right_section}>
           <img src="../../../img/main-header-img.jpg" alt="my picture" />    
         </section>
 

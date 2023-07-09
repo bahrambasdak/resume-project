@@ -12,7 +12,6 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     display: flex;
     row-gap: 2rem;
     align-items: center;
-    padding: 100px;
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
     color: white;
@@ -20,6 +19,8 @@ $main-header-menu-text-color: rgb(248, 248, 248);
   .Home_header .right_section{
     max-width: 50%;
     border-radius: 12px;
+    padding: 100px;
+
 
     img{
       
@@ -28,18 +29,18 @@ $main-header-menu-text-color: rgb(248, 248, 248);
   }
   .Home_header .left_section{
     max-width: 50%;
+    padding: 100px;
+
 
   }
   .welcome_text {
     color: $main-header-welcom-text-color;
     font-size: 2rem;
-    max-width: 50%;
 
   }
   .aboutMe {
     font-size: 1.3rem;
     color: white;
-    max-width: 50%;
     text-align:left;
     line-height: 2rem;
   }
