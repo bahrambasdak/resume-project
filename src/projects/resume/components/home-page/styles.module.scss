@@ -1,0 +1,86 @@
+/////////////////////////////////////MAIN HEADER//////////////////////////////
+$main-header-welcom-text-color: rgb(200, 201, 203);
+$main-header-menu-text-color: rgb(248, 248, 248);
+.Home_header {
+    filter: brightness(1);
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../img/main-header-img.jpg");
+    background-size: cover;
+    background-repeat: round;
+  
+    display: flex;
+    row-gap: 2rem;
+    align-items: center;
+    padding: 100px;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .Home_header .right_section{
+    max-width: 50%;
+    border-radius: 12px;
+
+    img{
+      
+    }
+
+  }
+  .Home_header .left_section{
+    max-width: 50%;
+
+  }
+  .welcome_text {
+    color: $main-header-welcom-text-color;
+    font-size: 2rem;
+    max-width: 50%;
+
+  }
+  .aboutMe {
+    font-size: 1.3rem;
+    color: white;
+    max-width: 50%;
+    text-align:left;
+    line-height: 2rem;
+  }
+  .typer {
+    display: inline-block;
+    width: auto !important;
+    color: #999;
+    font-size: 1.5rem;
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(199, 195, 195, 0.2);
+    border-bottom: 1px solid rgba(199, 195, 195, 0.2);
+    background-color: transparent;
+  }
+  .type_text {
+    text-align: center;
+  }
+  
+  .main_header_link {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  .main_header_link a {
+    display: flex;
+    justify-content: center;
+    padding: 0.6rem;
+    margin: 1rem;
+    color: rgb(233, 158, 248);
+  
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s ease-out;
+    z-index: 2;
+  }
+  
+  .main_header_link a:hover {
+    background-color: blueviolet;
+  }
+  
+  .header_canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }

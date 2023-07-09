@@ -1,4 +1,4 @@
-import MainHeader from "./components/MainHeader";
+import MainHeader from "./components/home-page";
 import MainMenu from "./components/MainMenu";
 import AboutMe from "./components/aboutMe";
 
@@ -80,7 +80,7 @@ const Home = () => {
   return (
     <div className='App'>
       <div className='Container'>
-      <MainMenu showInTop={showInTop} />
+      {/* <MainMenu showInTop={showInTop} /> */}
 
       <MainHeader showInTop={showInTop} />
 

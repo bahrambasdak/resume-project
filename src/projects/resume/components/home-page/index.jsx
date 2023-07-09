@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp } from "react-icons/bs";
-import classes from "../styles.module.scss";
+import classes from "./styles.module.scss";
 
-const MainHeader = ({ showInTop }) => {
+const HomePage = ({ showInTop }) => {
   const canvasRef = useRef(null);
   const typistRef = useRef(null);
   console.log("mainHeader render");
@@ -136,39 +136,50 @@ const MainHeader = ({ showInTop }) => {
   }, [showInTop]);
 
   return (
-    <>
-      <header className={classes.Home_header} id="home">
+      <div className={classes.Home_header} id="home">
         <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
-        <div className={classes.welcome_text}>به وب سایت من خوش آمدید</div>
-        <div className={classes.name_text}>بهرام بسدک</div>
-        <div className={classes.type_text}>
-          <input
-            type="text"
-            value=""
-            ref={typistRef}
-            className={classes.typer}
-            readOnly
-          />
-        </div>
 
-        <div className={classes.main_header_link}>
-          <a href="https://github.com/bahrambasdak?tab=repositories">
-            <BsGithub />
-          </a>
-          <a href="https://t.me/Bahrambs">
-            <BsTelegram />
-          </a>
-          <a href="https://www.instagram.com/bhrmbasdak/">
-            <BsInstagram />
-          </a>
 
-          <a href="https://wa.me/+989351905281">
-            <BsWhatsapp />
-          </a>
-        </div>
-      </header>
-    </>
+        <section className="left_section">
+          <div className={classes.welcome_text}>Hello! welcome to my website</div>
+          <p className={classes.aboutMe}>
+          Creative and self-starting Front-End Developer with 3+ years of experience in designing, developing, and maintaining front-end web applications using . Highly skilled in JavaScript, React and Redux .
+          I am Interested in learning modern technologies and solving upcoming challenges.
+          With the spirit of team work and also high ability to solve problems, I can be effective in advancing the team's goals
+          </p>
+          <div className={classes.type_text}>
+            <input
+              type="text"
+              value=""
+              ref={typistRef}
+              className={classes.typer}
+              readOnly
+            />
+          </div>
+
+          <div className={classes.main_header_link}>
+            <a href="https://github.com/bahrambasdak?tab=repositories">
+              <BsGithub />
+            </a>
+            <a href="https://t.me/Bahrambs">
+              <BsTelegram />
+            </a>
+            <a href="https://www.instagram.com/bhrmbasdak/">
+              <BsInstagram />
+            </a>
+
+            <a href="https://wa.me/+989351905281">
+              <BsWhatsapp />
+            </a>
+          </div>
+        </section>
+
+        <section className="right_section">
+          <img src="../../../img/main-header-img.jpg" alt="my picture" />    
+        </section>
+
+      </div>
   );
 };
 
-export default memo(MainHeader);
+export default memo(HomePage);

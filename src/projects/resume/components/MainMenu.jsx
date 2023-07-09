@@ -27,19 +27,19 @@ const MainMenu = ({ showInTop }) => {
       </button>
       <ul className={classes.menu} onClick={() => setshowMenu((prev) => !prev)}>
         <li className={classes.item}>
-          <a href="#aboutMe" className={hash ==="#aboutMe" ? classes.active:''}>درباره من</a>
+          <a href="#aboutMe" className={hash ==="#aboutMe" ? classes.active:''}>About me</a>
         </li>
         <li className={classes.item}>
-          <a href="#skills" className={hash ==="#skills" ? classes.active:''}>مهارت ها</a>
+          <a href="#skills" className={hash ==="#skills" ? classes.active:''}>Skills</a>
         </li>
         <li className={classes.item}>
-          <a href={resume} download >رزومه</a>
+          <a href={resume} download >Resume</a>
         </li>
         <li className={classes.item}>
-          <a href="#portfilio" className={hash ==="#portfilio" ? classes.active:''}>نمونه کارها</a>
+          <a href="#portfilio" className={hash ==="#portfilio" ? classes.active:''}>Projects </a>
         </li>
         <li className={classes.item}>
-          <a href="#home" className={hash ==="#home" || hash===''? classes.active:''}>خانه</a>
+          <a href="#home" className={hash ==="#home" || hash===''? classes.active:''}>Home</a>
         </li>
 
 

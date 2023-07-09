@@ -11,7 +11,7 @@ const Projects = ({ projects }) => {
       <div className={classes.portfolio} id="portfilio">
 
         <h2 className={classes.title}>
-          <span>نمونه کارهای </span>من
+        My<span> Projects </span>
         </h2>
         <div className={classes.projects}>
           {projects.map((project, key) => {
