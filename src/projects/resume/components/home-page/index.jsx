@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import classes from "./styles.module.scss";
+import homePage from "../../img/homePage.jpg"
 
 const HomePage = ({ showInTop }) => {
   const canvasRef = useRef(null);
@@ -37,7 +38,7 @@ const HomePage = ({ showInTop }) => {
     canvasRefCurrent.width = winWidth;
     canvasRefCurrent.height = winHeight;
 
-    const text = "توسعه دهنده ی  React"; //'front end developer';//
+    const text = "Welcome to my website"; //'front end developer';//
     typistRef.current.value = "";
 
     let i = 0;
@@ -141,11 +142,17 @@ const HomePage = ({ showInTop }) => {
 
 
         <section className={classes.left_section}>
-          <div className={classes.welcome_text}>Hello! welcome to my website</div>
+          <div className={classes.welcome_text}>Greetings!</div>
           <p className={classes.aboutMe}>
-          Creative and self-starting Front-End Developer with 3+ years of experience in designing, developing, and maintaining front-end web applications using . Highly skilled in JavaScript, React and Redux .
-          I am Interested in learning modern technologies and solving upcoming challenges.
-          With the spirit of team work and also high ability to solve problems, I can be effective in advancing the team's goals
+
+          I'm Bahram Basdak, a dedicated React developer with expertise in
+           creating exceptional frontend applications using React, JavaScript,
+            HTML, and CSS. With a solid background of over 3 years in designing,
+             developing, and maintaining cutting-edge front-end web solutions, 
+             I excel at crafting intuitive and visually appealing user interfaces.
+          My passion lies in staying abreast of the latest technologies and proactively 
+          tackling upcoming challenges. With a collaborative mindset and a proven ability to solve
+           complex problems, I am committed to driving the team towards achieving its objectives.
           </p>
           <div className={classes.type_text}>
             <input
@@ -175,7 +182,7 @@ const HomePage = ({ showInTop }) => {
         </section>
 
         <section className={classes.right_section}>
-          <img src="../../../img/main-header-img.jpg" alt="my picture" />    
+          <img src={homePage} alt="my picture" className={classes.myPicture}/>    
         </section>
 
       </div>

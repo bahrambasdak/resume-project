@@ -1,4 +1,3 @@
-import MainHeader from "./components/home-page";
 import MainMenu from "./components/MainMenu";
 import AboutMe from "./components/aboutMe";
 
@@ -13,9 +12,10 @@ import "./mainStyles.scss"
 
 import classes from "./styles.module.scss";
 import Projects from "./components/projects/Projects";
+import HomePage from "./components/home-page";
 
 
-const Home = () => {
+const Main = () => {
   const [showInTop, setShowInTop] = useState(false);
   const screenHeight = window.screen.availHeight;
   console.log("home render");
@@ -82,7 +82,7 @@ const Home = () => {
       <div className='Container'>
       {/* <MainMenu showInTop={showInTop} /> */}
 
-      <MainHeader showInTop={showInTop} />
+      <HomePage showInTop={showInTop} />
 
       <AboutMe />
 
@@ -94,7 +94,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Main;
 
 
 

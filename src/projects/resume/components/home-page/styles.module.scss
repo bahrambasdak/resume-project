@@ -10,39 +10,54 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     background-repeat: round;
   
     display: flex;
+    flex-wrap: wrap;
     row-gap: 2rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: calc(10px + 2vmin);
     color: white;
   }
   .Home_header .right_section{
-    max-width: 50%;
-    border-radius: 12px;
-    padding: 100px;
+    display: flex;
+    border-radius: 20px;
+    background-color: #999;
+    object-fit: cover;
+    box-shadow: 0px 0px 30px -5px #151410;
+    width: 30%;
+    height: 70%;
+    overflow: hidden;
+    z-index: 1;
 
-
-    img{
-      
+    .myPicture{
+      width: 100%;
+      height: 100%;
     }
 
   }
   .Home_header .left_section{
     max-width: 50%;
-    padding: 100px;
+    width: 40%;
+    text-align:left;
+    line-height: 4rem;
+    font-family:'lato', sans-serif;
+    z-index: 2;
 
 
   }
   .welcome_text {
-    color: $main-header-welcom-text-color;
-    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    line-height: 1.7;
+    padding-bottom: 10px;
+
 
   }
   .aboutMe {
     font-size: 1.3rem;
     color: white;
-    text-align:left;
     line-height: 2rem;
+    font-weight: 300;
+
   }
   .typer {
     display: inline-block;
@@ -68,16 +83,16 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     justify-content: center;
     padding: 0.6rem;
     margin: 1rem;
-    color: rgb(233, 158, 248);
+    color: white;
   
     cursor: pointer;
     border-radius: 50%;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
     z-index: 2;
   }
   
   .main_header_link a:hover {
-    background-color: blueviolet;
+    transform:translateY(-0.3rem);
   }
   
   .header_canvas {

@@ -4,15 +4,15 @@ import ProtectedRout from "./projects/productManager/components/ProtectedRout";
 
 import ProductManager from "./projects/productManager/ProductManager";
 import productManagerRoutes from "./projects/productManager/routes";
-import Home from "./projects/resume/Home";
 import TodoList from "./projects/todolist/TodoList";
+import Main from "./projects/resume";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Main />} />
           <Route path="/todolist" element={<TodoList />} />
 
           <Route path="/product-manager" element={<ProductManager />}>
@@ -40,7 +40,7 @@ function App() {
               }
             })}
           </Route>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>
     </div>
