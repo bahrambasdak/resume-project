@@ -1,5 +1,20 @@
 import MainMenu from "./components/MainMenu";
 import AboutMe from "./components/aboutMe";
+import {IoLogoJavascript} from "react-icons/io";
+import {GrReactjs} from "react-icons/gr";
+import {TbBrandNextjs} from "react-icons/tb";
+import {AiFillHtml5 , AiFillApi} from "react-icons/ai";
+import {IoLogoCss3 , IoLogoSass} from "react-icons/io";
+import {FaGitAlt} from "react-icons/fa";
+import {SiRedux} from "react-icons/si";
+
+
+
+
+
+
+
+
 
 import { useEffect, useState } from "react";
 import MySkills from "./components/mySkills/MySkills";
@@ -31,17 +46,17 @@ const Main = () => {
   }, [handleScroll]);
 
   const skills = [
-    { name: "Javascript", degree: 95 },
-    { name: "Reactjs", degree: 95 },
-    { name: "Nextjs", degree: 95 },
-    { name: "HTML5", degree: 95 },
-    { name: "CSS3", degree: 95 },
-    { name: "GIT", degree: 95 },
-    { name: "SASS", degree: 95 },
-    { name: "RestFull API", degree: 95 },
-    { name: "Redux", degree: 90 },
+    { name: "Javascript", logo: <IoLogoJavascript /> ,color:'#E8ED58'},
+    { name: "Reactjs", logo: <GrReactjs /> ,color:'#33FCFF'},
+    { name: "Nextjs", logo: <TbBrandNextjs /> ,color:'black'},
+    { name: "HTML5", logo: <AiFillHtml5 /> ,color:'#FF9A4B'},
+    { name: "CSS3", logo: <IoLogoCss3 /> ,color:'#4BB3FF'},
+    { name: "GIT", logo: <FaGitAlt /> ,color:'#FB7D2C'},
+    { name: "SASS", logo: <IoLogoSass /> ,color:'#F22CFB'},
+    { name: "RestFull API", logo: <AiFillApi /> ,color:'#35FB2C'},
+    { name: "Redux", logo: <SiRedux /> ,color:'#972CFB'},
   ];
-
+  
   const projects = [
     {
       title: "www.teamyab.com",

@@ -4,6 +4,7 @@ import "../..//mainStyles.scss"
 
 
 
+
 const MySkills = ({ skills }) => {
   return (
       <div className={`${classes.my_skills} page`} id="skills">
@@ -22,10 +23,8 @@ const MySkills = ({ skills }) => {
               return (
                 <div className={classes.skill} key={key}>
                   
-                  <div className={classes.logo}>
-                    <div>
-                      
-                    </div>
+                  <div className={classes.logo} style={{color:skill.color}}>
+                    {skill.logo}
                   </div>
                   <p className={classes.name}>{skill.name}</p>
 
