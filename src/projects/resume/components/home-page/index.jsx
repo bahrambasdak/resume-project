@@ -169,7 +169,7 @@ const HomePage = ({ showInTop }) => {
           </div>
 
           <div className={classes.main_header_link}>
-            <a href="https://github.com/bahrambasdak?tab=repositories">
+            <a href="https://github.com/bahrambasdak">
               <BsGithub />
             </a>
             <a href="https://www.linkedin.com/in/bahrambasdak/">

@@ -84,7 +84,7 @@ const Main = () => {
 
       <HomePage showInTop={showInTop} />
 
-      <AboutMe />
+      {/* <AboutMe /> */}
 
       <MySkills skills={skills} />
       <Projects projects={projects} />
