@@ -102,3 +102,47 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     width: 100%;
     height: 100%;
   }
+
+
+
+  .get_resumeBtn {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: bold;
+    gap: 5px;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    p{
+      padding-top: 2px;
+    }
+  }
+  .get_resumeBtn:hover {
+    background-color: white;
+    color: #282c34;
+  }
+  
+  .get_resumeBtn::before {
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
+    content: "";
+    width: 0px;
+    height: 45px;
+    background-color: white;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    z-index: -1;
+  }
+  .get_resumeBtn:hover::before {
+    width: 180px;
+    left: -1px;
+    top: -1px;
+  }

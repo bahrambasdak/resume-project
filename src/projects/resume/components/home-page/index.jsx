@@ -1,7 +1,11 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
-import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp ,BsLinkedin} from "react-icons/bs";
+import {AiFillLinkedin , AiFillFilePdf} from "react-icons/ai";
+import resume from "../../bahram-basdak-resume-1401.pdf";
+
+
 import classes from "./styles.module.scss";
 import homePage from "../../img/homePage.jpg"
 
@@ -168,7 +172,10 @@ const HomePage = ({ showInTop }) => {
             <a href="https://github.com/bahrambasdak?tab=repositories">
               <BsGithub />
             </a>
-            <a href="https://t.me/Bahrambs">
+            <a href="https://www.linkedin.com/in/bahrambasdak/">
+              <AiFillLinkedin />
+            </a>
+            {/* <a href="https://t.me/Bahrambs">
               <BsTelegram />
             </a>
             <a href="https://www.instagram.com/bhrmbasdak/">
@@ -177,8 +184,12 @@ const HomePage = ({ showInTop }) => {
 
             <a href="https://wa.me/+989351905281">
               <BsWhatsapp />
-            </a>
+            </a> */}
           </div>
+          <a className={classes.get_resumeBtn} href={resume} download>
+          <AiFillFilePdf />
+            <p>SEE MY RESUME  </p>
+          </a>
         </section>
 
         <section className={classes.right_section}>
