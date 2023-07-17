@@ -28,6 +28,7 @@ import "./mainStyles.scss"
 import classes from "./styles.module.scss";
 import Projects from "./components/projects/Projects";
 import HomePage from "./components/home-page";
+import { Experience } from "./components/experience";
 
 
 const Main = () => {
@@ -102,6 +103,7 @@ const Main = () => {
       {/* <AboutMe /> */}
 
       <MySkills skills={skills} />
+      <Experience />
       <Projects projects={projects} />
       </div>
       <button></button>
