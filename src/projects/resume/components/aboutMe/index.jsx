@@ -10,7 +10,7 @@ const AboutMe = () => {
     console.log("about me useEfect");
   }, []);
   return (
-     <div className={classes.about_me} id="aboutMe">
+     <div className={`${classes.about_me} page`} id="aboutMe">
 
 
       <div className={classes.left}>

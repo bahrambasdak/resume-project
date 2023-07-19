@@ -140,11 +140,7 @@ $skills-title-color2: rgb(31, 30, 30);
         margin: 0 30%;
       }
     }
-    .dashboardFooter {
-      .footerContent {
-        margin: 0 30%;
-      }
-    }
+
   }
 }
 
@@ -165,11 +161,7 @@ $skills-title-color2: rgb(31, 30, 30);
         margin: 0 25%;
       }
     }
-    .dashboardFooter {
-      .footerContent {
-        margin: 0 25%;
-      }
-    }
+
   }
 }
 
@@ -190,11 +182,7 @@ $skills-title-color2: rgb(31, 30, 30);
         margin: 0 18%;
       }
     }
-    .dashboardFooter {
-      .footerContent {
-        margin: 0 18%;
-      }
-    }
+
   }
 }
 
@@ -211,11 +199,6 @@ $skills-title-color2: rgb(31, 30, 30);
 
     }
     .footer {
-      .footerContent {
-        margin: 0 8%;
-      }
-    }
-    .dashboardFooter {
       .footerContent {
         margin: 0 8%;
       }
@@ -275,12 +258,7 @@ $skills-title-color2: rgb(31, 30, 30);
       }
     }
 
-  .portfolio .projects .project {
-    width: 500px;
-  }
-  .portfolio .projects {
-    width: 70vw;
-  }
+
   }
 }
 
@@ -304,64 +282,6 @@ $skills-title-color2: rgb(31, 30, 30);
         margin: 0 5%;
       }
     }
-
-  .main_menu {
-    left: -200px;
-    width: 200px;
-    height: 100vh;
-    background-color: rgba($color: #346ad7, $alpha: 0.8);
-  }
-
-  .showMenuBtn {
-    display: flex;
-  }
-  .showMenu {
-    flex-direction: column;
-    position: fixed;
-    left: 0px;
-    height: 100%;
-    .showMenuBtn {
-      position: static;
-      align-self: flex-start;
-    }
-  }
-
-  .main_menu .menu {
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 100%;
-    align-items: center;
-    .item {
-      width: 100%;
-      display: flex;
-    }
-    .item a {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  .portfolio .projects {
-    width: 90%;
-  }
-  .portfolio .projects .project {
-    width: 100%;
-  }
-  .my_skills_section .skills .skill {
-    width: 100%;
-  }
-
-  .my_skills_section {
-    padding-top: 20px;
-  }
-
-  .about_me {
-    padding-top: 0px;
-  }
-
-  .portfolio {
-    padding-top: 20px;
-  }
-
   }
 }
 

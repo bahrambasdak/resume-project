@@ -35,7 +35,8 @@ export const Experience = () => {
 
 
   return (
-      <div className={classes.page_container}>
+    <div className={`${classes.experience_page} page`} >
+      <div className={classes.page_container} >
 
         <h2 className={classes.title}>
         My<span> Experience </span>
@@ -57,8 +58,10 @@ export const Experience = () => {
             );
           })}
         </div>
-      </div>
-  );
+        </div>
+            </div>
+
+          );
 };
 
 

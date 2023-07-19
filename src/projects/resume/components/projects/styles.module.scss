@@ -19,12 +19,16 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
 $skills-title-color: rgb(202, 15, 235);
 $skills-title-color2: rgb(31, 30, 30);
 
+
+.portfolio_page{
+  width: 100%;
+}
 .portfolio {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 70px;
-    width: 100vw;
+    width: 100%;
   }
   .portfolio > .title {
     font-size: 3rem;
@@ -79,7 +83,7 @@ $skills-title-color2: rgb(31, 30, 30);
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      width: 400px;
+      width: 250px;
       text-align: left;
     }
     .portfolio .projects .project .desc_section .title{
@@ -113,20 +117,38 @@ $skills-title-color2: rgb(31, 30, 30);
 
   }
 
+  @media only screen and #{$mq-large} {
+
+    .portfolio .projects .project {
+     width: 100%;
+    }
+  }
+
+
   @media only screen and #{$mq-medium} {
 
      .portfolio .projects .project {
-      //width: 80%;
-
-    //   .img_section{
-    //     width: 100%;
-    //     height: 360px;
-  
-    //   }
-    //   .desc_section{
-    //     display: flex;
-    //     flex-direction: column;
-    //     height: 360px;
-    //   }
+      width: 80%;
      }
   }
+
+  @media only screen and #{$mq-small} {
+
+    .portfolio .projects .project {
+     width: 100%;
+    }
+ }
+
+ @media only screen and #{$mq-xsmall} {
+  .portfolio .projects{
+    width: 90%;
+  }
+  .portfolio .projects .project {
+   width: 100%;
+   .img_section{
+      height: 250px;
+   }
+  }
+}
+ 
+  

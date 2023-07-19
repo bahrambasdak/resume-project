@@ -31,7 +31,7 @@
     direction: ltr;
     overflow: hidden;
     overflow-x: hidden;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     margin: auto;
     // display: flex;
@@ -52,7 +52,7 @@
 
      .page{
        max-width: 100%;
-       min-height: 100vh;
+       min-height: 100%;
        padding-bottom: 20px;
        height: auto;
 
@@ -128,79 +128,7 @@
     padding: 10px;
   }
   
-  /////////////////////////////////////MAIN HEADER//////////////////////////////
-  
-  .Home_header {
-    filter: brightness(1);
-    width: 100vw;
-    height: 100vh;
-    background-image: url("./img/main-header-img.jpg");
-    background-size: cover;
-    background-repeat: round;
-  
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    align-items: center;
-  
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .welcome_text {
-    color: $main-header-welcom-text-color;
-    font-size: 1.5rem;
-  }
-  .name_text {
-    font-size: 4rem;
-    color: white;
-    font-weight: 500;
-  }
-  .typer {
-    display: inline-block;
-    width: auto !important;
-    color: #999;
-    font-size: 1.5rem;
-    border: 1px solid transparent;
-    border-top: 1px solid rgba(199, 195, 195, 0.2);
-    border-bottom: 1px solid rgba(199, 195, 195, 0.2);
-    background-color: transparent;
-  }
-  .type_text {
-    text-align: center;
-  }
-  
-  .main_header_link {
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-  }
-  .main_header_link a {
-    display: flex;
-    justify-content: center;
-    padding: 0.6rem;
-    margin: 1rem;
-    color: rgb(233, 158, 248);
-  
-    cursor: pointer;
-    border-radius: 50%;
-    transition: all 0.5s ease-out;
-    z-index: 2;
-  }
-  
-  .main_header_link a:hover {
-    background-color: blueviolet;
-  }
-  
-  .header_canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  
+
   
   
   
@@ -373,12 +301,7 @@
         padding: 0 4%;
 
     }
-    .portfolio .projects .project {
-      width: 500px;
-    }
-    .portfolio .projects {
-      width: 70vw;
-    }
+
   
   
   
@@ -411,64 +334,8 @@
         //margin: 0 5%;
         padding: 0 5%;
     }
-    .main_menu {
-      left: -200px;
-      width: 200px;
-      height: 100vh;
-      background-color: rgba($color: #346ad7, $alpha: 0.8);
-    }
-  
-    .showMenuBtn {
-      display: flex;
-    }
-    .showMenu {
-      flex-direction: column;
-      position: fixed;
-      left: 0px;
-      height: 100%;
-      .showMenuBtn {
-        position: static;
-        align-self: flex-start;
-      }
-    }
-  
-    .main_menu .menu {
-      flex-direction: column;
-      justify-content: flex-start;
-      flex-basis: 100%;
-      align-items: center;
-      .item {
-        width: 100%;
-        display: flex;
-      }
-      .item a {
-        width: 100%;
-        text-align: center;
-      }
-    }
-    .portfolio .projects {
-      width: 90%;
-    }
-    .portfolio .projects .project {
-      width: 100%;
-    }
-    .my_skills_section .skills .skill {
-      width: 100%;
-    }
-  
-    .my_skills_section {
-      padding-top: 20px;
-    }
-  
-    .about_me {
-      padding-top: 0px;
-    }
-  
-    .portfolio {
-      padding-top: 20px;
-    }
-  
-    }
+
+  }
   }
   
   

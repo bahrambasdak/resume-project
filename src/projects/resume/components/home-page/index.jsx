@@ -8,6 +8,7 @@ import resume from "../../bahram-basdak-resume-1401.pdf";
 
 import classes from "./styles.module.scss";
 import homePage from "../../img/homePage.jpg"
+import { Marginer } from "../global/Marginer";
 
 const HomePage = ({ showInTop }) => {
   const canvasRef = useRef(null);
@@ -141,7 +142,8 @@ const HomePage = ({ showInTop }) => {
   }, [showInTop]);
 
   return (
-      <div className={classes.Home_header} id="home">
+      <div className={`${classes.Home_header} page`} id="home">
+        <Marginer size={'20px'}/>
         <canvas ref={canvasRef} className={classes.header_canvas}></canvas>
 
 
@@ -195,6 +197,8 @@ const HomePage = ({ showInTop }) => {
         <section className={classes.right_section}>
           <img src={homePage} alt="my picture" className={classes.myPicture}/>    
         </section>
+        <Marginer size={'20px'}/>
+
 
       </div>
   );
