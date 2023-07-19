@@ -64,30 +64,28 @@ const Main = () => {
       img: work6,
       space: "external",
       path: "https://www.teamyab.com/",
+      desc:`As my main project I worked on the Teamyab in collaboration with Teamyab's team`,
     },
     {
       title: "Huralya(web3)",
       img: work5,
       space: "external",
       path: "https://huralya-web3.netlify.app/",
+      desc:'The front-end project of a website in the blockchain field with features such as connecting to Trustvallet and Metamask ',
     },
     {
       title: "Product Manager",
       img: work2,
       space: "internal",
       path: "/product-manager",
+      desc:'Project management panel of a store with the capabilities of managing, removing and adding products',
     },
-    { 
-      title: "Todo List",
-      img: work1,
-      space: "internal",
-      path: "/todolist" 
-      },
     {
       title: "Face Landmark",
       img: work4,
       space: "external",
       path: "https://face-landmark.netlify.app/",
+      desc:'A project with the ability to recognize the human face and draw points according to the shape of that face',
     },
 
 

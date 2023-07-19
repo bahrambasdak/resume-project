@@ -1,6 +1,13 @@
 import { BsZoomIn, BsLink } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { SiFreelancer } from "react-icons/si";
+import webDevLogo from "./icon/web-dev.png"
+import lifeStyleLogo from "./icon/life_style_working_25.jpg"
+import teamYabLogo from "./icon/about us.jpg"
+
+
+
+
 
 
 
@@ -9,19 +16,18 @@ import { Marginer } from "../global/Marginer";
 
 const experiences = [
     {
-        logo: <SiFreelancer size={100} className="logo_img"/>
-        ,
-        company:'teamYab',
+        logo: <img src={teamYabLogo} style={{width:'100%'}}></img>,
+        company:'Team Yab',
         role:'Front-end Developer',
         period:'October 2022 - until now',
         desc:'I work in the front end team of the company',
     },
     {
-        logo:'',
-        company:'',
-        role:'',
-        period:'',
-        desc:'',
+        logo:<img src={webDevLogo} style={{width:'100%'}}></img>,
+        company:'Freelance',
+        role:'Web Developer',
+        period:'November 2021 - October 2022',
+        desc:'Taking on different projects in web development to learn as much as possible.',
     }
 ]
 
@@ -29,7 +35,6 @@ export const Experience = () => {
 
 
   return (
-    
       <div className={classes.page_container}>
 
         <h2 className={classes.title}>

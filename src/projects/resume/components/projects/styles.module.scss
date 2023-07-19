@@ -1,5 +1,21 @@
 ////////////////////// Projects /////////////////////////////////////////////////////
 ///
+/// // Breakpoints
+$bp-xsmall: 37.5em; // 600px
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-xsmall: '(max-width: #{$bp-xsmall})';
+$mq-small: '(max-width: #{$bp-small})';
+$mq-medium: '(max-width: #{$bp-medium})';
+$mq-large: '(max-width: #{$bp-large})';
+$mq-xlarge: '(max-width: #{$bp-xlarge})';
+$mq-xxlarge: '(max-width: #{$bp-xxlarge})';
+$mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
 $skills-title-color: rgb(202, 15, 235);
 $skills-title-color2: rgb(31, 30, 30);
 
@@ -10,7 +26,7 @@ $skills-title-color2: rgb(31, 30, 30);
     padding-top: 70px;
     width: 100vw;
   }
-  .portfolio .title {
+  .portfolio > .title {
     font-size: 3rem;
     display: inline-block;
     color: $skills-title-color2;
@@ -23,85 +39,94 @@ $skills-title-color2: rgb(31, 30, 30);
     text-align: center;
   }
   
-  .portfolio .title span {
+  .portfolio > .title span {
     color: $skills-title-color;
     border-bottom: 1px solid $skills-title-color;
     padding-bottom: 10px;
   }
   
   .portfolio .projects {
+    width: 80%;
     display: flex;
-    width: 80vw;
-    gap: 1rem;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    flex-shrink: 1;
+    gap: 20px;
   }
   
   .portfolio .projects .project {
-    position: relative;
-    width: 350px;
-    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 30px;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     border-radius: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    
+
   }
-  
-  .portfolio .projects .project img {
-    position: absolute;
-    width: 100% !important;
-    height: 100% !important;
-    top: 0;
-    left: 0;
-  }
-  .portfolio .projects .project .work_title {
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 100%;
-    left: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    background-color: rgba($color: #79edf1, $alpha: 0.3);
-    div {
-      padding: 10px;
-    }
-  
-    .icons {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      font-size: 2rem;
-  
-      .zoom {
-        cursor: pointer;
-        display: none;
-      }
-  
-      .zoom:hover {
-        color: red;
-      }
-      .link {
-        cursor: pointer;
-        font-size: 4rem;
-        color: #cc11b3;
-      }
-  
-      .link:hover {
-        color: red;
-      }
-    }
-  }
-  
   .portfolio .projects .project:hover {
-    .work_title {
-      top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  }
+  
+    .portfolio .projects .project .img_section{
+      width: 500px;
+      height: 360px;
+      flex-grow: 1;
+
     }
+    .portfolio .projects .project .desc_section{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 400px;
+      text-align: left;
+    }
+    .portfolio .projects .project .desc_section .title{
+        font-size: 2rem;
+      }
+      .portfolio .projects .project .desc_section .desc{
+
+      }
+      .portfolio .projects .project .desc_section .link_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        color: white;
+        width: 140px;
+        height: 45px;
+        background-color: rgb(224, 113, 228);
+        border-radius: 5px;
+        cursor: pointer;
+
+
+      }
+    
+
+  
+    .portfolio .projects .project .desc_section .link_btn:hover{
+        background-color: rgb(171, 88, 179);
+        transition: all .3s;
+        transform: translateY(-2px);
+
+  }
+
+  @media only screen and #{$mq-medium} {
+
+     .portfolio .projects .project {
+      //width: 80%;
+
+    //   .img_section{
+    //     width: 100%;
+    //     height: 360px;
+  
+    //   }
+    //   .desc_section{
+    //     display: flex;
+    //     flex-direction: column;
+    //     height: 360px;
+    //   }
+     }
   }

@@ -1,6 +1,21 @@
 ////////////////////// Experience /////////////////////////////////////////////////////
 
+// Breakpoints
+$bp-xsmall: 37.5em; // 600px
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
 
+// Media Queries
+$mq-xsmall: '(max-width: #{$bp-xsmall})';
+$mq-small: '(max-width: #{$bp-small})';
+$mq-medium: '(max-width: #{$bp-medium})';
+$mq-large: '(max-width: #{$bp-large})';
+$mq-xlarge: '(max-width: #{$bp-xlarge})';
+$mq-xxlarge: '(max-width: #{$bp-xxlarge})';
+$mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)'; 
 .page_container {
     display: flex;
     flex-direction: column;
@@ -30,9 +45,9 @@
   
   .page_container .experience_container {
     display: flex;
-    width: 80vw;
-    gap: 1rem;
-    justify-content: space-around;
+    width: 90%;
+    gap: 2rem;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -46,8 +61,9 @@
     background-color: white;
     padding: 20px;
     position: relative;
-    width: 400px;
+    width: 450px;
     height: 350px;
+    max-width: 90%;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -56,28 +72,33 @@
 
   .page_container .experience_container .experience {
     .logo{
-
       border-radius: 50%;
       width: 150px;
       height: 150px;
-      .logo_img{
-        width: 150px;
-        height: 150px;
-        font-size: 10rem;
-      }
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 
     }
     .company{
-
+      font-size: 2rem;
     }
     .role{
-
+      font-size: 1.6rem;
     }
     .period{
-
+color: #525F7F;
     }
     .desc{
+      color: #525F7F;
 
+    }
+  }
+
+
+  @media only screen and #{$mq-medium} {
+
+    .page_container .experience_container .experience{
+      width: 700px;
     }
   }
 
