@@ -1,0 +1,114 @@
+////////////////////// Experience /////////////////////////////////////////////////////
+
+// Breakpoints
+$bp-xsmall: 37.5em; // 600px
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-xsmall: '(max-width: #{$bp-xsmall})';
+$mq-small: '(max-width: #{$bp-small})';
+$mq-medium: '(max-width: #{$bp-medium})';
+$mq-large: '(max-width: #{$bp-large})';
+$mq-xlarge: '(max-width: #{$bp-xlarge})';
+$mq-xxlarge: '(max-width: #{$bp-xxlarge})';
+$mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)'; 
+
+.page_container{
+  width: 100%;
+  background-color: rgb(242, 242, 242);
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 0px;
+    width: 100%;
+  }
+  .container .title {
+    font-size: 3rem;
+    display: inline-block;
+    color: rgb(31, 30, 30);
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px rgb(151, 151, 172);
+    border-bottom: 1px solid rgb(212, 206, 206);
+    padding-bottom: 10px;
+    margin: 0 0 3rem 0;
+    text-align: center;
+  }
+  
+  .container .title span {
+    color: rgb(202, 15, 235);
+    border-bottom: 1px solid rgb(202, 15, 235);
+    padding-bottom: 10px;
+  }
+  
+  .container .certificates {
+    display: flex;
+    width: 90%;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  
+  .container .certificates .certificate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    width: 450px;
+    height: 350px;
+    max-width: 90%;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+
+  .container .certificates .certificate {
+    .logo{
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+
+    }
+    .company{
+      font-size: 2rem;
+    }
+    .role{
+      font-size: 1.6rem;
+    }
+    .period{
+color: #525F7F;
+    }
+    .desc{
+      color: #525F7F;
+
+    }
+  }
+
+
+  @media only screen and #{$mq-medium} {
+
+    .container .certificates .certificate{
+      width: 700px;
+    }
+  }
+
+
+  
+
+
+  

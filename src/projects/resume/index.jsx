@@ -29,6 +29,7 @@ import classes from "./styles.module.scss";
 import Projects from "./components/projects/Projects";
 import HomePage from "./components/home-page";
 import { Experience } from "./components/experience";
+import { Certificates } from "./components/certificates";
 
 
 const Main = () => {
@@ -103,6 +104,7 @@ const Main = () => {
       <MySkills skills={skills} />
       <Experience />
       <Projects projects={projects} />
+      <Certificates />
       </div>
       <button></button>
     </div>
