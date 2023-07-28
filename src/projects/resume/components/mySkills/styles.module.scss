@@ -36,18 +36,16 @@ $skills-title-color2: rgb(31, 30, 30);
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
     min-height: 80%;
-  
   }
   .my_skills_section .title {
     color: $skills-title-color2;
     font-size: 3rem;
     font-weight: 900;
     text-shadow: 2px 2px 2px rgb(151, 151, 172);
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(212, 206, 206);
+    padding-bottom: 8px;
   }
   .my_skills_section .title span {
     color: $skills-title-color;
@@ -59,6 +57,44 @@ $skills-title-color2: rgb(31, 30, 30);
     grid-template-columns: 1fr 1fr 1fr;
     padding: 50px 0px;
     }
+    .my_skills_section .content {
+      .mySkill_logo{
+        animation: interShow 1s ease-in-out;
+      }
+      .skills{
+        animation: outerShow 1s ease-in-out;
+      }
+    }
+
+  @keyframes interShow {
+    0% {
+      transform: translateX(-100%) ;
+      opacity: 0; 
+    }
+    100% { 
+      transform: translateX(0%);  
+      opacity: 1; 
+
+    }
+  }
+
+  @keyframes outerShow {
+    0% {
+      transform: translateX(100%) ; 
+      opacity: 0; 
+
+    }
+    100% { 
+      transform: translateX(0%);  
+      opacity: 1; 
+
+    }
+  }
+
+
+
+
+
   .my_skills_section .skills .skill {
     display: flex;
     flex-direction: column;

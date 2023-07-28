@@ -3,6 +3,7 @@ import { BsGithub} from "react-icons/bs";
 import {AiFillLinkedin} from "react-icons/ai";
 import { Marginer } from "../global/Marginer";
 // import {footerBG} from "./img/wave.svg"
+import myphoto from "./img/jsCertificate.JPG"
 
 
 const Footer = () => {
@@ -51,12 +52,7 @@ const Footer = () => {
    <use id={classes.wave2} class={classes.wave} xlinkHref="#wave" x="0" y="0" ></use>
  
   <g class={classes.topball}>
-  <circle class="ball" cx="110" cy="8" r="4" stroke="none" strokeWidth="0" fill="red" />
 
-    <g class={classes.arrow}>
-    <polyline class="" points="108,8 110,6 112,8" fill="none"  />
-    <polyline class="" points="110,6 110,10.5" fill="none"  />
-    </g>
     
   </g>
   <g class={classes.gooeff}>

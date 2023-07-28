@@ -70,9 +70,32 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     transition: all 1s;
     // transition-duration: infinite;
     // transform: translateX(-50%);
-
+    animation: interShow 1s ease-in-out;
 
   }
+  @keyframes interShow {
+    0% {
+      transform: translateX(-100%) ; 
+      //opacity:.6; 
+    }
+    100% { 
+      transform: translateX(0%);  
+      //opacity:1; 
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   .welcome_text {
     color: white;
     font-weight: 600;

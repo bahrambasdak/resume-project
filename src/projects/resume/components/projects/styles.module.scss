@@ -38,7 +38,7 @@ $skills-title-color2: rgb(31, 30, 30);
     font-weight: 900;
     text-shadow: 2px 2px 2px rgb(151, 151, 172);
     border-bottom: 1px solid rgb(212, 206, 206);
-    padding-bottom: 10px;
+    padding-bottom: 9px;
     margin: 0 0 3rem 0;
     text-align: center;
   }
@@ -68,8 +68,22 @@ $skills-title-color2: rgb(31, 30, 30);
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    
+    animation: interShow 1s ease-in-out;
 
-  }
+
+}
+
+@keyframes interShow {
+0% {
+  transform: translateX(-100%) ;
+  opacity: 0; 
+}
+100% { 
+  transform: translateX(0%);  
+  opacity: 1; 
+
+}
+}
   .portfolio .projects .project:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  }
   

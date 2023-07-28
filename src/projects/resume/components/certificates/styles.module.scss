@@ -37,7 +37,7 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
     font-weight: 900;
     text-shadow: 2px 2px 2px rgb(151, 151, 172);
     border-bottom: 1px solid rgb(212, 206, 206);
-    padding-bottom: 10px;
+    padding-bottom: 9px;
     margin: 0 0 3rem 0;
     text-align: center;
   }
@@ -56,7 +56,9 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
     flex-wrap: wrap;
     flex-grow: 1;
     flex-shrink: 1;
+
   }
+
   
   .container .certificates .certificate {
     display: flex;
@@ -71,9 +73,22 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
     border-radius: 0.5rem;
     flex-grow: 1;
     flex-wrap: wrap;
+    animation: interShow 1s ease-in-out;
+}
+
+@keyframes interShow {
+0% {
+  transform: translateX(-100%) ;
+  opacity: 0; 
+}
+100% { 
+  transform: translateX(0%);  
+  opacity: 1; 
+
+}
+}
 
 
-  }
   .container .certificates .certificate:hover{
     transform: translateY(-10px);
   }

@@ -89,8 +89,6 @@ const Main = () => {
       path: "https://face-landmark.netlify.app/",
       desc:'A project with the ability to recognize the human face and draw points according to the shape of that face',
     },
-
-
   ];
 
   return (

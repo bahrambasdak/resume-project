@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { SiFreelancer } from "react-icons/si";
 import webCertificate from "./img/webCertificate.JPG"
 import jsCertificate from "./img/jsCertificate.JPG"
+import queraReact from "./img/queraReact.JPG"
+
+
 
 import classes from "./styles.module.scss";
 import { Marginer } from "../global/Marginer";
@@ -21,7 +24,14 @@ const certificates = [
         period:'December 20, 2021',
         desc:'Web Design I - HTML5, CSS3 with Visual Studio Code',
         link:'https://freecodecamp.org/certification/fcca1e9d62f-440a-4640-80f7-63aef7eca4ac/responsive-web-design'
-    }
+    },
+    {
+      logo:<img src={queraReact} style={{width:'100%',height:'100%'}}></img>,
+      title:'Responsive Web Design',
+      period:'December 20, 2021',
+      desc:'Professional Project-Oriented Course In Front-End Development With React',
+      link:'https://quera.org/certificate/bbJtF0PT/'
+  },
 ]
 
 export const Certificates = () => {
