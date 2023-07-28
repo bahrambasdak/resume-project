@@ -27,8 +27,8 @@ const certificates = [
     },
     {
       logo:<img src={queraReact} style={{width:'100%',height:'100%'}}></img>,
-      title:'Responsive Web Design',
-      period:'December 20, 2021',
+      title:'Jump Frontend with React',
+      period:'July 2022',
       desc:'Professional Project-Oriented Course In Front-End Development With React',
       link:'https://quera.org/certificate/bbJtF0PT/'
   },
