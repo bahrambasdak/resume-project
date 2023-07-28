@@ -30,6 +30,7 @@ import Projects from "./components/projects/Projects";
 import HomePage from "./components/home-page";
 import { Experience } from "./components/experience";
 import { Certificates } from "./components/certificates";
+import Footer from "./components/footer";
 
 
 const Main = () => {
@@ -105,6 +106,7 @@ const Main = () => {
       <Experience />
       <Projects projects={projects} />
       <Certificates />
+      <Footer />
       </div>
       <button></button>
     </div>
