@@ -50,7 +50,7 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
   
   .page_container .experience_container {
     display: flex;
-    width: 90%;
+    width: 100%;
     gap: 2rem;
     justify-content: center;
     align-items: center;
@@ -72,6 +72,8 @@ $mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     border-radius: 0.5rem;
+    flex-grow: 1;
+
   }
 
 

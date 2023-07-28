@@ -27,7 +27,7 @@ $skills-title-color2: rgb(31, 30, 30);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 70px;
+    padding: 70px 0px;
     width: 100%;
   }
   .portfolio > .title {
@@ -50,7 +50,7 @@ $skills-title-color2: rgb(31, 30, 30);
   }
   
   .portfolio .projects {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
