@@ -30,7 +30,7 @@ $main-header-menu-text-color: rgb(248, 248, 248);
   
     display: flex;
     flex-wrap: wrap;
-    row-gap: 2rem;
+    gap: 3rem;
     align-items: center;
     justify-content: space-around;
     font-size: calc(10px + 2vmin);
@@ -42,12 +42,13 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     display: flex;
     border-radius: 20px;
     background-color: #999;
+    align-self: flex-start;
     object-fit: cover;
     box-shadow: 0px 0px 30px -5px #151410;
     width: 400px;
     max-width: 70%;
 
-    height: 80%;
+    //height: 80%;
     overflow: hidden;
     z-index: 1;
 
@@ -60,8 +61,9 @@ $main-header-menu-text-color: rgb(248, 248, 248);
 
   }
   .Home_header .left_section{
-    padding: 20px 0px;
-    width: 600px;
+    //padding: 20px 0px;
+    width: 400px;
+    flex-grow: 1;
     max-width: 90%;
     text-align:left;
     line-height: 4rem;
@@ -83,17 +85,6 @@ $main-header-menu-text-color: rgb(248, 248, 248);
       //opacity:1; 
     }
   }
-
-
-
-
-
-
-
-
-
-
-
 
 
   .welcome_text {
