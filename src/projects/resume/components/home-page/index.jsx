@@ -22,9 +22,9 @@ const HomePage = ({ showInTop }) => {
   const createPoints = (count, xInit, yInit) => {
     const points = [];
     let V = 3;
-    let R = 3;
-    winWidth < 768 ? (V = 2) : winWidth < 600 ? (V = 1) : (V = 3);
-    winWidth < 768 ? (R = 2) : winWidth < 600 ? (R = 1) : (R = 3);
+    let R = 20;
+    // winWidth < 768 ? (V = 2) : winWidth < 600 ? (V = 1) : (V = 3);
+    // winWidth < 768 ? (R = 2) : winWidth < 600 ? (R = 1) : (R = 3);
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
@@ -37,7 +37,7 @@ const HomePage = ({ showInTop }) => {
   };
 
   useEffect(() => {
-    let points = createPoints(200);
+    let points = createPoints(50);
     const canvasRefCurrent = canvasRef.current;
     const ctx = canvasRefCurrent.getContext("2d");
     canvasRefCurrent.width = winWidth;
@@ -85,6 +85,8 @@ const HomePage = ({ showInTop }) => {
     const drowPoints = () => {
       ctx.clearRect(0, 0, winWidth, winHeight);
 
+      //gradient.addColorStop(1, "green");
+
       points.forEach((point, index) => {
         points.slice(index).forEach((item) => {
           const radius = Math.sqrt(
@@ -106,10 +108,19 @@ const HomePage = ({ showInTop }) => {
           }
         });
 
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
-        ctx.fillStyle = "rgba(250,250,250,0.3)";
-        ctx.fill();
+         ctx.beginPath();
+         //ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
+         const gradient = ctx.createRadialGradient(point.x, point.y, 0.1, point.x, point.y, point.r);
+         gradient.addColorStop(0, "#FFFF");
+         gradient.addColorStop(1, 'rgba(0,0,0,0)');
+      
+        ctx.strokeStyle=  'rgba(0,0,0,0)';
+        ctx.fillStyle = gradient;
+        ctx.fillRect (point.x-point.r, point.y-point.r, point.x+point.r, point.y+point.r);
+
+        // ctx.fill();
+        // ctx.stroke();
+        //ctx.restore();
       });
     };
     let myanimation;

@@ -6,7 +6,6 @@ import jsCertificate from "./img/jsCertificate.JPG"
 import queraReact from "./img/queraReact.JPG"
 
 
-
 import classes from "./styles.module.scss";
 import { Marginer } from "../global/Marginer";
 
