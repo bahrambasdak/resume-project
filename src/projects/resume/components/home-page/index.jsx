@@ -199,7 +199,7 @@ const HomePage = ({ showInTop }) => {
               <BsWhatsapp />
             </a> */}
           </div>
-          <a className={classes.get_resumeBtn} href={resume} download>
+          <a className={classes.get_resumeBtn} href={resume} >
           <AiFillFilePdf />
             <p>SEE MY RESUME  </p>
           </a>
