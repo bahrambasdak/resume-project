@@ -1,5 +1,5 @@
 import { memo, useEffect } from "react";
-import resume from "../../bahram-basdak-resume-1401.pdf";
+import resume from "../../bahram-basdak-resume 1402.pdf";
 import classes from "./styles.module.scss";
 
 

@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import classes from "../styles.module.scss";
 import { MdMenu, MdClose } from "react-icons/md";
-import resume from "../bahram-basdak-resume-1401.pdf";
+import resume from "../bahram-basdak-resume 1402.pdf";
 import { useLocation } from "react-router-dom";
 
 const MainMenu = ({ showInTop }) => {

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp ,BsLinkedin} from "react-icons/bs";
 import {AiFillLinkedin , AiFillFilePdf} from "react-icons/ai";
-import resume from "../../bahram-basdak-resume-1401.pdf";
+import resume from "../../bahram-basdak-resume 1402.pdf";
 
 
 import classes from "./styles.module.scss";
@@ -47,7 +47,7 @@ const HomePage = ({ showInTop }) => {
     typistRef.current.value = "";
 
     let i = 0;
-    const speed = 100;
+    const speed = 300;
     let reverse = false;
 
     // const addPoints = (e) => {
@@ -78,7 +78,7 @@ const HomePage = ({ showInTop }) => {
       }
     }
     writer();
-    const writerInterval = setInterval(writer, 6000);
+    const writerInterval = setInterval(writer, 10000);
 
     //canvasRef.current.addEventListener("click", addPoints);
 
@@ -162,14 +162,7 @@ const HomePage = ({ showInTop }) => {
           <div className={classes.welcome_text}>Greetings!</div>
           <p className={classes.aboutMe}>
 
-          I'm Bahram Basdak, a dedicated React developer with expertise in
-           creating exceptional frontend applications using React, JavaScript,
-            HTML, and CSS. With a solid background of over 3 years in designing,
-             developing, and maintaining cutting-edge front-end web solutions, 
-             I excel at crafting intuitive and visually appealing user interfaces.
-          My passion lies in staying abreast of the latest technologies and proactively 
-          tackling upcoming challenges. With a collaborative mindset and a proven ability to solve
-           complex problems, I am committed to driving the team towards achieving its objectives.
+          I'm Bahram Basdak, a React developer experienced in creating frontend applications using React, JavaScript, HTML, and CSS. With over 3 years of expertise in designing and developing front-end web solutions, I focus on crafting user-friendly interfaces and solving complex problems collaboratively to achieve team objectives.
           </p>
           <div className={classes.type_text}>
             <input

@@ -19,7 +19,6 @@ body {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    height: fit-content;
 
     .footerBG {
         width:100vw;
@@ -117,6 +116,7 @@ body {
       padding-top: 20px;
       width: 100%;
       gap: 10px;
+      height: fit-content;
       .title{
         font-size: 2rem;
         font-weight: bold;
