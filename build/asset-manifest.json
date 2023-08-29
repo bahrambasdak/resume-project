@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd894375.css",
-    "main.js": "/static/js/main.6d8e4f26.js",
+    "main.css": "/static/css/main.269e68f2.css",
+    "main.js": "/static/js/main.314dffa3.js",
     "static/js/496.fd553932.chunk.js": "/static/js/496.fd553932.chunk.js",
     "static/media/life_style_working_25.jpg": "/static/media/life_style_working_25.7aa1450b0b83130d09f7.jpg",
     "static/media/queraReact.JPG": "/static/media/queraReact.5e79841368914cb025bf.JPG",
     "static/media/about us.jpg": "/static/media/about us.e576f0c0d10563bb55ed.jpg",
-    "static/media/bahram-basdak-resume-1401.pdf": "/static/media/bahram-basdak-resume-1401.1b8edac1b766925e69c1.pdf",
     "static/media/work6.JPG": "/static/media/work6.b93f418ce55c3cfe4e2d.JPG",
+    "static/media/bahram-basdak-resume 1402.pdf": "/static/media/bahram-basdak-resume 1402.bf7242bd4b124cead1f7.pdf",
     "static/media/header-day.jpg": "/static/media/header-day.1565fc4e05bc12a8da4d.jpg",
     "static/media/main-header-img.jpg": "/static/media/main-header-img.99b8224f5cbde054ce64.jpg",
     "static/media/jsCertificate.JPG": "/static/media/jsCertificate.819d094885a9b7556992.JPG",
@@ -24,12 +24,12 @@
     "static/media/profile.jpg": "/static/media/profile.5625b3bb101f3d04ed33.jpg",
     "static/media/defaultprofile.jpg": "/static/media/defaultprofile.5a1c79884c66c57d9ddf.jpg",
     "index.html": "/index.html",
-    "main.dd894375.css.map": "/static/css/main.dd894375.css.map",
-    "main.6d8e4f26.js.map": "/static/js/main.6d8e4f26.js.map",
+    "main.269e68f2.css.map": "/static/css/main.269e68f2.css.map",
+    "main.314dffa3.js.map": "/static/js/main.314dffa3.js.map",
     "496.fd553932.chunk.js.map": "/static/js/496.fd553932.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd894375.css",
-    "static/js/main.6d8e4f26.js"
+    "static/css/main.269e68f2.css",
+    "static/js/main.314dffa3.js"
   ]
 }
