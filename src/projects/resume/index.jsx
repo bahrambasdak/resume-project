@@ -26,7 +26,7 @@ import work6 from "./img/work6.JPG";
 import "./mainStyles.scss"
 
 import classes from "./styles.module.scss";
-import Projects from "./components/projects/Projects";
+import Projects from "./components/projects";
 import HomePage from "./components/home-page";
 import { Experience } from "./components/experience";
 import { Certificates } from "./components/certificates";

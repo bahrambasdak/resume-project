@@ -44,28 +44,9 @@ const Projects = ({ projects }) => {
             <img
               src={project.img}
               alt=""
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%",objectFit:'cover' }}
             />
             </div>
-
-            {/* <div className={classes.work_title}>
-              <div>{project.title}</div>
-              <div className={classes.icons}>
-                <BsZoomIn
-                  className={classes.zoom}
-                  
-                />
-                {project.space === "internal" ? (
-                  <Link to={project.path}>
-                    <BsLink className={classes.link} />
-                  </Link>
-                ) : (
-                  <a href={project.path}>
-                    <BsLink className={classes.link} />
-                  </a>
-                )}
-              </div>
-            </div> */}
           </div>
         );
       })}
