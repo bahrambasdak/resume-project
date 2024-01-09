@@ -25,16 +25,11 @@ const Login = () => {
       password: passwordRef.current.value,
     })
       .then((res) => {
-        console.log(res.data);
-        // toggleAuth(e.target[0].value);
-        // navigate("/product-manager/dashboard");
       })
       .catch((err) => {
         setError(err.response.data);
-        console.log(err.response.data);
       });
   };
-  console.log("Login");
   return (
     <div
       className={`${classes.page_wraper} ${

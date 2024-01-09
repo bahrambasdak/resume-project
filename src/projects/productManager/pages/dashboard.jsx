@@ -16,14 +16,12 @@ useEffect(()=>{
   const fetchPrice = async ()=>{
     const res = await fetch("https://api.coincap.io/v2/assets/?limit=5");
     const data = await res.json();
-    console.log(data);
   }
   fetchPrice();
 },[])
 
 
   const { products } = useProducts();
-  console.log("dashboard");
   return (
     <div
       className={`${classes.page_wraper} ${classes.dashboard_page} ${

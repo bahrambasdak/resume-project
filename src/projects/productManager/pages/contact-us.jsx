@@ -4,7 +4,6 @@ import classes from "../styles.module.scss";
 
 const ContactUs = () => {
     const {theme} = useTheme();
-    console.log('contact us');
   return (
     <div
       className={`${classes.page_wraper} ${

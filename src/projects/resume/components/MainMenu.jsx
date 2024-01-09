@@ -5,12 +5,10 @@ import resume from "../bahram-basdak-resume 1402.pdf";
 import { useLocation } from "react-router-dom";
 
 const MainMenu = ({ showInTop }) => {
-  console.log("mainmenu render");
   const [showMenu, setshowMenu] = useState(false);
   const hash = useLocation().hash;
 
   useEffect(() => {
-    console.log("mainmenu useEfect");
   },[]);
 
   return (

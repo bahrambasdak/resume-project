@@ -9,7 +9,6 @@ import { useAuth } from "../contexts/Auth";
 const Header = ({ setShowSidebar, showSidebar }) => {
   const { theme, toggleThemeMode } = useTheme();
   const {user} = useAuth();
-  console.log('Header');
   return (
     <div
       className={`${classes.main_header} ${

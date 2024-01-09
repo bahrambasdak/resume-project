@@ -5,14 +5,9 @@ import classes from "./styles.module.scss";
 
 
 const AboutMe = () => {
-  console.log("about me render");
-  useEffect(() => {
-    console.log("about me useEfect");
-  }, []);
+
   return (
      <div className={`${classes.about_me} page`} id="aboutMe">
-
-
       <div className={classes.left}>
         <h1>
           <span>About</span> me

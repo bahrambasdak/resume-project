@@ -78,14 +78,12 @@ const ProductProvider = ({ children }) => {
     addProduct: addProduct,
     removeProduct: removeProduct,
   };
-  console.log("Products");
   return (
     <productContext.Provider value={value}>{children}</productContext.Provider>
   );
 };
 
 const useProducts = () => {
-  console.log("useProducts");
   const context = useContext(productContext);
   if (context === undefined)
     throw new Error("useProducts must be with in ProductProvider");

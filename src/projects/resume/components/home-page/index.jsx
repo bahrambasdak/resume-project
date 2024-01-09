@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
-import { BsGithub, BsTelegram, BsInstagram, BsWhatsapp ,BsLinkedin} from "react-icons/bs";
+import { BsGithub} from "react-icons/bs";
 import {AiFillLinkedin , AiFillFilePdf} from "react-icons/ai";
 import resume from "../../bahram-basdak-resume 1402.pdf";
 
@@ -12,19 +12,16 @@ import { Marginer } from "../global/Marginer";
 
 const HomePage = ({ showInTop }) => {
   const canvasRef = useRef(null);
-  const typistRef = useRef(null);
-  console.log("mainHeader render");
   const winWidth = window.screen.availWidth;
   const winHeight = window.screen.availHeight;
   let r_line = winWidth / 15;
+  const [autoTyperText , setAutoTyperText] = useState('')
   if (winWidth < 768) r_line = winWidth / 9;
 
   const createPoints = (count, xInit, yInit) => {
     const points = [];
     let V = 3;
     let R = 20;
-    // winWidth < 768 ? (V = 2) : winWidth < 600 ? (V = 1) : (V = 3);
-    // winWidth < 768 ? (R = 2) : winWidth < 600 ? (R = 1) : (R = 3);
     for (let i = 0; i < count; i++) {
       const x = xInit || Math.random() * winWidth;
       const y = yInit || Math.random() * winHeight;
@@ -35,57 +32,40 @@ const HomePage = ({ showInTop }) => {
     }
     return points;
   };
+  const text = "Welcome to my website"; //'front end developer';//
 
+  let i = 0;
+  const speed = 100;
+  let reverse = false;
+
+  const  writer = useCallback(()=>{
+    if (i < text.length && !reverse) {
+      setAutoTyperText(text.split("").slice(0, i + 1).join("") + "|");
+      i++;
+    } else {
+      reverse = true;
+    }
+
+    if (i >= 0 && reverse) {
+      setAutoTyperText(text.split("").slice(0, i).join("") + "|") ;
+      i--;
+    } else if (reverse) {
+      reverse = false;
+    }
+
+  },[])
+
+  
   useEffect(() => {
     let points = createPoints(50);
     const canvasRefCurrent = canvasRef.current;
     const ctx = canvasRefCurrent.getContext("2d");
     canvasRefCurrent.width = winWidth;
     canvasRefCurrent.height = winHeight;
-
-    const text = "Welcome to my website"; //'front end developer';//
-    typistRef.current.value = "";
-
-    let i = 0;
-    const speed = 300;
-    let reverse = false;
-
-    // const addPoints = (e) => {
-    //   points.push(...createPoints(10, e.clientX, e.clientY));
-    // };
-
-    function writer() {
-      if (i < text.length && !reverse) {
-        typistRef.current.value =
-          text
-            .split("")
-            .slice(0, i + 1)
-            .join("") + "|"; //charAt(i)
-        i++;
-        setTimeout(writer, speed);
-      } else {
-        clearTimeout(writer);
-        reverse = true;
-      }
-
-      if (i >= 0 && reverse) {
-        typistRef.current.value = text.split("").slice(0, i).join("") + "|";
-        i--;
-        setTimeout(writer, speed);
-      } else if (reverse) {
-        reverse = false;
-        clearTimeout(writer);
-      }
-    }
-    writer();
-    const writerInterval = setInterval(writer, 10000);
-
-    //canvasRef.current.addEventListener("click", addPoints);
+    const writerInterval = setInterval(writer, 100);
 
     const drowPoints = () => {
       ctx.clearRect(0, 0, winWidth, winHeight);
-
-      //gradient.addColorStop(1, "green");
 
       points.forEach((point, index) => {
         points.slice(index).forEach((item) => {
@@ -109,7 +89,6 @@ const HomePage = ({ showInTop }) => {
         });
 
          ctx.beginPath();
-         //ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
          const gradient = ctx.createRadialGradient(point.x, point.y, 0.1, point.x, point.y, point.r);
          gradient.addColorStop(0, "#FFFF");
          gradient.addColorStop(1, 'rgba(0,0,0,0)');
@@ -117,10 +96,6 @@ const HomePage = ({ showInTop }) => {
         ctx.strokeStyle=  'rgba(0,0,0,0)';
         ctx.fillStyle = gradient;
         ctx.fillRect (point.x-point.r, point.y-point.r, point.x+point.r, point.y+point.r);
-
-        // ctx.fill();
-        // ctx.stroke();
-        //ctx.restore();
       });
     };
     let myanimation;
@@ -142,13 +117,9 @@ const HomePage = ({ showInTop }) => {
 
     if (!showInTop) myanimation = requestAnimationFrame(translatePoints);
 
-    console.log("mainHeader useEfect");
-
     return () => {
-      console.log("mainheader stopped");
       clearInterval(writerInterval);
       cancelAnimationFrame(myanimation);
-      //canvasRefCurrent.removeEventListener("click", addPoints);
     };
   }, [showInTop]);
 
@@ -167,8 +138,7 @@ const HomePage = ({ showInTop }) => {
           <div className={classes.type_text}>
             <input
               type="text"
-              value=""
-              ref={typistRef}
+              value={autoTyperText}
               className={classes.typer}
               readOnly
             />
@@ -181,16 +151,7 @@ const HomePage = ({ showInTop }) => {
             <a href="https://www.linkedin.com/in/bahrambasdak/">
               <AiFillLinkedin />
             </a>
-            {/* <a href="https://t.me/Bahrambs">
-              <BsTelegram />
-            </a>
-            <a href="https://www.instagram.com/bhrmbasdak/">
-              <BsInstagram />
-            </a>
 
-            <a href="https://wa.me/+989351905281">
-              <BsWhatsapp />
-            </a> */}
           </div>
           <a className={classes.get_resumeBtn} href={resume} >
           <AiFillFilePdf />

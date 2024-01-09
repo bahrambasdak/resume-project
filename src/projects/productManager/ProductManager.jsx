@@ -15,10 +15,7 @@ const ProductManager = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
 
-  console.log('product-manager');
-
   useEffect(() => {
-    console.log('product-manager useEfect');
     navigate("dashboard");
   }, []);
 

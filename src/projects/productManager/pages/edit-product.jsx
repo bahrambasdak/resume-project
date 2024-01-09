@@ -13,7 +13,6 @@ const EditProduct = () => {
     editProduct(data);
     navigate("/product-manager/all-products");
   };
-  console.log("editProduct");
   return (
     <div
       className={`${classes.page_wraper} ${

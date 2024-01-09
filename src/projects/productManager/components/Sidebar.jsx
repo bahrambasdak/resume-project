@@ -8,7 +8,6 @@ const Sidebar = ({ routes, showSidebar }) => {
   const activeRoute = (routename) => {
     return location.pathname.indexOf(routename) > -1 ? "selected" : "";
   };
-  console.log("Sidebar");
   return (
     <aside
       className={`${classes.sidebar} ${

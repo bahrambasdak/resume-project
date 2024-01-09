@@ -28,9 +28,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() =>
     getLocalStorage("user", { loggedIn: false, email: "" })
   );
-  console.log("Auth");
   useEffect(() => {
-    console.log("Auth useEffect");
     setLocalStorage("user", user);
   }, [user]);
 
@@ -53,7 +51,6 @@ const AuthProvider = ({ children }) => {
 };
 
 const useAuth = () => {
-  console.log("useAuth");
   const context = useContext(AuthContext);
   if (context === undefined)
     throw new Error("useAuth must be within AuthProvider!");

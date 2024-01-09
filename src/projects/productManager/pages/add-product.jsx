@@ -13,7 +13,6 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     addProduct({ ...data, id: uuidv4() });
   };
-  console.log("addProduct");
   return (
     <div
       className={`${classes.page_wraper} ${

@@ -18,7 +18,6 @@ const ProductList = () => {
     removeProduct(selectedProduct);
     setselectedProduct(null);
   };
-  console.log("productList");
   return (
     <>
       <div

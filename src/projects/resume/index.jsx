@@ -36,7 +36,6 @@ import Footer from "./components/footer";
 const Main = () => {
   const [showInTop, setShowInTop] = useState(false);
   const screenHeight = window.screen.availHeight;
-  console.log("home render");
 
   const handleScroll = () => {
     if (screenHeight - window.scrollY < 200 && !showInTop) setShowInTop(true);
