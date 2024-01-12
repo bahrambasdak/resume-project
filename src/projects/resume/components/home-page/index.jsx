@@ -32,7 +32,7 @@ const HomePage = ({ showInTop }) => {
     }
     return points;
   };
-  const text = "Welcome to my website"; //'front end developer';//
+  const text = "Welcome to my website :)  "; //'front end developer';//
 
   let i = 0;
   const speed = 100;
@@ -40,14 +40,14 @@ const HomePage = ({ showInTop }) => {
 
   const  writer = useCallback(()=>{
     if (i < text.length && !reverse) {
-      setAutoTyperText(text.split("").slice(0, i + 1).join("") + "|");
+      setAutoTyperText(text.split("").slice(0, i + 1).join(""));
       i++;
     } else {
       reverse = true;
     }
 
     if (i >= 0 && reverse) {
-      setAutoTyperText(text.split("").slice(0, i).join("") + "|") ;
+      setAutoTyperText(text.split("").slice(0, i).join("")) ;
       i--;
     } else if (reverse) {
       reverse = false;
@@ -135,13 +135,8 @@ const HomePage = ({ showInTop }) => {
 
           I'm Bahram Basdak, a React developer experienced in creating frontend applications using React, JavaScript, HTML, and CSS. With over 3 years of expertise in designing and developing front-end web solutions, I focus on crafting user-friendly interfaces and solving complex problems collaboratively to achieve team objectives.
           </p>
-          <div className={classes.type_text}>
-            <input
-              type="text"
-              value={autoTyperText}
-              className={classes.typer}
-              readOnly
-            />
+          <div className={classes.typer}>
+            {autoTyperText}
           </div>
 
           <div className={classes.main_header_link}>
