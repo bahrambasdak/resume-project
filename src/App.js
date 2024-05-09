@@ -1,7 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import ProtectedRout from "./projects/productManager/components/ProtectedRout";
-
 import ProductManager from "./projects/productManager/ProductManager";
 import productManagerRoutes from "./projects/productManager/routes";
 import TodoList from "./projects/todolist/TodoList";

@@ -2,29 +2,28 @@ import { memo, useEffect } from "react";
 import resume from "../../bahram-basdak-resume 1402.pdf";
 import classes from "./styles.module.scss";
 
-
-
 const AboutMe = () => {
-
   return (
-     <div className={`${classes.about_me} page`} id="aboutMe">
+    <div className={`${classes.about_me} page`} id="aboutMe">
       <div className={classes.left}>
         <h1>
           <span>About</span> me
         </h1>
         <h3> Front-end | React Developer </h3>
         <div className={classes.text}>
-
           <p>
-          Creative and self-starting Front-End Developer with 3+ years of experience in designing, developing, and maintaining front-end web applications using . Highly skilled in JavaScript, React and Redux .
-          I am Interested in learning modern technologies and solving upcoming challenges.
-          With the spirit of team work and also high ability to solve problems, I can be effective in advancing the team's goals
+            Creative and self-starting Front-End Developer with 3+ years of
+            experience in designing, developing, and maintaining front-end web
+            applications using . Highly skilled in JavaScript, React and Redux .
+            I am Interested in learning modern technologies and solving upcoming
+            challenges. With the spirit of team work and also high ability to
+            solve problems, I can be effective in advancing the team's goals
           </p>
         </div>
         <div className={classes.description}>
           <div>
             <div>
-              <b>Name</b> : Bahram Basdak 
+              <b>Name</b> : Bahram Basdak
             </div>
             <div>
               <b>Email</b> : bahrambasdak@gmail.com
@@ -49,7 +48,7 @@ const AboutMe = () => {
           </div>
         </div>
         <a href={resume} download>
-          <button>Get resume  </button>
+          <button>Get resume </button>
         </a>
       </div>
     </div>

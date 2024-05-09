@@ -1,39 +1,47 @@
-import {  MySkillLogo } from "../../img/mySkill";
+import { MySkillLogo } from "../../img/mySkill";
 import classes from "./styles.module.scss";
-import "../..//mainStyles.scss"
-
-
-
+import "../..//mainStyles.scss";
 
 const MySkills = ({ skills }) => {
   return (
-      <div className={`${classes.my_skills} page`} id="skills">
-        <div className={classes.my_skills_section} >
-          <h2 className={classes.title}>
-          My <span>Skills</span> 
-          </h2>
-          <div className={classes.content} style={{display:'flex',flexWrap:'wrap',width:'100%',justifyContent:'space-between'}}>
-            <div className={classes.mySkill_logo} style={{width:'400px', maxWidth:'80%'}}>
+    <div className={`${classes.my_skills} page`} id="skills">
+      <div className={classes.my_skills_section}>
+        <h2 className={classes.title}>
+          My <span>Skills</span>
+        </h2>
+        <div
+          className={classes.content}
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            width: "100%",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            className={classes.mySkill_logo}
+            style={{ width: "400px", maxWidth: "80%" }}
+          >
             <MySkillLogo />
-            </div>
-          <div className={classes.skills} style={{width:'400px', maxWidth:'90%'}}>
-
+          </div>
+          <div
+            className={classes.skills}
+            style={{ width: "400px", maxWidth: "90%" }}
+          >
             {skills.map((skill, key) => {
               return (
                 <div className={classes.skill} key={key}>
-                  
-                  <div className={classes.logo} style={{color:skill.color}}>
+                  <div className={classes.logo} style={{ color: skill.color }}>
                     {skill.logo}
                   </div>
                   <p className={classes.name}>{skill.name}</p>
-
                 </div>
               );
             })}
           </div>
-          </div>
         </div>
       </div>
+    </div>
   );
 };
 

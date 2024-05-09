@@ -21,7 +21,12 @@ const TodosList = () => {
     <div className={classes.todos_list}>
       <ul>
         {todos.map((todo, key) => (
-          <li className={`${todo.status ? classes.iscomplete : ""} ${todo.edit ? classes.edited: ''}`} key={key}>
+          <li
+            className={`${todo.status ? classes.iscomplete : ""} ${
+              todo.edit ? classes.edited : ""
+            }`}
+            key={key}
+          >
             <input
               type="checkBox"
               onChange={(e) => handleChecked(e, todo)}

@@ -1,12 +1,11 @@
-
-import classes from './todoListStyles.module.css';
+import classes from "./todoListStyles.module.css";
 import TodosHeader from "./components/Header";
 import AddTodos from "./components/AddTodos";
 import { useEffect, useState } from "react";
 import TodosList from "./components/Todos";
 import TodosFooter from "./components/Footer";
 import { v4 as uuidv4 } from "uuid";
-import {TodosProvider} from './contexts/Todos'
+import { TodosProvider } from "./contexts/Todos";
 
 function TodoList() {
   const [todosState, setTodosState] = useState([]);
@@ -16,9 +15,8 @@ function TodoList() {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  useEffect( () => {
+  useEffect(() => {
     const localTodos = JSON.parse(localStorage.getItem("todos"));
-  
 
     setTodosState(localTodos ? localTodos : []);
   }, []);
@@ -33,10 +31,10 @@ function TodoList() {
   return (
     <div className={`${classes.TodoList} `}>
       <TodosProvider>
-      <TodosHeader />
-      <AddTodos addTodo={addTodo} />
-      <TodosList todos={todosState} setTodos={setTodos} />
-      <TodosFooter todos={todosState} />
+        <TodosHeader />
+        <AddTodos addTodo={addTodo} />
+        <TodosList todos={todosState} setTodos={setTodos} />
+        <TodosFooter todos={todosState} />
       </TodosProvider>
     </div>
   );

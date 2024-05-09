@@ -11,15 +11,13 @@ $bp-xlarge: 120em; // 1920px
 $bp-xxlarge: 160em; // 2560px
 
 // Media Queries
-$mq-xsmall: '(max-width: #{$bp-xsmall})';
-$mq-small: '(max-width: #{$bp-small})';
-$mq-medium: '(max-width: #{$bp-medium})';
-$mq-large: '(max-width: #{$bp-large})';
-$mq-xlarge: '(max-width: #{$bp-xlarge})';
-$mq-xxlarge: '(max-width: #{$bp-xxlarge})';
-$mq-retina: '(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)';
-
-
+$mq-xsmall: "(max-width: #{$bp-xsmall})";
+$mq-small: "(max-width: #{$bp-small})";
+$mq-medium: "(max-width: #{$bp-medium})";
+$mq-large: "(max-width: #{$bp-large})";
+$mq-xlarge: "(max-width: #{$bp-xlarge})";
+$mq-xxlarge: "(max-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi)";
 
 $main-header-welcom-text-color: rgb(200, 201, 203);
 $main-header-menu-text-color: rgb(248, 248, 248);
@@ -36,7 +34,7 @@ $skills-title-color2: rgb(31, 30, 30);
   // align-items: center;
   // justify-content: center;
   position: relative;
-  font-family: 'Times New Roman','Georgia',  Georgia ,  monospace;
+  font-family: "Times New Roman", "Georgia", Georgia, monospace;
   font-size: 1.2rem;
   margin: auto;
 }
@@ -110,19 +108,9 @@ $skills-title-color2: rgb(31, 30, 30);
   padding: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////RESPONSIVE///////////////////////////////////////////////
 ///
-/// 
+///
 @media only screen and #{$mq-retina} {
   .App {
     .header {
@@ -133,14 +121,12 @@ $skills-title-color2: rgb(31, 30, 30);
     .Container {
       //margin: 0 30%;
       margin: 0;
-
     }
     .footer {
       .footerContent {
         margin: 0 30%;
       }
     }
-
   }
 }
 
@@ -154,14 +140,12 @@ $skills-title-color2: rgb(31, 30, 30);
     .Container {
       //margin: 0 25%;
       margin: 0;
-
     }
     .footer {
       .footerContent {
         margin: 0 25%;
       }
     }
-
   }
 }
 
@@ -175,14 +159,12 @@ $skills-title-color2: rgb(31, 30, 30);
     .Container {
       //margin: 0 18%;
       margin: 0;
-
     }
     .footer {
       .footerContent {
         margin: 0 18%;
       }
     }
-
   }
 }
 
@@ -194,9 +176,8 @@ $skills-title-color2: rgb(31, 30, 30);
       }
     }
     .Container {
-     // margin: 0 10%;
-       margin: 0;
-
+      // margin: 0 10%;
+      margin: 0;
     }
     .footer {
       .footerContent {
@@ -218,22 +199,19 @@ $skills-title-color2: rgb(31, 30, 30);
     .Container {
       //margin: 0 6%;
       margin: 0;
-
     }
     .footer {
       position: static;
       bottom: 0;
       .footerContent {
         margin: 0 5%;
-
       }
     }
-
   }
 }
 
 @media only screen and #{$mq-small} {
-        //for tablet////
+  //for tablet////
   .App {
     .header {
       .headerContent {
@@ -244,7 +222,6 @@ $skills-title-color2: rgb(31, 30, 30);
     .Container {
       //margin: 0 4%;
       margin: 0;
-
     }
 
     .footer {
@@ -257,13 +234,11 @@ $skills-title-color2: rgb(31, 30, 30);
         }
       }
     }
-
-
   }
 }
 
 @media only screen and #{$mq-xsmall} {
-        //for mobile////
+  //for mobile////
 
   .App {
     height: auto;
@@ -284,4 +259,3 @@ $skills-title-color2: rgb(31, 30, 30);
     }
   }
 }
-

@@ -1,152 +1,145 @@
-
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
 body {
   font-family: Lato, sans-serif;
 }
 
+.page_container {
+  width: 100vw;
 
+  background-color: #e1e5ee;
+  margin: -5px 0px 0px 0px;
+  padding: 0px;
+  color: #441d41;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+    gap: 10px;
+    height: fit-content;
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .name {
+      z-index: 1;
+      color: black;
+    }
 
-.page_container{
+    .link {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .link a {
+      display: flex;
+      justify-content: center;
+      padding: 0.6rem;
+      margin: 1rem;
+      color: rgb(64, 18, 68);
+
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.2s ease-out;
+      z-index: 2;
+    }
+
+    .link a:hover {
+      transform: translateY(-0.3rem);
+    }
+  }
+
+  .footerBG {
     width: 100vw;
-
-    background-color:#e1e5ee;
-    margin: -5px 0px 0px 0px;
-    padding:0px;
-    color: #441d41;
-    text-align:center;
     position: absolute;
     bottom: 0px;
     left: 0px;
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      width: 100%;
-      gap: 10px;
-      height: fit-content;
-      .title{
-        font-size: 2rem;
-        font-weight: bold;
-
-      }
-      .name{
-        z-index: 1;
-        color: black;
-
-      }
-      
-      .link {
-        display: flex;
-        justify-content: center;
-        font-size: 2rem;
-      }
-      .link a {
-        display: flex;
-        justify-content: center;
-        padding: 0.6rem;
-        margin: 1rem;
-        color: rgb(64, 18, 68);
-      
-        cursor: pointer;
-        border-radius: 50%;
-        transition: all 0.2s ease-out;
-        z-index: 2;
-      }
-      
-      .link a:hover {
-        transform:translateY(-0.3rem);
-      }
+    object-fit: cover;
+    .arrow {
+      stroke-width: 0.3px;
+      stroke: yellow;
+    }
+    .topball {
+      animation: ball 1.5s ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-delay: 0.3s;
+      cursor: pointer;
     }
 
-    .footerBG {
-        width:100vw;
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        object-fit: cover;
-        .arrow {
-            stroke-width: .3px;
-            stroke:yellow;
-          }
-          .topball {
-            animation: ball 1.5s ease-in-out;
-            animation-iteration-count:infinite;
-            animation-direction: alternate;
-            animation-delay: 0.3s;
-            cursor:pointer;
-          }
-          
-          .wave {
-            animation: wave 3s linear;
-            animation-iteration-count:infinite;
-            fill: #4478e3;
-          }
-          .drop {
-            fill: transparent;
-            animation: drop 5s ease infinite normal;
-            stroke: #4478e3;
-            stroke-width:0.5;
-            opacity:.6; 
-            transform: translateY(80%);
-          }
-          .drop1 {
-            transform-origin: 20px 3px;
-          }
-          .drop2 {
-            animation-delay: 3s;
-            animation-duration:3s;
-            transform-origin: 25px 3px;
-          }
-          .drop3 {
-            animation-delay: -2s;
-            animation-duration:3.4s;
-            transform-origin: 16px 3px;
-          }
-          .gooeff {
-                filter: url('#goo');
-          }
-          #wave2 {
-            animation-duration:5s;
-            animation-direction: reverse;
-            opacity: .6
-          }
-          #wave3 {
-            animation-duration: 7s;
-            opacity:.3;
-          }
-          @keyframes drop {
-            0% {
-              transform: translateY(80%); 
-              opacity:.6; 
-            }
-            80% {
-              transform: translateY(80%); 
-              opacity:.6; 
-            }
-            90% { 
-              transform: translateY(10%) ; 
-              opacity:.6; 
-            }
-            100% { 
-              transform: translateY(0%) scale(1.5);  
-              stroke-width:0.2;
-              opacity:0; 
-            }
-          }
-          @keyframes wave {
-            to {transform: translateX(-100%);}
-          }
-          @keyframes ball {
-            to {transform: translateY(20%);}
-          }
-
-
+    .wave {
+      animation: wave 3s linear;
+      animation-iteration-count: infinite;
+      fill: #4478e3;
+    }
+    .drop {
+      fill: transparent;
+      animation: drop 5s ease infinite normal;
+      stroke: #4478e3;
+      stroke-width: 0.5;
+      opacity: 0.6;
+      transform: translateY(80%);
+    }
+    .drop1 {
+      transform-origin: 20px 3px;
+    }
+    .drop2 {
+      animation-delay: 3s;
+      animation-duration: 3s;
+      transform-origin: 25px 3px;
+    }
+    .drop3 {
+      animation-delay: -2s;
+      animation-duration: 3.4s;
+      transform-origin: 16px 3px;
+    }
+    .gooeff {
+      filter: url("#goo");
+    }
+    #wave2 {
+      animation-duration: 5s;
+      animation-direction: reverse;
+      opacity: 0.6;
+    }
+    #wave3 {
+      animation-duration: 7s;
+      opacity: 0.3;
+    }
+    @keyframes drop {
+      0% {
+        transform: translateY(80%);
+        opacity: 0.6;
       }
-      
-  
+      80% {
+        transform: translateY(80%);
+        opacity: 0.6;
+      }
+      90% {
+        transform: translateY(10%);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(0%) scale(1.5);
+        stroke-width: 0.2;
+        opacity: 0;
+      }
+    }
+    @keyframes wave {
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes ball {
+      to {
+        transform: translateY(20%);
+      }
+    }
   }
-
+}
