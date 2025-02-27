@@ -145,8 +145,8 @@ const HomePage = ({ showInTop }) => {
       <section className={classes.left_section}>
         <div className={classes.welcome_text}>Greetings!</div>
         <p className={classes.aboutMe}>
-          I'm Bahram Basdak, a React developer experienced in creating frontend
-          applications using React, JavaScript, HTML, and CSS. With over 3 years
+          I'm Bahram Basdak, a Front-End developer experienced in creating frontend
+          applications using React, Next.js, JavaScript, HTML, and CSS. With over 3 years
           of expertise in designing and developing front-end web solutions, I
           focus on crafting user-friendly interfaces and solving complex
           problems collaboratively to achieve team objectives.
