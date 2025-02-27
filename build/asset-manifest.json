@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a438148.css",
-    "main.js": "/static/js/main.314dffa3.js",
+    "main.css": "/static/css/main.43582cfb.css",
+    "main.js": "/static/js/main.245ec344.js",
     "static/js/496.fd553932.chunk.js": "/static/js/496.fd553932.chunk.js",
-    "static/media/life_style_working_25.jpg": "/static/media/life_style_working_25.7aa1450b0b83130d09f7.jpg",
     "static/media/queraReact.JPG": "/static/media/queraReact.5e79841368914cb025bf.JPG",
     "static/media/about us.jpg": "/static/media/about us.e576f0c0d10563bb55ed.jpg",
     "static/media/work6.JPG": "/static/media/work6.b93f418ce55c3cfe4e2d.JPG",
-    "static/media/bahram-basdak-resume 1402.pdf": "/static/media/bahram-basdak-resume 1402.bf7242bd4b124cead1f7.pdf",
+    "static/media/Bahram-Basdak-Resume-14031205.pdf": "/static/media/Bahram-Basdak-Resume-14031205.eb875531c13cdff79447.pdf",
     "static/media/header-day.jpg": "/static/media/header-day.1565fc4e05bc12a8da4d.jpg",
     "static/media/main-header-img.jpg": "/static/media/main-header-img.99b8224f5cbde054ce64.jpg",
     "static/media/jsCertificate.JPG": "/static/media/jsCertificate.819d094885a9b7556992.JPG",
@@ -18,18 +17,17 @@
     "static/media/header-night.jpg": "/static/media/header-night.374c675d154d3f5c5a8f.jpg",
     "static/media/BNazanin.ttf": "/static/media/BNazanin.6337ce6eb8d11957c0c0.ttf",
     "static/media/work2.JPG": "/static/media/work2.dba0f8227ba2556fed72.JPG",
-    "static/media/work1.JPG": "/static/media/work1.8edb4b9df1a5f87cf07b.JPG",
     "static/media/work4.JPG": "/static/media/work4.e3d3f1fdd7d6c02e1f79.JPG",
     "static/media/web-dev.png": "/static/media/web-dev.ad02d63870968fd4d1e7.png",
     "static/media/profile.jpg": "/static/media/profile.5625b3bb101f3d04ed33.jpg",
     "static/media/defaultprofile.jpg": "/static/media/defaultprofile.5a1c79884c66c57d9ddf.jpg",
     "index.html": "/index.html",
-    "main.9a438148.css.map": "/static/css/main.9a438148.css.map",
-    "main.314dffa3.js.map": "/static/js/main.314dffa3.js.map",
+    "main.43582cfb.css.map": "/static/css/main.43582cfb.css.map",
+    "main.245ec344.js.map": "/static/js/main.245ec344.js.map",
     "496.fd553932.chunk.js.map": "/static/js/496.fd553932.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a438148.css",
-    "static/js/main.314dffa3.js"
+    "static/css/main.43582cfb.css",
+    "static/js/main.245ec344.js"
   ]
 }
