@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub } from "react-icons/bs";
 import { AiFillLinkedin, AiFillFilePdf } from "react-icons/ai";
-import resume from "../../bahram-basdak-resume 1402.pdf";
+import resume from "../../Bahram-Basdak-Resume-14031205.pdf";
 
 import classes from "./styles.module.scss";
 import homePage from "../../img/homePage.jpg";
