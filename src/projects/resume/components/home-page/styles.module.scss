@@ -93,6 +93,7 @@ $main-header-menu-text-color: rgb(248, 248, 248);
   color: white;
   line-height: 2rem;
   font-weight: 300;
+  
 }
 .typer {
   display: flex;
@@ -185,5 +186,9 @@ $main-header-menu-text-color: rgb(248, 248, 248);
     height: 50%;
     width: 90%;
     max-width: 90%;
+  }
+  .Home_header .left_section .get_resumeBtn{
+    width: 100%;
+
   }
 }
