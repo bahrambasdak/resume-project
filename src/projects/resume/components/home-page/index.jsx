@@ -33,27 +33,27 @@ const HomePage = ({ showInTop }) => {
   }, [winHeight, winWidth]);
   const text = "Welcome to my website :)  "; //'front end developer';//
 
-  let i = 0;
+  const typerIndex = useRef(0);
+  const isReversing = useRef(false);
 
   const writer = useCallback(() => {
-      let reverse = false;
-    if (i < text.length && !reverse) {
+    if (typerIndex.current < text.length && !isReversing.current) {
       setAutoTyperText(
         text
           .split("")
-          .slice(0, i + 1)
+          .slice(0, typerIndex.current + 1)
           .join("")
       );
-      i++;
+      typerIndex.current++;
     } else {
-      reverse = true;
+      isReversing.current = true;
     }
 
-    if (i >= 0 && reverse) {
-      setAutoTyperText(text.split("").slice(0, i).join(""));
-      i--;
-    } else if (reverse) {
-      reverse = false;
+    if (typerIndex.current >= 0 && isReversing.current) {
+      setAutoTyperText(text.split("").slice(0, typerIndex.current).join(""));
+      typerIndex.current--;
+    } else if (isReversing.current) {
+      isReversing.current = false;
     }
   }, []);
 
