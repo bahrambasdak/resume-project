@@ -4,7 +4,6 @@ import classes from "../styles.module.scss";
 
 import { v4 as uuidv4 } from "uuid";
 import { useTheme } from "../contexts/theme";
-import { memo } from "react";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();

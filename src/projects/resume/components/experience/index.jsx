@@ -1,4 +1,3 @@
-
 import webDevLogo from "./icon/web-dev.png";
 import teamYabLogo from "./icon/about us.jpg";
 
@@ -7,14 +6,18 @@ import { Marginer } from "../global/Marginer";
 
 const experiences = [
   {
-    logo: <img src={teamYabLogo} style={{ width: "100%" }}></img>,
+    logo: (
+      <img src={teamYabLogo} style={{ width: "100%" }} alt="Team Yab"></img>
+    ),
     company: "Team Yab",
     role: "Front-end Developer",
     period: "October 2022 - until now",
     desc: "I work in the front end team of the company",
   },
   {
-    logo: <img src={webDevLogo} style={{ width: "100%" }}></img>,
+    logo: (
+      <img src={webDevLogo} style={{ width: "100%" }} alt="Web Developer"></img>
+    ),
     company: "Freelance",
     role: "Web Developer",
     period: "November 2021 - October 2022",

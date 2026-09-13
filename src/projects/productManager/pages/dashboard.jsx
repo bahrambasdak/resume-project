@@ -2,24 +2,12 @@ import DashboardWidget from "../components/dashboard/DashboardWidget";
 import { FaTshirt, FaCoins } from "react-icons/fa";
 import { BsBasket3Fill } from "react-icons/bs";
 
-
 import { useTheme } from "../contexts/theme";
 import classes from "../styles.module.scss";
 import { useProducts } from "../contexts/products";
-import { useEffect } from "react";
-
-//import MyChart from "../components/dashboard/Chart";
 
 const Dashboard = () => {
   const { theme } = useTheme();
-useEffect(()=>{
-  const fetchPrice = async ()=>{
-    const res = await fetch("https://api.coincap.io/v2/assets/?limit=5");
-    const data = await res.json();
-  }
-  fetchPrice();
-},[])
-
 
   const { products } = useProducts();
   return (
@@ -39,7 +27,7 @@ useEffect(()=>{
           title="مجموع قیمت محصولات "
           value={products.reduce(
             (sum, item) => Number(item.price) + Number(sum),
-            0
+            0,
           )}
           icon={<FaCoins />}
           color="yellow"
@@ -48,14 +36,12 @@ useEffect(()=>{
           title="تعداد سفارش ها "
           value={products.reduce(
             (sum, item) => Number(item.availability) + Number(sum),
-            0
+            0,
           )}
           icon={<BsBasket3Fill />}
           color="red"
         />
       </div>
-      {/* <div className={classes.dashboard_chart}><MyChart/></div> */}
-      
     </div>
   );
 };

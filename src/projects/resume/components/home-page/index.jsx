@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useEffect } from "react";
 import { memo } from "react";
 import { BsGithub } from "react-icons/bs";
@@ -17,7 +17,7 @@ const HomePage = ({ showInTop }) => {
   const [autoTyperText, setAutoTyperText] = useState("");
   if (winWidth < 768) r_line = winWidth / 9;
 
-  const createPoints = (count, xInit, yInit) => {
+  const createPoints = useCallback((count, xInit, yInit) => {
     const points = [];
     let V = 3;
     let R = 20;
@@ -30,14 +30,13 @@ const HomePage = ({ showInTop }) => {
       points.push({ x, y, vx, vy, r });
     }
     return points;
-  };
+  }, [winHeight, winWidth]);
   const text = "Welcome to my website :)  "; //'front end developer';//
 
   let i = 0;
-  const speed = 100;
-  let reverse = false;
 
   const writer = useCallback(() => {
+      let reverse = false;
     if (i < text.length && !reverse) {
       setAutoTyperText(
         text
@@ -135,7 +134,7 @@ const HomePage = ({ showInTop }) => {
       clearInterval(writerInterval);
       cancelAnimationFrame(myanimation);
     };
-  }, [showInTop]);
+  }, [createPoints, r_line, showInTop, winHeight, winWidth, writer]);
 
   return (
     <div className={`${classes.Home_header} page`} id="home">
@@ -164,7 +163,7 @@ const HomePage = ({ showInTop }) => {
       </section>
 
       <section className={classes.right_section}>
-        <img src={homePage} alt="my picture" className={classes.myPicture} />
+        <img src={homePage} alt="home_page" className={classes.myPicture} />
       </section>
       <Marginer size={"20px"} />
     </div>

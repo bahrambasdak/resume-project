@@ -17,7 +17,7 @@ const ProductManager = () => {
 
   useEffect(() => {
     navigate("dashboard");
-  }, []);
+  }, [navigate]);
 
   return (
     <div
