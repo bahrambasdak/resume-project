@@ -8,7 +8,7 @@ import Main from "./projects/resume";
 function App() {
   return (
     <div>
-      <BrowserRouter basename="/resume-project">
+      <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Main />} />
           <Route path="/todolist" element={<TodoList />} />
