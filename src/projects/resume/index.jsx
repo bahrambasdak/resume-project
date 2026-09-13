@@ -7,15 +7,13 @@ import { IoLogoCss3, IoLogoSass } from "react-icons/io";
 import { FaGitAlt } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import MySkills from "./components/mySkills/MySkills";
 import work2 from "./img/work2.JPG";
 import work4 from "./img/work4.JPG";
 import work5 from "./img/work5.JPG";
 import work6 from "./img/work6.JPG";
 import "./mainStyles.scss";
-
-import classes from "./styles.module.scss";
 import Projects from "./components/projects";
 import HomePage from "./components/home-page";
 import { Experience } from "./components/experience";
@@ -26,10 +24,10 @@ const Main = () => {
   const [showInTop, setShowInTop] = useState(false);
   const screenHeight = window.screen.availHeight;
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (screenHeight - window.scrollY < 200 && !showInTop) setShowInTop(true);
     if (screenHeight - window.scrollY > 200 && showInTop) setShowInTop(false);
-  };
+  }, [screenHeight, showInTop]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
