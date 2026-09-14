@@ -58,7 +58,7 @@ const HomePage = ({ showInTop }) => {
   }, []);
 
   useEffect(() => {
-    let points = createPoints(50);
+    let points = createPoints(100);
     const canvasRefCurrent = canvasRef.current;
     const ctx = canvasRefCurrent.getContext("2d");
     canvasRefCurrent.width = winWidth;
